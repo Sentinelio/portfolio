@@ -1,0 +1,145 @@
+{
+  "hero": "images/hero.jpg",
+  "projects": [
+    {
+      "slug": "01-cyberpunk-2077",
+      "cover": "images/projects/01-cyberpunk-2077/01-cover.jpg",
+      "images": [
+        "images/projects/01-cyberpunk-2077/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "02-rime",
+      "cover": "images/projects/02-rime/01-cover.jpg",
+      "images": [
+        "images/projects/02-rime/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "03-deadlight",
+      "cover": "images/projects/03-deadlight/01-cover.jpg",
+      "images": [
+        "images/projects/03-deadlight/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "04-gylt",
+      "cover": "images/projects/04-gylt/01-cover.jpg",
+      "images": [
+        "images/projects/04-gylt/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "05-song-of-nunu",
+      "cover": "images/projects/05-song-of-nunu/01-cover.jpg",
+      "images": [
+        "images/projects/05-song-of-nunu/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "06-tuned-in",
+      "cover": "images/projects/06-tuned-in/01-cover.jpg",
+      "images": [
+        "images/projects/06-tuned-in/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "07-the-sexy-brutale",
+      "cover": "images/projects/07-the-sexy-brutale/01-cover.jpg",
+      "images": [
+        "images/projects/07-the-sexy-brutale/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "08-wanted-weapons-of-fate",
+      "cover": "images/projects/08-wanted-weapons-of-fate/01-cover.jpg",
+      "images": [
+        "images/projects/08-wanted-weapons-of-fate/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "09-ut3-physx-mod",
+      "cover": "images/projects/09-ut3-physx-mod/01-cover.jpg",
+      "images": [
+        "images/projects/09-ut3-physx-mod/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "10-cops",
+      "cover": "images/projects/10-cops/01-cover.jpg",
+      "images": [
+        "images/projects/10-cops/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "11-commandos-strike-force",
+      "cover": "images/projects/11-commandos-strike-force/01-cover.jpg",
+      "images": [
+        "images/projects/11-commandos-strike-force/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "12-imperial-glory",
+      "cover": "images/projects/12-imperial-glory/01-cover.jpg",
+      "images": [
+        "images/projects/12-imperial-glory/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "13-strider",
+      "cover": "images/projects/13-strider/01-cover.jpg",
+      "images": [
+        "images/projects/13-strider/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "14-tower",
+      "cover": "images/projects/14-tower/01-cover.jpg",
+      "images": [
+        "images/projects/14-tower/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "15-dynamic-tileset",
+      "cover": "images/projects/15-dynamic-tileset/01-cover.jpg",
+      "images": [
+        "images/projects/15-dynamic-tileset/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "16-bp-actorfinder",
+      "cover": "images/projects/16-bp-actorfinder/01-cover.jpg",
+      "images": [
+        "images/projects/16-bp-actorfinder/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "17-bp-debugmenu",
+      "cover": "images/projects/17-bp-debugmenu/01-cover.jpg",
+      "images": [
+        "images/projects/17-bp-debugmenu/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "18-rebel-assault",
+      "cover": "images/projects/18-rebel-assault/01-cover.jpg",
+      "images": [
+        "images/projects/18-rebel-assault/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "19-port",
+      "cover": "images/projects/19-port/01-cover.jpg",
+      "images": [
+        "images/projects/19-port/01-cover.jpg"
+      ]
+    },
+    {
+      "slug": "20-courtyard",
+      "cover": "images/projects/20-courtyard/01-cover.jpg",
+      "images": [
+        "images/projects/20-courtyard/01-cover.jpg"
+      ]
+    }
+  ]
+}
