@@ -1,144 +1,328 @@
 {
-  "hero": "images/hero.jpg",
+  "hero": "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521192Unzd.jpg",
   "projects": [
     {
       "slug": "01-cyberpunk-2077",
-      "cover": "images/projects/01-cyberpunk-2077/01-cover.jpg",
+      "cover": "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/1227852150fHkm.jpg",
       "images": [
-        "images/projects/01-cyberpunk-2077/01-cover.jpg"
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/1227852150fHkm.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521192D6Ty.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521192vWFa.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/122785211925C3o.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521192Unzd.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521192pmTz.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521192DkfX.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/122785211925ehb.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521192YMpb.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521192sV5z.jpg"
       ]
     },
     {
       "slug": "02-rime",
-      "cover": "images/projects/02-rime/01-cover.jpg",
+      "cover": "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/12278521507ouc.jpg",
       "images": [
-        "images/projects/02-rime/01-cover.jpg"
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/12278521507ouc.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513323KnoU.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513323XUvG.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/122785133390yEq.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513339h6QD.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513339pGIZ.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513339yL9n.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521484jwF.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148WRP9.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148nt1D.jpg"
       ]
     },
     {
       "slug": "03-deadlight",
-      "cover": "images/projects/03-deadlight/01-cover.jpg",
+      "cover": "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/1227852149Ttlh.jpg",
       "images": [
-        "images/projects/03-deadlight/01-cover.jpg"
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/1227852149Ttlh.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513339LpiY.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/122785133237ASC.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513323og9T.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513325amws.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513339J7NE.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513339s04E.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513339eJEb.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513339lzHf.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513339i9bS.jpg"
       ]
     },
     {
       "slug": "04-gylt",
-      "cover": "images/projects/04-gylt/01-cover.jpg",
+      "cover": "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/1227852150sOHu.jpg",
       "images": [
-        "images/projects/04-gylt/01-cover.jpg"
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/1227852150sOHu.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521486gw0.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148O7qY.png",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852149SWF5.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148ugNU.png",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/122785214898M8.png",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148OLuJ.png",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852149V4sq.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148aIDf.png",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148qNgP.png"
       ]
     },
     {
       "slug": "05-song-of-nunu",
-      "cover": "images/projects/05-song-of-nunu/01-cover.jpg",
+      "cover": "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278524326l2bx.jpg",
       "images": [
-        "images/projects/05-song-of-nunu/01-cover.jpg"
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278524326l2bx.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278524326wc46.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852432666hH.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/122785243261IdK.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278524326ltpD.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278524326hXTS.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278524326qh3V.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278524326VHVV.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278524326ej4X.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278524326wo0f.jpg"
       ]
     },
     {
       "slug": "06-tuned-in",
-      "cover": "images/projects/06-tuned-in/01-cover.jpg",
+      "cover": "https://i.kickstarter.com/assets/054/436/618/7ac3252619b9f3c98c94b3a6be90c2a5_original.png?anim=false&fit=cover&gravity=auto&height=873&origin=ugc&q=92&v=1784047097&width=1552&sig=CQ0V4Ti4mWyj8YhcyanlIbnyuhCXwcOI%2B%2Bm62FCtRxQ%3D",
       "images": [
-        "images/projects/06-tuned-in/01-cover.jpg"
+        "https://i.kickstarter.com/assets/054/436/618/7ac3252619b9f3c98c94b3a6be90c2a5_original.png?anim=false&fit=cover&gravity=auto&height=873&origin=ugc&q=92&v=1784047097&width=1552&sig=CQ0V4Ti4mWyj8YhcyanlIbnyuhCXwcOI%2B%2Bm62FCtRxQ%3D"
       ]
     },
     {
       "slug": "07-the-sexy-brutale",
-      "cover": "images/projects/07-the-sexy-brutale/01-cover.jpg",
+      "cover": "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148D56o.jpg",
       "images": [
-        "images/projects/07-the-sexy-brutale/01-cover.jpg"
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148D56o.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148in3Z.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148h6wB.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148HjxA.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148kCmU.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521488jsq.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148letp.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/122785214856jt.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148T9FL.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148w3Xk.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852148hdoe.jpg"
       ]
     },
     {
       "slug": "08-wanted-weapons-of-fate",
-      "cover": "images/projects/08-wanted-weapons-of-fate/01-cover.jpg",
+      "cover": "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/1227852149AmV9.jpg",
       "images": [
-        "images/projects/08-wanted-weapons-of-fate/01-cover.jpg"
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/1227852149AmV9.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333EAXU.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333PCPS.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333UbMp.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333qJfT.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333t2hT.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133330Ygk.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333VehC.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333XAPS.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333eYOy.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333vypI.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133334JbN.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333G7X2.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333KlbY.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333Lasq.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333WmAP.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333chTw.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333dnuV.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333sMO9.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333vhw6.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133338qjG.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333NSfJ.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333V26p.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333Zy6b.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333pCv5.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333rpr5.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333w4e2.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333prVC.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333xRu4.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333AnWO.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333IYf0.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333uM16.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133334VZy.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133338IBF.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333DdCz.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333Eny9.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333HeYH.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333MS9Q.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333QSx3.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333XyAQ.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333oMbM.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/1227851333377Y1.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333C4Fc.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333CPzN.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333CVm8.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333G2bj.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333N56l.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333OmYP.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333Sems.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333UKGS.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333eIbm.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333jn8M.jpg"
       ]
     },
     {
       "slug": "09-ut3-physx-mod",
-      "cover": "images/projects/09-ut3-physx-mod/01-cover.jpg",
+      "cover": "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133251d0B.jpg",
       "images": [
-        "images/projects/09-ut3-physx-mod/01-cover.jpg"
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133251d0B.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325Bzyr.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325Ev73.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325HUXq.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325PT06.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325Rx4A.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325WUFw.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325Xtny.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325hFLd.jpg"
       ]
     },
     {
       "slug": "10-cops",
-      "cover": "images/projects/10-cops/01-cover.jpg",
+      "cover": "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333PVyS.jpg",
       "images": [
-        "images/projects/10-cops/01-cover.jpg"
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333PVyS.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333azNp.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133334y1F.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133335XLb.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333YUSm.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333gFSN.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333uJM2.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333u4vC.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333yMnH.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133332lUz.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333Tdcp.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133331grr.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333VlDQ.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133335tts.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333o5Ji.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333yrG9.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133331tii.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/1227851333371pm.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333HtUh.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333TGMh.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333fKHb.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333rG90.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133333pJl.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333Kicr.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333X35p.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333XUY9.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333YDl1.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333iT4S.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333PnIv.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333P7DB.jpg"
       ]
     },
     {
       "slug": "11-commandos-strike-force",
-      "cover": "images/projects/11-commandos-strike-force/01-cover.jpg",
+      "cover": "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/1227852149cAe2.jpg",
       "images": [
-        "images/projects/11-commandos-strike-force/01-cover.jpg"
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/1227852149cAe2.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333I9Ri.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333Zeqm.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333swXP.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333LD5Y.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333Nb3e.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333j6Jc.jpg"
       ]
     },
     {
       "slug": "12-imperial-glory",
-      "cover": "images/projects/12-imperial-glory/01-cover.jpg",
+      "cover": "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/1227852149ZNNr.jpg",
       "images": [
-        "images/projects/12-imperial-glory/01-cover.jpg"
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/file/1227852149ZNNr.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513323NNrf.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513323WrSv.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513323ebTa.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133253rx2.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133251Jse.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325Pq4O.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325Sj0R.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325WO8H.jpg"
       ]
     },
     {
       "slug": "13-strider",
-      "cover": "images/projects/13-strider/01-cover.jpg",
+      "cover": "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325S1p9.jpg",
       "images": [
-        "images/projects/13-strider/01-cover.jpg"
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325S1p9.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325klor.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325nVfd.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325rRzz.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325uLAV.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513339NVKh.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278513339Tgo6.jpg"
       ]
     },
     {
       "slug": "14-tower",
-      "cover": "images/projects/14-tower/01-cover.jpg",
+      "cover": "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325HDdB.jpg",
       "images": [
-        "images/projects/14-tower/01-cover.jpg"
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325HDdB.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325UeO5.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325t4Lt.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325v0Lb.jpg"
       ]
     },
     {
       "slug": "15-dynamic-tileset",
-      "cover": "images/projects/15-dynamic-tileset/01-cover.jpg",
-      "images": [
-        "images/projects/15-dynamic-tileset/01-cover.jpg"
-      ]
+      "cover": "",
+      "images": []
     },
     {
       "slug": "16-bp-actorfinder",
-      "cover": "images/projects/16-bp-actorfinder/01-cover.jpg",
+      "cover": "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852150XtIR.jpg",
       "images": [
-        "images/projects/16-bp-actorfinder/01-cover.jpg"
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852150XtIR.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521501jzc.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852150jUgm.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521506DCz.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521503JQv.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/12278521507CeT.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852150l3dK.jpg",
+        "https://dvqlxo2m2q99q.cloudfront.net/000_clients/122785/page/1227852150IWUa.jpg"
       ]
     },
     {
       "slug": "17-bp-debugmenu",
-      "cover": "images/projects/17-bp-debugmenu/01-cover.jpg",
-      "images": [
-        "images/projects/17-bp-debugmenu/01-cover.jpg"
-      ]
+      "cover": "",
+      "images": []
     },
     {
       "slug": "18-rebel-assault",
-      "cover": "images/projects/18-rebel-assault/01-cover.jpg",
+      "cover": "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325RedV.jpg",
       "images": [
-        "images/projects/18-rebel-assault/01-cover.jpg"
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325RedV.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325TUS7.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325V2Z8.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325cwz7.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325j6ho.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325jeL8.jpg"
       ]
     },
     {
       "slug": "19-port",
-      "cover": "images/projects/19-port/01-cover.jpg",
+      "cover": "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133252D43.jpg",
       "images": [
-        "images/projects/19-port/01-cover.jpg"
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/122785133252D43.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325JRek.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325aUWe.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325fuzb.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325ogtT.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325zQcV.jpg"
       ]
     },
     {
       "slug": "20-courtyard",
-      "cover": "images/projects/20-courtyard/01-cover.jpg",
+      "cover": "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325Ia8w.jpg",
       "images": [
-        "images/projects/20-courtyard/01-cover.jpg"
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325Ia8w.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325PS6G.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325gGB5.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325ODOC.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513325qauj.jpg",
+        "https://d2f8l4t0zpiyim.cloudfront.net/000_clients/122785/page/12278513333wYJm.jpg"
       ]
     }
   ]
