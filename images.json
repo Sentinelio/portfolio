@@ -1,0 +1,278 @@
+{
+  "hero": null,
+  "projects": [
+    {
+      "slug": "01-cyberpunk-2077",
+      "cover": "images/projects/01-cyberpunk-2077/01.jpg",
+      "images": [
+        "images/projects/01-cyberpunk-2077/01.jpg",
+        "images/projects/01-cyberpunk-2077/02.jpg",
+        "images/projects/01-cyberpunk-2077/03.jpg",
+        "images/projects/01-cyberpunk-2077/04.jpg",
+        "images/projects/01-cyberpunk-2077/05.jpg",
+        "images/projects/01-cyberpunk-2077/06.jpg",
+        "images/projects/01-cyberpunk-2077/07.jpg",
+        "images/projects/01-cyberpunk-2077/08.jpg",
+        "images/projects/01-cyberpunk-2077/09.jpg",
+        "images/projects/01-cyberpunk-2077/10.jpg"
+      ]
+    },
+    {
+      "slug": "02-rime",
+      "cover": "images/projects/02-rime/01.jpg",
+      "images": [
+        "images/projects/02-rime/01.jpg",
+        "images/projects/02-rime/04.jpg",
+        "images/projects/02-rime/05.jpg",
+        "images/projects/02-rime/06.jpg",
+        "images/projects/02-rime/07.jpg",
+        "images/projects/02-rime/08.jpg",
+        "images/projects/02-rime/09.jpg",
+        "images/projects/02-rime/10.jpg"
+      ]
+    },
+    {
+      "slug": "03-deadlight",
+      "cover": "images/projects/03-deadlight/01.jpg",
+      "images": [
+        "images/projects/03-deadlight/01.jpg",
+        "images/projects/03-deadlight/02.jpg",
+        "images/projects/03-deadlight/06.jpg",
+        "images/projects/03-deadlight/07.jpg",
+        "images/projects/03-deadlight/08.jpg",
+        "images/projects/03-deadlight/09.jpg",
+        "images/projects/03-deadlight/10.jpg"
+      ]
+    },
+    {
+      "slug": "04-gylt",
+      "cover": "images/projects/04-gylt/01.jpg",
+      "images": [
+        "images/projects/04-gylt/01.jpg",
+        "images/projects/04-gylt/02.jpg",
+        "images/projects/04-gylt/03.png",
+        "images/projects/04-gylt/04.jpg",
+        "images/projects/04-gylt/05.png",
+        "images/projects/04-gylt/06.png",
+        "images/projects/04-gylt/07.png",
+        "images/projects/04-gylt/08.jpg",
+        "images/projects/04-gylt/09.png",
+        "images/projects/04-gylt/10.png"
+      ]
+    },
+    {
+      "slug": "05-song-of-nunu",
+      "cover": "images/projects/05-song-of-nunu/01.jpg",
+      "images": [
+        "images/projects/05-song-of-nunu/01.jpg",
+        "images/projects/05-song-of-nunu/02.jpg",
+        "images/projects/05-song-of-nunu/03.jpg",
+        "images/projects/05-song-of-nunu/04.jpg",
+        "images/projects/05-song-of-nunu/05.jpg",
+        "images/projects/05-song-of-nunu/06.jpg",
+        "images/projects/05-song-of-nunu/07.jpg",
+        "images/projects/05-song-of-nunu/08.jpg",
+        "images/projects/05-song-of-nunu/09.jpg",
+        "images/projects/05-song-of-nunu/10.jpg"
+      ]
+    },
+    {
+      "slug": "06-tuned-in",
+      "cover": "images/projects/06-tuned-in/01.png",
+      "images": [
+        "images/projects/06-tuned-in/01.png"
+      ]
+    },
+    {
+      "slug": "07-the-sexy-brutale",
+      "cover": "images/projects/07-the-sexy-brutale/01.jpg",
+      "images": [
+        "images/projects/07-the-sexy-brutale/01.jpg",
+        "images/projects/07-the-sexy-brutale/02.jpg",
+        "images/projects/07-the-sexy-brutale/03.jpg",
+        "images/projects/07-the-sexy-brutale/04.jpg",
+        "images/projects/07-the-sexy-brutale/05.jpg",
+        "images/projects/07-the-sexy-brutale/06.jpg",
+        "images/projects/07-the-sexy-brutale/07.jpg",
+        "images/projects/07-the-sexy-brutale/08.jpg",
+        "images/projects/07-the-sexy-brutale/09.jpg",
+        "images/projects/07-the-sexy-brutale/10.jpg",
+        "images/projects/07-the-sexy-brutale/11.jpg"
+      ]
+    },
+    {
+      "slug": "08-wanted-weapons-of-fate",
+      "cover": "images/projects/08-wanted-weapons-of-fate/01.jpg",
+      "images": [
+        "images/projects/08-wanted-weapons-of-fate/01.jpg",
+        "images/projects/08-wanted-weapons-of-fate/02.jpg",
+        "images/projects/08-wanted-weapons-of-fate/03.jpg",
+        "images/projects/08-wanted-weapons-of-fate/04.jpg",
+        "images/projects/08-wanted-weapons-of-fate/05.jpg",
+        "images/projects/08-wanted-weapons-of-fate/06.jpg",
+        "images/projects/08-wanted-weapons-of-fate/07.jpg",
+        "images/projects/08-wanted-weapons-of-fate/08.jpg",
+        "images/projects/08-wanted-weapons-of-fate/09.jpg",
+        "images/projects/08-wanted-weapons-of-fate/10.jpg",
+        "images/projects/08-wanted-weapons-of-fate/11.jpg",
+        "images/projects/08-wanted-weapons-of-fate/12.jpg",
+        "images/projects/08-wanted-weapons-of-fate/13.jpg",
+        "images/projects/08-wanted-weapons-of-fate/14.jpg",
+        "images/projects/08-wanted-weapons-of-fate/15.jpg",
+        "images/projects/08-wanted-weapons-of-fate/16.jpg",
+        "images/projects/08-wanted-weapons-of-fate/17.jpg",
+        "images/projects/08-wanted-weapons-of-fate/18.jpg",
+        "images/projects/08-wanted-weapons-of-fate/19.jpg",
+        "images/projects/08-wanted-weapons-of-fate/20.jpg",
+        "images/projects/08-wanted-weapons-of-fate/21.jpg",
+        "images/projects/08-wanted-weapons-of-fate/22.jpg",
+        "images/projects/08-wanted-weapons-of-fate/23.jpg",
+        "images/projects/08-wanted-weapons-of-fate/24.jpg",
+        "images/projects/08-wanted-weapons-of-fate/25.jpg",
+        "images/projects/08-wanted-weapons-of-fate/26.jpg",
+        "images/projects/08-wanted-weapons-of-fate/27.jpg",
+        "images/projects/08-wanted-weapons-of-fate/28.jpg",
+        "images/projects/08-wanted-weapons-of-fate/29.jpg",
+        "images/projects/08-wanted-weapons-of-fate/30.jpg",
+        "images/projects/08-wanted-weapons-of-fate/31.jpg",
+        "images/projects/08-wanted-weapons-of-fate/32.jpg",
+        "images/projects/08-wanted-weapons-of-fate/33.jpg",
+        "images/projects/08-wanted-weapons-of-fate/34.jpg",
+        "images/projects/08-wanted-weapons-of-fate/35.jpg",
+        "images/projects/08-wanted-weapons-of-fate/36.jpg",
+        "images/projects/08-wanted-weapons-of-fate/37.jpg",
+        "images/projects/08-wanted-weapons-of-fate/38.jpg",
+        "images/projects/08-wanted-weapons-of-fate/39.jpg",
+        "images/projects/08-wanted-weapons-of-fate/40.jpg",
+        "images/projects/08-wanted-weapons-of-fate/41.jpg",
+        "images/projects/08-wanted-weapons-of-fate/42.jpg",
+        "images/projects/08-wanted-weapons-of-fate/43.jpg",
+        "images/projects/08-wanted-weapons-of-fate/44.jpg",
+        "images/projects/08-wanted-weapons-of-fate/45.jpg",
+        "images/projects/08-wanted-weapons-of-fate/46.jpg",
+        "images/projects/08-wanted-weapons-of-fate/47.jpg",
+        "images/projects/08-wanted-weapons-of-fate/48.jpg",
+        "images/projects/08-wanted-weapons-of-fate/49.jpg",
+        "images/projects/08-wanted-weapons-of-fate/50.jpg",
+        "images/projects/08-wanted-weapons-of-fate/51.jpg",
+        "images/projects/08-wanted-weapons-of-fate/52.jpg"
+      ]
+    },
+    {
+      "slug": "09-ut3-physx-mod",
+      "cover": "images/projects/09-ut3-physx-mod/01.jpg",
+      "images": [
+        "images/projects/09-ut3-physx-mod/01.jpg",
+        "images/projects/09-ut3-physx-mod/02.jpg",
+        "images/projects/09-ut3-physx-mod/03.jpg",
+        "images/projects/09-ut3-physx-mod/04.jpg",
+        "images/projects/09-ut3-physx-mod/05.jpg",
+        "images/projects/09-ut3-physx-mod/06.jpg",
+        "images/projects/09-ut3-physx-mod/07.jpg",
+        "images/projects/09-ut3-physx-mod/08.jpg",
+        "images/projects/09-ut3-physx-mod/09.jpg"
+      ]
+    },
+    {
+      "slug": "11-commandos-strike-force",
+      "cover": "images/projects/11-commandos-strike-force/01.jpg",
+      "images": [
+        "images/projects/11-commandos-strike-force/01.jpg",
+        "images/projects/11-commandos-strike-force/02.jpg",
+        "images/projects/11-commandos-strike-force/03.jpg",
+        "images/projects/11-commandos-strike-force/04.jpg",
+        "images/projects/11-commandos-strike-force/05.jpg",
+        "images/projects/11-commandos-strike-force/06.jpg",
+        "images/projects/11-commandos-strike-force/07.jpg"
+      ]
+    },
+    {
+      "slug": "12-imperial-glory",
+      "cover": "images/projects/12-imperial-glory/01.jpg",
+      "images": [
+        "images/projects/12-imperial-glory/01.jpg",
+        "images/projects/12-imperial-glory/02.jpg",
+        "images/projects/12-imperial-glory/03.jpg",
+        "images/projects/12-imperial-glory/04.jpg",
+        "images/projects/12-imperial-glory/05.jpg",
+        "images/projects/12-imperial-glory/06.jpg",
+        "images/projects/12-imperial-glory/07.jpg",
+        "images/projects/12-imperial-glory/08.jpg",
+        "images/projects/12-imperial-glory/09.jpg"
+      ]
+    },
+    {
+      "slug": "13-strider",
+      "cover": "images/projects/13-strider/01.jpg",
+      "images": [
+        "images/projects/13-strider/01.jpg",
+        "images/projects/13-strider/02.jpg",
+        "images/projects/13-strider/03.jpg",
+        "images/projects/13-strider/04.jpg",
+        "images/projects/13-strider/05.jpg",
+        "images/projects/13-strider/06.jpg",
+        "images/projects/13-strider/07.jpg"
+      ]
+    },
+    {
+      "slug": "14-tower",
+      "cover": "images/projects/14-tower/01.jpg",
+      "images": [
+        "images/projects/14-tower/01.jpg",
+        "images/projects/14-tower/02.jpg",
+        "images/projects/14-tower/03.jpg",
+        "images/projects/14-tower/04.jpg"
+      ]
+    },
+    {
+      "slug": "16-bp-actorfinder",
+      "cover": "images/projects/16-bp-actorfinder/01.jpg",
+      "images": [
+        "images/projects/16-bp-actorfinder/01.jpg",
+        "images/projects/16-bp-actorfinder/02.jpg",
+        "images/projects/16-bp-actorfinder/03.jpg",
+        "images/projects/16-bp-actorfinder/04.jpg",
+        "images/projects/16-bp-actorfinder/05.jpg",
+        "images/projects/16-bp-actorfinder/06.jpg",
+        "images/projects/16-bp-actorfinder/07.jpg",
+        "images/projects/16-bp-actorfinder/08.jpg"
+      ]
+    },
+    {
+      "slug": "18-rebel-assault",
+      "cover": "images/projects/18-rebel-assault/01.jpg",
+      "images": [
+        "images/projects/18-rebel-assault/01.jpg",
+        "images/projects/18-rebel-assault/02.jpg",
+        "images/projects/18-rebel-assault/03.jpg",
+        "images/projects/18-rebel-assault/04.jpg",
+        "images/projects/18-rebel-assault/05.jpg",
+        "images/projects/18-rebel-assault/06.jpg"
+      ]
+    },
+    {
+      "slug": "19-port",
+      "cover": "images/projects/19-port/01.jpg",
+      "images": [
+        "images/projects/19-port/01.jpg",
+        "images/projects/19-port/02.jpg",
+        "images/projects/19-port/03.jpg",
+        "images/projects/19-port/04.jpg",
+        "images/projects/19-port/05.jpg",
+        "images/projects/19-port/06.jpg"
+      ]
+    },
+    {
+      "slug": "20-courtyard",
+      "cover": "images/projects/20-courtyard/01.jpg",
+      "images": [
+        "images/projects/20-courtyard/01.jpg",
+        "images/projects/20-courtyard/02.jpg",
+        "images/projects/20-courtyard/03.jpg",
+        "images/projects/20-courtyard/04.jpg",
+        "images/projects/20-courtyard/05.jpg",
+        "images/projects/20-courtyard/06.jpg"
+      ]
+    }
+  ]
+}
