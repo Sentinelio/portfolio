@@ -1,0 +1,74 @@
+name: Generate images.json
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "images/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-images-json
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate images.json
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+
+          EXTS = {".jpg", ".jpeg", ".png", ".webp", ".avif", ".gif"}
+          root = Path("images")
+
+          def is_image(p):
+              return p.is_file() and not p.name.startswith(".") and p.suffix.lower() in EXTS
+
+          def rel(p):
+              # Relative path, forward slashes, no leading slash
+              return p.as_posix().lstrip("/")
+
+          data = {"hero": None, "projects": []}
+
+          if root.is_dir():
+              heroes = sorted(p for p in root.glob("hero.*") if is_image(p))
+              if heroes:
+                  data["hero"] = rel(heroes[0])
+
+              projects_dir = root / "projects"
+              if projects_dir.is_dir():
+                  for d in sorted(
+                      (d for d in projects_dir.iterdir() if d.is_dir() and not d.name.startswith(".")),
+                      key=lambda d: d.name,
+                  ):
+                      images = [rel(p) for p in sorted(d.iterdir(), key=lambda p: p.name) if is_image(p)]
+                      data["projects"].append({
+                          "slug": d.name,
+                          "cover": images[0] if images else None,
+                          "images": images,
+                      })
+
+          Path("images.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+          print(f"hero: {data['hero']}, projects: {len(data['projects'])}")
+
+      - name: Commit images.json if changed
+        run: |
+          if git diff --quiet -- images.json && [ -z "$(git ls-files --others --exclude-standard -- images.json)" ]; then
+            echo "images.json unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images.json
+          git commit -m "chore: regenerate images.json"
+          git pull --rebase origin main
+          git push origin HEAD:main
