@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Manuel Mendiluce — Level Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#07090c;color:#dfe6ee;font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;}
+a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
+::selection{background:#ff7a2f;color:#07090c;}
+@keyframes mmScan{0%{transform:translateY(-100%);}100%{transform:translateY(100%);}}
+</style>
+</helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#07090c"></rect><text x="200" y="232" font-family="monospace" font-size="150" font-weight="700" fill="#ff7a2f" text-anchor="middle">MM</text></svg></template>
+<div style="position:relative;min-height:100vh;background-color:#07090c;">
+
+  <header style="position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:0;height:52px;background:rgba(7,9,12,0.94);backdrop-filter:blur(10px);border-bottom:1px solid #1b2230;">
+    <a href="." onClick="{{ reloadHome }}" title="Reload the portfolio" style="display:flex;align-items:center;gap:12px;padding:0 24px;height:100%;border-right:1px solid #1b2230;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.1em;color:#dfe6ee;cursor:pointer;" style-hover="color:#ff7a2f;background:#0c1017;"><span style="display:inline-block;width:8px;height:8px;background:#ff7a2f;"></span>MM_PORTFOLIO.umap</a>
+    <nav style="display:flex;height:100%;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;">
+      <a href="#" onClick="{{ goTop }}" style="display:flex;align-items:center;padding:0 18px;border-right:1px solid #1b2230;color:#8a94a3;" style-hover="color:#ff7a2f;background:#0c1017;">OVERVIEW</a>
+      <a href="#levels" onClick="{{ navGo }}" style="display:flex;align-items:center;padding:0 18px;border-right:1px solid #1b2230;color:#8a94a3;" style-hover="color:#ff7a2f;background:#0c1017;">LEVELS</a>
+      <a href="#log" onClick="{{ navGo }}" style="display:flex;align-items:center;padding:0 18px;border-right:1px solid #1b2230;color:#8a94a3;" style-hover="color:#ff7a2f;background:#0c1017;">CHANGELOG</a>
+      <a href="#tools" onClick="{{ navGo }}" style="display:flex;align-items:center;padding:0 18px;border-right:1px solid #1b2230;color:#8a94a3;" style-hover="color:#ff7a2f;background:#0c1017;">TOOLS</a>
+    </nav>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:14px;padding:0 24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#8a94a3;"><sc-if value="{{ recruiterMode }}" hint-placeholder-val="{{ false }}"><span style="background:#ff7a2f;color:#07090c;font-weight:700;padding:3px 8px;">RECRUITER ACCESS</span></sc-if><sc-if value="{{ availOn }}" hint-placeholder-val="{{ false }}"><span style="color:#ff7a2f;">●</span> AVAILABLE · </sc-if><a href="{{ emailHref }}" title="{{ emailLabel }}">CONTACT</a><span style="color:#2a3344;">/</span><a href="{{ linkedinHref }}" target="_blank" rel="noopener" title="LinkedIn profile">LINKEDIN</a></div>
+  </header>
+
+  <section id="overview" style="position:relative;overflow:hidden;border-bottom:1px solid #1b2230;">
+    <div style="position:absolute;inset:0;background:#0c1017;"></div>
+    <sc-if value="{{ hero.has }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ hero.a }}');"></div>
+      <div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ hero.b }}');opacity:{{ hero.bo }};transition:opacity {{ hero.bt }};"></div>
+    </sc-if>
+    <div style="position:absolute;inset:0;background:rgba(7,9,12,0.78);"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,9,12,0.7) 0%,rgba(7,9,12,0.2) 60%,rgba(7,9,12,0) 100%),linear-gradient(180deg,rgba(7,9,12,0.5) 0%,transparent 30%,rgba(7,9,12,0.85) 100%);"></div>
+    <div style="position:relative;max-width:1360px;margin:0 auto;padding:56px 32px 44px;box-sizing:border-box;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.3em;color:#ff7a2f;">// LEVEL DESIGNER · SINCE 2004</div>
+      <h1 style="margin:18px 0 0;font-weight:700;font-size:clamp(38px,5vw,68px);line-height:1.04;letter-spacing:-0.03em;min-height:2.1em;">{{ phraseA }}<br><span style="color:#ff7a2f;">{{ phraseB }}</span></h1>
+      <sc-if value="{{ siteHeroCustom }}" hint-placeholder-val="{{ false }}"><p style="max-width:620px;margin:18px 0 0;font-size:16px;line-height:1.7;color:#8a94a3;">{{ siteHero }}</p></sc-if>
+      <sc-if value="{{ siteHeroDefault }}" hint-placeholder-val="{{ true }}"><p style="max-width:620px;margin:18px 0 0;font-size:16px;line-height:1.7;color:#8a94a3;">Twenty-two years of level design — metrics, blockouts, combat encounters and puzzles for <span style="color:#dfe6ee;">Cyberpunk 2077</span>, <span style="color:#dfe6ee;">Rime</span>, <span style="color:#dfe6ee;">Deadlight</span>, <span style="color:#dfe6ee;">Gylt</span> and <span style="color:#dfe6ee;">Song of Nunu</span>. Now Principal Level Designer at Vercors Games.</p></sc-if>
+    </div>
+  </section>
+
+  <section id="levels" style="max-width:1360px;margin:0 auto;padding:40px 32px 20px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <h2 style="margin:0;font-weight:700;font-size:22px;letter-spacing:-0.02em;">Latest levels</h2>
+      <div style="flex:1;border-top:1px dashed #1b2230;"></div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#52607a;">LATEST 4 · FULL LIST IN THE <a href="#log" style="color:#ff7a2f;">CHANGELOG</a></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;">
+      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="14">
+        <div onClick="{{ c.open }}" style="cursor:pointer;display:flex;flex-direction:column;gap:10px;" style-hover="transform:translateY(-4px);">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:4px;overflow:hidden;background:#0c1017;border:1px solid #1b2230;box-shadow:0 14px 28px rgba(0,0,0,0.45);transition:box-shadow 0.25s ease;">
+            <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,122,47,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,47,0.12) 1px,transparent 1px);background-size:24px 24px;"></div>
+            <sc-if value="{{ c.has }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ c.a }}');"></div>
+              <div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ c.b }}');opacity:{{ c.bo }};transition:opacity {{ c.bt }};"></div>
+            </sc-if>
+            <sc-if value="{{ c.noImg }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;left:0;right:0;top:40%;height:20%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:rgba(255,122,47,0.55);">NO TEXTURE</div></sc-if>
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,9,12,0.55) 0%,transparent 28%,transparent 55%,rgba(7,9,12,0.95) 100%);"></div>
+            <div style="position:absolute;left:0;top:0;bottom:0;width:7px;background:linear-gradient(90deg,#ff7a2f 0px,#ff7a2f 1px,rgba(255,122,47,0.22) 1px,rgba(255,122,47,0) 100%);"></div>
+            <div style="position:absolute;top:10px;left:14px;right:10px;display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;">
+              <span style="color:#07090c;background:#ff7a2f;padding:3px 7px;font-weight:700;">{{ c.num }}</span>
+              <span style="display:inline-flex;gap:6px;align-items:center;"><span style="color:#dfe6ee;">{{ c.year }}</span><sc-if value="{{ c.hasScore }}" hint-placeholder-val="{{ false }}"><span style="font-weight:700;color:#07090c;background:#dfe6ee;padding:3px 6px;">{{ c.score }}</span></sc-if></span>
+            </div>
+            <div style="position:absolute;left:16px;right:12px;bottom:12px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.14em;color:#ff7a2f;">{{ c.studio }}</div>
+              <div style="font-weight:700;font-size:19px;line-height:1.02;letter-spacing:-0.01em;margin-top:5px;text-wrap:balance;">{{ c.title }}</div>
+            </div>
+          </div>
+          <div style="font-size:12px;color:#8a94a3;line-height:1.4;padding:0 2px;">{{ c.role }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="log" style="max-width:1360px;margin:0 auto;padding:50px 32px 30px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;">
+      <h2 style="margin:0;font-weight:700;font-size:22px;letter-spacing:-0.02em;">Changelog</h2>
+      <div style="flex:1;border-top:1px dashed #1b2230;"></div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#52607a;"><span style="display:inline-flex;align-items:center;gap:6px;margin-right:14px;"><span style="display:inline-block;width:7px;height:7px;background:#dfe6ee;transform:rotate(45deg);box-shadow:0 0 0 1px #ff7a2f;"></span>RELEASE</span>{{ logRange }} · NEWEST FIRST · CLICK A CASE</div>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(170px,250px) repeat({{ logCols }},minmax(0,1fr));padding:8px 0 6px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#52607a;">
+      <div></div>
+      <sc-for list="{{ logYears }}" as="y" hint-placeholder-count="6"><div style="grid-column:{{ y.col }} / span 24;">{{ y.label }}</div></sc-for>
+    </div>
+    <sc-if value="{{ availOn }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:minmax(170px,250px) repeat({{ logCols }},minmax(0,1fr));align-items:center;padding:16px 0;border-top:1px solid #1b2230;">
+        <div style="grid-column:1;padding-right:14px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center;">
+          <div style="width:40px;height:40px;border:1px dashed #ff7a2f;background:#0c1017;display:flex;align-items:center;justify-content:center;"><span style="width:10px;height:10px;border-radius:50%;background:#ff7a2f;box-shadow:0 0 0 4px rgba(255,122,47,0.2);"></span></div>
+          <div><div style="font-weight:700;font-size:16px;line-height:1.1;color:#ff7a2f;">{{ availTitle }}</div><div style="font-size:12px;color:#8a94a3;margin-top:6px;line-height:1.5;">{{ availRoles }}</div></div>
+        </div>
+        <div style="grid-column:{{ availCol }} / -1;position:relative;height:14px;">
+          <span style="position:absolute;left:0;bottom:100%;margin-bottom:4px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;color:#dfe6ee;white-space:nowrap;">{{ availFrom }}</span>
+          <div style="position:absolute;inset:0;border:1px dashed #ff7a2f;border-right:none;box-sizing:border-box;background:repeating-linear-gradient(90deg,rgba(255,122,47,0.25) 0 6px,transparent 6px 12px);"></div>
+          <span style="position:absolute;right:0;top:100%;margin-top:4px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;color:#ff7a2f;white-space:nowrap;">→ OPEN</span>
+        </div>
+      </div>
+    </sc-if>
+    <sc-for list="{{ logRows }}" as="row" hint-placeholder-count="6">
+      <div onMouseEnter="{{ row.enter }}" onMouseLeave="{{ row.leave }}" style="position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(170px,250px) repeat({{ logCols }},minmax(0,1fr));row-gap:22px;align-items:center;padding:30px 0 16px;border-top:1px solid #1b2230;border-bottom:{{ row.bottom }};">
+        <sc-if value="{{ row.bgHas }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:{{ row.bgOp }};transition:opacity 0.6s ease;">
+            <div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ row.bgA }}');"></div>
+            <div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ row.bgB }}');opacity:{{ row.bgBo }};transition:opacity {{ row.bgBt }};"></div>
+            <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,9,12,0.85) 0%,rgba(7,9,12,0.15) 45%,rgba(7,9,12,0.5) 100%);"></div>
+          </div>
+        </sc-if>
+        <div style="grid-column:1;grid-row:1 / span 2;align-self:start;padding-right:14px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;">
+          <div style="width:40px;height:40px;border:1px solid #1b2230;background:#0c1017;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <sc-if value="{{ row.logoHas }}" hint-placeholder-val="{{ false }}"><div style="width:32px;height:32px;background-image:url('{{ row.logo }}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div></sc-if>
+            <sc-if value="{{ row.logoNo }}" hint-placeholder-val="{{ true }}"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#52607a;">{{ row.ini }}</div></sc-if>
+          </div>
+          <div><div style="font-weight:700;font-size:16px;line-height:1.1;">{{ row.company }}</div><div style="font-size:12px;color:#8a94a3;margin-top:6px;line-height:1.5;">{{ row.roles }}</div></div>
+        </div>
+        <sc-for list="{{ row.stints }}" as="st" hint-placeholder-count="1">
+          <div style="grid-column:{{ st.c1 }} / {{ st.c2 }};grid-row:1;position:relative;height:14px;min-width:0;">
+            <span style="position:absolute;left:0;bottom:100%;margin-bottom:4px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;color:#dfe6ee;white-space:nowrap;">{{ st.from }}</span>
+            <div style="position:absolute;inset:0;background:{{ st.bg }};border-left:2px solid #ff7a2f;border-right:2px solid #ff7a2f;box-sizing:border-box;"></div>
+            <span style="position:absolute;right:0;top:100%;margin-top:4px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;color:{{ st.toColor }};white-space:nowrap;">{{ st.to }}</span>
+          </div>
+          <sc-for list="{{ st.marks }}" as="mk" hint-placeholder-count="0">
+            <div onClick="{{ mk.open }}" onMouseEnter="{{ mk.enter }}" onMouseLeave="{{ mk.leave }}" title="{{ mk.title }}" style="grid-column:{{ mk.col }} / span 1;grid-row:1;justify-self:center;position:relative;z-index:2;width:10px;height:10px;cursor:pointer;">
+              <div style="width:10px;height:10px;background:{{ mk.bg }};border:2px solid #07090c;box-sizing:border-box;transform:rotate(45deg) scale({{ mk.scale }});box-shadow:0 0 0 1px #ff7a2f;transition:transform 0.2s ease,background 0.2s ease;" style-hover="background:#ff7a2f;"></div>
+            </div>
+          </sc-for>
+          <div style="grid-column:{{ st.k1 }} / {{ st.k2 }};grid-row:2;display:flex;gap:8px;flex-wrap:wrap;min-width:0;justify-content:{{ st.justify }};">
+            <sc-for list="{{ st.cases }}" as="k" hint-placeholder-count="1">
+              <sc-if value="{{ k.single }}" hint-placeholder-val="{{ true }}">
+                <div onClick="{{ k.open }}" onMouseEnter="{{ k.enter }}" onMouseLeave="{{ k.leave }}" title="{{ k.title }}" style="position:relative;width:54px;height:72px;flex:0 0 auto;border-radius:3px;overflow:hidden;background:#0c1017;border:1px solid {{ k.border }};box-shadow:{{ k.shadow }};cursor:pointer;transform:{{ k.tf }};transition:transform 0.2s ease,border-color 0.2s ease,box-shadow 0.2s ease;" style-hover="border-color:#ff7a2f;transform:translateY(-3px);">
+                  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,122,47,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,47,0.12) 1px,transparent 1px);background-size:12px 12px;"></div>
+                  <sc-if value="{{ k.has }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ k.img }}');"></div></sc-if>
+                  <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(7,9,12,0.92) 100%);"></div>
+                  <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(90deg,rgba(255,255,255,0.18),rgba(0,0,0,0.35));"></div>
+                  <div style="position:absolute;left:7px;right:4px;bottom:5px;font-weight:700;font-size:8px;line-height:1.05;color:#dfe6ee;">{{ k.title }}</div>
+                  <sc-if value="{{ k.hasBadge }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;top:4px;right:4px;font-family:'JetBrains Mono',monospace;font-size:7px;font-weight:700;letter-spacing:0.08em;color:#07090c;background:#ff7a2f;padding:2px 4px;">{{ k.badge }}</div></sc-if>
+                </div>
+              </sc-if>
+              <sc-if value="{{ k.nda }}" hint-placeholder-val="{{ false }}">
+                <div title="Unannounced project · under NDA" style="position:relative;width:54px;height:72px;flex:0 0 auto;border-radius:3px;overflow:hidden;background:#0c1017;border:1px dashed #2a3344;cursor:default;">
+                  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,122,47,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,47,0.12) 1px,transparent 1px);background-size:12px 12px;"></div>
+                  <div style="position:absolute;left:0;right:0;top:16px;height:28px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px;color:#52607a;">?</div>
+                  <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(7,9,12,0.92) 100%);"></div>
+                  <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(90deg,rgba(255,255,255,0.12),rgba(0,0,0,0.35));"></div>
+                  <div style="position:absolute;left:7px;right:4px;bottom:5px;font-weight:700;font-size:8px;line-height:1.05;color:#8a94a3;">Unannounced</div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ k.group }}" hint-placeholder-val="{{ false }}">
+                <div onMouseEnter="{{ k.show }}" onMouseLeave="{{ k.hide }}" style="display:flex;gap:8px;align-items:stretch;">
+                  <div title="{{ k.title }}" style="position:relative;width:18px;height:72px;flex:0 0 auto;border-radius:3px;border:1px dashed #2a3344;background:#0c1017;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;" style-hover="border-color:#ff7a2f;">
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;line-height:1;color:#ff7a2f;">{{ k.sign }}</div>
+                  </div>
+                  <sc-for list="{{ k.items }}" as="j" hint-placeholder-count="0">
+                    <div onClick="{{ j.open }}" onMouseEnter="{{ j.enter }}" onMouseLeave="{{ j.leave }}" title="{{ j.title }}" style="position:relative;width:{{ j.w }}px;height:72px;flex:0 0 auto;border-radius:3px;overflow:hidden;background:#0c1017;border:1px solid {{ j.border }};box-shadow:0 6px 14px rgba(0,0,0,0.45);cursor:pointer;opacity:{{ j.op }};transition:width 0.25s ease,opacity 0.25s ease,border-color 0.2s ease;" style-hover="border-color:#ff7a2f;">
+                      <div style="position:absolute;inset:0;width:54px;background-image:linear-gradient(rgba(255,122,47,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,47,0.12) 1px,transparent 1px);background-size:12px 12px;"></div>
+                      <sc-if value="{{ j.has }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ j.img }}');"></div></sc-if>
+                      <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(7,9,12,0.92) 100%);"></div>
+                      <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(90deg,rgba(255,255,255,0.18),rgba(0,0,0,0.35));"></div>
+                      <div style="position:absolute;left:7px;width:43px;bottom:5px;font-weight:700;font-size:8px;line-height:1.05;color:#dfe6ee;">{{ j.title }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </sc-for>
+          </div>
+        </sc-for>
+      </div>
+    </sc-for>
+  </section>
+
+  <section id="tools" style="max-width:1360px;margin:0 auto;padding:50px 32px 20px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <h2 style="margin:0;font-weight:700;font-size:22px;letter-spacing:-0.02em;">Tools &amp; personal maps</h2>
+      <div style="flex:1;border-top:1px dashed #1b2230;"></div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#52607a;">BLUEPRINTS · HAMMER 2</div>
+      <div style="display:flex;gap:6px;">
+        <button onClick="{{ toolsLeft }}" style="background:none;border:1px solid #2a3344;color:#dfe6ee;font-family:'JetBrains Mono',monospace;font-size:12px;width:32px;height:30px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">◂</button>
+        <button onClick="{{ toolsRight }}" style="background:none;border:1px solid #2a3344;color:#dfe6ee;font-family:'JetBrains Mono',monospace;font-size:12px;width:32px;height:30px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">▸</button>
+      </div>
+    </div>
+    <div ref="{{ toolsRef }}" style="display:flex;gap:12px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px;">
+      <sc-for list="{{ workList }}" as="w" hint-placeholder-count="6">
+        <div onClick="{{ w.open }}" style="cursor:pointer;flex:0 0 200px;border:1px solid #1b2230;overflow:hidden;background:#0c1017;" style-hover="border-color:#ff7a2f;">
+          <div style="position:relative;width:200px;height:200px;">
+            <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,122,47,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,47,0.12) 1px,transparent 1px);background-size:20px 20px;"></div>
+            <sc-if value="{{ w.has }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background-image:url('{{ w.img }}');background-size:cover;background-position:center;"></div></sc-if>
+            <sc-if value="{{ w.noImg }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:40px;color:#ff7a2f;">{{ w.initials }}</div></sc-if>
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(7,9,12,0.94) 100%);"></div>
+            <div style="position:absolute;top:10px;left:10px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#07090c;background:#ff7a2f;padding:3px 6px;font-weight:700;">{{ w.tag }}</div>
+            <div style="position:absolute;left:12px;right:12px;bottom:10px;">
+              <div style="font-weight:700;font-size:15px;line-height:1.15;">{{ w.title }}</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.08em;color:#8a94a3;margin-top:4px;">{{ w.sub }}</div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="about" style="max-width:1360px;margin:0 auto;padding:60px 32px 40px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px;">
+      <h2 style="margin:0;font-weight:700;font-size:22px;letter-spacing:-0.02em;">About</h2>
+      <div style="flex:1;border-top:1px dashed #1b2230;"></div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#52607a;">HOW I WORK</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px;align-items:start;">
+      <div>
+        <sc-if value="{{ aboutQuoteCustom }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.25;letter-spacing:-0.02em;">{{ aboutQuote }}</p></sc-if>
+        <sc-if value="{{ aboutQuoteDefault }}" hint-placeholder-val="{{ true }}"><p style="margin:0;font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.25;letter-spacing:-0.02em;">The best ideas come from teams that work <span style="color:#ff7a2f;">as a team</span>, not individuals in parallel. A healthy, motivated crew beats a worn-out one every time.</p></sc-if>
+        <sc-if value="{{ aboutBodyCustom }}" hint-placeholder-val="{{ false }}"><p style="margin:22px 0 0;max-width:520px;font-size:15px;line-height:1.75;color:#8a94a3;">{{ aboutBody }}</p></sc-if>
+        <sc-if value="{{ aboutBodyDefault }}" hint-placeholder-val="{{ true }}"><p style="margin:22px 0 0;max-width:520px;font-size:15px;line-height:1.75;color:#8a94a3;">Level design fascinated me long before it was my job — I was tinkering with map editors as a kid. QA taught me how every department fits together; twenty-two years later I still build maps and tools for fun, and I'm always up for lending a hand or a joke when crunch bites.</p></sc-if>
+      </div>
+      <sc-if value="{{ aboutRowsCustom }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #1b2230;">
+        <sc-for list="{{ aboutRows }}" as="ar" hint-placeholder-count="5">
+          <div style="display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #1b2230;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#52607a;padding-top:3px;text-transform:uppercase;">{{ ar.label }}</div><div style="font-size:14px;line-height:1.5;">{{ ar.value }}</div></div>
+        </sc-for>
+      </div>
+      </sc-if>
+      <sc-if value="{{ aboutRowsDefault }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #1b2230;">
+        <div style="display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #1b2230;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">BASED IN</div><div style="font-size:14px;line-height:1.5;">Maków Podhalański, Poland</div></div>
+        <div style="display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #1b2230;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">FOCUS</div><div style="font-size:14px;line-height:1.5;">Metrics &amp; tilesets · blockouts · combat encounters · puzzles · technical LD &amp; tools</div></div>
+        <div style="display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #1b2230;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">ENGINES</div><div style="font-size:14px;line-height:1.5;">Unreal Engine 3 / 4 / 5 · RED Engine 4 · Unity 5 · Diesel · Hammer 2</div></div>
+        <div style="display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #1b2230;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">LEADERSHIP</div><div style="font-size:14px;line-height:1.5;">Lead on Rime &amp; Gylt · Level Design Director on Song of Nunu</div></div>
+        <div style="display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #1b2230;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">LANGUAGES</div><div style="font-size:14px;line-height:1.5;">Spanish (Native) · English</div></div>
+      </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <section id="contact" style="border-top:1px solid #1b2230;background:#0c1017;">
+    <div style="max-width:1360px;margin:0 auto;padding:64px 32px 96px;display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#ff7a2f;">// NEXT LEVEL</div>
+        <sc-if value="{{ contactTitleCustom }}" hint-placeholder-val="{{ false }}"><h2 style="margin:12px 0 0;font-weight:700;font-size:clamp(32px,4.4vw,60px);line-height:0.98;letter-spacing:-0.03em;">{{ contactTitle }}</h2></sc-if>
+        <sc-if value="{{ contactTitleDefault }}" hint-placeholder-val="{{ true }}"><h2 style="margin:12px 0 0;font-weight:700;font-size:clamp(32px,4.4vw,60px);line-height:0.98;letter-spacing:-0.03em;">Let's build something<br>players remember.</h2></sc-if>
+        <sc-if value="{{ contactBodyCustom }}" hint-placeholder-val="{{ false }}"><p style="margin:14px 0 0;font-size:15px;color:#8a94a3;">{{ contactBody }}</p></sc-if>
+        <sc-if value="{{ contactBodyDefault }}" hint-placeholder-val="{{ true }}"><p style="margin:14px 0 0;font-size:15px;color:#8a94a3;">Always seeking new challenges — or just a good chat about games and the spaces they happen in.</p></sc-if>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="{{ emailHref }}" style="background:#ff7a2f;color:#07090c;padding:14px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.1em;" style-hover="background:#dfe6ee;color:#07090c;">{{ emailLabel }}</a>
+        <a href="{{ linkedinHref }}" target="_blank" style="border:1px solid #2a3344;color:#dfe6ee;padding:14px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.1em;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">LINKEDIN ↗</a>
+      </div>
+    </div>
+  </section>
+  <footer style="position:fixed;left:0;right:0;bottom:0;z-index:40;height:36px;box-sizing:border-box;border-top:1px solid #1b2230;background:rgba(7,9,12,0.92);backdrop-filter:blur(10px);padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#52607a;"><span>MANUEL MENDILUCE · LEVEL DESIGNER</span><span>BUILD 2004 → NOW</span></footer>
+</div>
+
+<sc-if value="{{ hasActive }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:0;right:0;top:52px;bottom:36px;z-index:35;background:#07090c;overflow-y:auto;">
+    <div style="position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:14px;padding:0 24px;height:52px;background:rgba(7,9,12,0.95);backdrop-filter:blur(8px);border-bottom:1px solid #1b2230;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8a94a3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ pNum }} <span style="color:#dfe6ee;">/ {{ pTitle }}</span></div>
+      <div style="margin-left:auto;display:flex;gap:8px;">
+        <button onClick="{{ closeProject }}" title="Close (Esc)" style="background:transparent;border:1px solid #ff7a2f;color:#ff7a2f;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:10px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background 0.15s ease,color 0.15s ease,transform 0.15s ease;" style-hover="background:#ff7a2f;color:#07090c;transform:translateY(-1px);" style-active="transform:translateY(0);">✕ CLOSE <span style="font-size:9px;opacity:0.7;border:1px solid currentColor;border-radius:3px;padding:1px 4px;">ESC</span></button>
+      </div>
+    </div>
+    <div style="padding:24px 24px 96px;display:flex;flex-wrap:wrap;gap:20px;align-items:stretch;">
+      <div style="flex:1000 1 560px;min-width:0;display:flex;flex-direction:column;">
+        <div style="position:relative;aspect-ratio:16/9;background:#000;border:1px solid #1b2230;overflow:hidden;">
+          <sc-if value="{{ selNone }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background-color:#0c1017;background-image:linear-gradient(rgba(255,122,47,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,47,0.12) 1px,transparent 1px);background-size:32px 32px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:rgba(255,122,47,0.6);text-align:center;line-height:1.8;">NO TEXTURE<br>images/projects/{{ pSlug }}/</div></sc-if>
+          <sc-if value="{{ selIsVideo }}" hint-placeholder-val="{{ false }}"><iframe src="{{ selUrl }}" title="{{ pTitle }}" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe></sc-if>
+          <sc-if value="{{ selIsImage }}" hint-placeholder-val="{{ false }}"><div role="img" aria-label="{{ pTitle }}" style="position:absolute;inset:0;background-image:url('{{ selUrl }}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div></sc-if>
+          <div style="position:absolute;top:12px;left:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#dfe6ee;background:rgba(7,9,12,0.6);padding:3px 7px;">VIEWPORT · {{ pTitle }}</div>
+          <div style="position:absolute;top:12px;right:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#dfe6ee;background:rgba(7,9,12,0.6);padding:3px 7px;">{{ mediaCounter }}</div>
+          <sc-if value="{{ hasManyMedia }}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{ prevMedia }}" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:38px;height:38px;border:1px solid #2a3344;background:rgba(7,9,12,0.75);color:#dfe6ee;font-size:16px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">‹</button>
+            <button onClick="{{ nextMedia }}" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:38px;height:38px;border:1px solid #2a3344;background:rgba(7,9,12,0.75);color:#dfe6ee;font-size:16px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">›</button>
+          </sc-if>
+          <div style="position:absolute;top:0;left:0;width:14px;height:14px;border-top:2px solid #ff7a2f;border-left:2px solid #ff7a2f;"></div><div style="position:absolute;top:0;right:0;width:14px;height:14px;border-top:2px solid #ff7a2f;border-right:2px solid #ff7a2f;"></div><div style="position:absolute;bottom:0;left:0;width:14px;height:14px;border-bottom:2px solid #ff7a2f;border-left:2px solid #ff7a2f;"></div><div style="position:absolute;bottom:0;right:0;width:14px;height:14px;border-bottom:2px solid #ff7a2f;border-right:2px solid #ff7a2f;"></div>
+        </div>
+        <div ref="{{ thumbsRef }}" style="display:flex;gap:6px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;margin-top:8px;padding-bottom:4px;">
+          <sc-for list="{{ thumbs }}" as="th" hint-placeholder-count="0">
+            <div onClick="{{ th.pick }}" style="flex:0 0 132px;aspect-ratio:16/9;position:relative;border:1px solid {{ th.border }};background:#0c1017;cursor:pointer;overflow:hidden;">
+              <sc-if value="{{ th.isVideo }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#ff7a2f;">▶ VIDEO</div></sc-if>
+              <sc-if value="{{ th.isImage }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background-image:url('{{ th.img }}');background-size:cover;background-position:center;"></div></sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <aside style="flex:1 1 340px;min-width:340px;max-width:100%;align-self:stretch;display:flex;flex-direction:column;gap:2px;background:#1b2230;border:1px solid #1b2230;">
+        <div style="background:#0c1017;padding:22px 24px;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;">
+            <div style="font-weight:700;font-size:26px;line-height:1;letter-spacing:-0.02em;">{{ pTitle }}</div>
+            <sc-if value="{{ pHasScore }}" hint-placeholder-val="{{ false }}"><div style="flex:0 0 auto;text-align:center;background:#ff7a2f;color:#07090c;padding:6px 10px;"><div style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;line-height:1;">{{ pScore }}</div><div style="font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:0.1em;margin-top:2px;">METACRITIC</div></div></sc-if>
+          </div>
+          <div style="display:grid;grid-template-columns:88px 1fr;gap:8px 14px;font-size:13px;line-height:1.5;margin-top:16px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">STUDIO</div><div>{{ pCompany }}</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">PLATFORMS</div><div>{{ pPlatforms }}</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">STATUS</div><div><span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.12em;padding:3px 7px;color:{{ pStatusFg }};background:{{ pStatusBg }};">{{ pStatus }}</span></div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">TIME</div><div>{{ pTime }}</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">ROLE</div><div>{{ pPosition }}</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">ENGINE</div><div>{{ pEngine }}</div>
+          </div>
+        </div>
+        <div style="background:#0c1017;padding:22px 24px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#ff7a2f;margin-bottom:10px;">// BRIEFING</div>
+          <p style="margin:0;color:#8a94a3;font-size:14px;line-height:1.7;">{{ pAbout }}</p>
+        </div>
+        <div style="background:#0c1017;padding:22px 24px;flex:1;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#ff7a2f;margin-bottom:10px;">// OBJECTIVES COMPLETED</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <sc-for list="{{ pResp }}" as="r" hint-placeholder-count="0">
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:13px;line-height:1.55;"><span style="font-family:'JetBrains Mono',monospace;color:#ff7a2f;font-size:11px;">[x]</span><span>{{ r }}</span></div>
+            </sc-for>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div style="position:fixed;left:0;right:0;bottom:36px;z-index:6;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 24px;background:rgba(7,9,12,0.94);backdrop-filter:blur(10px);border-top:1px solid #1b2230;">
+      <div style="display:flex;align-items:center;gap:14px;min-width:0;">
+        <button onClick="{{ prevProject }}" title="Previous project" style="background:transparent;border:1px solid #ff7a2f;color:#ff7a2f;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:10px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background 0.15s ease,color 0.15s ease,transform 0.15s ease;white-space:nowrap;" style-hover="background:#ff7a2f;color:#07090c;transform:translateY(-1px);" style-active="transform:translateY(0);">◀ PREV</button>
+        <span style="min-width:0;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;">PREVIOUS</span><span style="display:block;font-weight:700;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ prevTitle }}</span></span>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#52607a;white-space:nowrap;">{{ pNum }}</div>
+      <div style="display:flex;align-items:center;gap:14px;min-width:0;text-align:right;">
+        <span style="min-width:0;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;">NEXT</span><span style="display:block;font-weight:700;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ nextTitle }}</span></span>
+        <button onClick="{{ nextProject }}" title="Next project" style="background:transparent;border:1px solid #ff7a2f;color:#ff7a2f;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:10px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background 0.15s ease,color 0.15s ease,transform 0.15s ease;white-space:nowrap;" style-hover="background:#ff7a2f;color:#07090c;transform:translateY(-1px);" style-active="transform:translateY(0);">NEXT ▶</button>
+      </div>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;cycleSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1.8,&quot;min&quot;:0.8,&quot;max&quot;:6,&quot;step&quot;:0.2,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { active: null, tick: 0, mediaIdx: 0, idx: null, idxFailed: false, filter: 'all', openGroup: '', content: null, unlocked: false };
+  slugs = {
+    cp: '01-cyberpunk-2077', rime: '02-rime', deadlight: '03-deadlight', gylt: '04-gylt', nunu: '05-song-of-nunu',
+    tunein: '06-tuned-in', brutale: '07-the-sexy-brutale', wanted: '08-wanted-weapons-of-fate', ut3: '09-ut3-physx-mod',
+    cops: '10-cops', commandos: '11-commandos-strike-force', imperial: '12-imperial-glory', strider: '13-strider', tower: '14-tower',
+    ptileset: '15-dynamic-tileset', pfinder: '16-bp-actorfinder', pdebug: '17-bp-debugmenu', prebel: '18-rebel-assault',
+    pport: '19-port', pcourtyard: '20-courtyard'
+  };
+  facts = {
+    cp: { score: '86', company: 'CD Projekt Red (Kraków, Poland)', platforms: 'PC, PS4, PS5, Xbox One, Xbox Series, Stadia', time: 'January 2019 – July 2021', position: 'Senior Level Designer', engine: 'RED Engine 4' },
+    rime: { score: '78', company: 'Tequila Works (Madrid, Spain)', platforms: 'PC, PS4, Xbox One, Nintendo Switch', time: 'September 2013 – May 2017', position: 'Senior → Lead Level Designer', engine: 'Unreal Engine 4' },
+    deadlight: { score: '78', company: 'Tequila Works (Madrid, Spain)', platforms: 'PC, Xbox 360 (XBLA)', time: 'May 2011 – August 2012', position: 'Senior Level Designer', engine: 'Unreal Engine 3' },
+    gylt: { score: '72', company: 'Tequila Works (Madrid, Spain)', platforms: 'Stadia launch title · later PC, PS4/5, Xbox, Switch', time: 'January 2018 – November 2018', position: 'Lead Level Designer', engine: 'Unreal Engine 4' },
+    nunu: { score: '75', company: 'Tequila Works (Madrid, Spain)', platforms: 'PC, PS4, PS5, Xbox One, Xbox Series, Nintendo Switch', time: '2021 – 2023', position: 'Level Design Director', engine: 'Unreal Engine 5' },
+    tunein: { score: '', company: 'Vercors Games (Madrid, Spain)', platforms: 'PC · in development', time: '2025 – Now', position: 'Principal Level Designer', engine: 'Unreal Engine 5' },
+    brutale: { score: '83', company: 'Tequila Works (Madrid, Spain)', platforms: 'PC, PS4, Xbox One, Nintendo Switch', time: 'April 2015 – September 2015', position: 'Additional Senior Level Designer', engine: 'Unity 5' },
+    wanted: { score: '62', company: 'Grin (Barcelona, Spain)', platforms: 'PC, PS3, Xbox 360', time: '2007 – 2009', position: 'Level Designer', engine: 'Diesel Engine' },
+    ut3: { score: '', company: 'Grin (Barcelona, Spain)', platforms: 'PC, PS3 · official mod', time: '2007', position: 'Level Designer', engine: 'Unreal Engine 3' },
+    cops: { score: '', company: 'Pyro Studios (Madrid, Spain)', platforms: 'Cancelled', time: '2006 – 2007', position: 'Junior Level Designer', engine: 'Ignition Engine / Unreal Engine 3' },
+    commandos: { score: '62', company: 'Pyro Studios (Madrid, Spain)', platforms: 'PC, PS2, Xbox', time: '2004 – 2006', position: 'QA Tester', engine: 'In-house engine' },
+    imperial: { score: '69', company: 'Pyro Studios (Madrid, Spain)', platforms: 'PC', time: '2004 – 2005', position: 'QA Tester', engine: 'In-house engine' },
+    strider: { score: '', company: 'Grin (Barcelona, Spain)', platforms: 'Cancelled · Xbox 360 pitch demo', time: '2009', position: 'Level Designer', engine: 'Diesel Engine' },
+    tower: { score: '', company: 'Grin (Barcelona, Spain)', platforms: 'Cancelled · XBLA pitch demo', time: '2009', position: 'Level Designer', engine: 'Diesel Engine' },
+    ptileset: { score: '', company: 'Personal project', platforms: 'Editor tool', time: 'Personal work', position: 'Technical Level Designer', engine: 'Unreal Engine 4 · Blueprints' },
+    pfinder: { score: '', company: 'Personal project', platforms: 'Editor tool', time: 'Personal work', position: 'Technical Level Designer', engine: 'Unreal Engine 4 · Blueprints' },
+    pdebug: { score: '', company: 'Personal project', platforms: 'Editor tool', time: 'Personal work', position: 'Technical Level Designer', engine: 'Unreal Engine 4 · Blueprints' },
+    prebel: { score: '', company: 'Personal project', platforms: 'PC', time: 'Personal work', position: 'Level Designer', engine: 'Hammer 2 (Source)' },
+    pport: { score: '', company: 'Personal project', platforms: 'PC', time: 'Personal work', position: 'Level Designer', engine: 'Hammer 2 (Source)' },
+    pbank: { score: '', company: 'Personal project', platforms: 'PC', time: 'Personal work', position: 'Level Designer', engine: 'Hammer 2 (Source)' },
+    pwarehouse: { score: '', company: 'Personal project', platforms: 'PC', time: 'Personal work', position: 'Level Designer', engine: 'Hammer 2 (Source)' },
+    pcourtyard: { score: '', company: 'Personal project', platforms: 'PC', time: 'Personal work', position: 'Level Designer', engine: 'Hammer 2 (Source)' }
+  };
+  abouts = {
+    cp: 'An open-world RPG set in Night City, a megalopolis obsessed with power, glamour and body modification. You play V, a mercenary chasing a one-of-a-kind implant that holds the key to immortality.',
+    rime: 'A puzzle-adventure about a boy shipwrecked on a mysterious island of ruins and towers, where light, sound and perspective hide the way forward.',
+    deadlight: 'A cinematic survival platformer set in 1980s Seattle after the outbreak: Randall Wayne crosses a ruined city on foot searching for his family.',
+    gylt: 'A story-driven survival horror about Sally, a girl who searches for her missing cousin in a twisted, hostile version of her own town.',
+    nunu: 'A narrative action-adventure set in the Freljord, following Nunu and his yeti companion Willump through blizzards, ruins and League of Legends legend.',
+    tunein: 'An original horror game built around a cursed TV that holds you captive: to break free you must survive the dark entity\u2019s programmes of puzzles, terror and impossible choices.',
+    brutale: 'A time-loop murder mystery inside a mansion casino, where the same day repeats and every guest dies unless the player rewrites their fate.',
+    wanted: 'A third-person cover shooter continuing the film\u2019s story, built around curved-bullet gunplay and adrenaline-fuelled abilities.',
+    ut3: 'The official Ageia PhysX map pack for Unreal Tournament 3, showcasing large-scale physics destruction inside competitive arenas.',
+    cops: 'An open-world police experience: the player patrols a living city and responds to crimes as they unfold. Cancelled before release.',
+    commandos: 'A tactical WWII action game where a small squad of specialists infiltrates enemy lines, switching between stealth planning and first-person combat.',
+    imperial: 'A Napoleonic grand strategy game combining turn-based empire management with real-time battles across Europe.',
+    strider: 'A pitch demo for an action-platformer reboot, built in a single month in an attempt to win new funding for the studio. Never greenlit.',
+    tower: 'An XBLA pitch demo about climbing a hostile tower full of traps, hazards and combat encounters. Never greenlit.',
+    ptileset: 'A Blueprint tool that generates modular level pieces on the fly, so designers can block out spaces with consistent metrics.',
+    pfinder: 'An editor utility that finds and filters actors across a level, cutting the time spent hunting for references in large maps.',
+    pdebug: 'An in-game debug menu built in Blueprints to toggle gameplay states, spawn actors and test scenarios without rebuilding.',
+    prebel: 'A level recreation exercise inspired by classic Star Wars combat spaces, focused on readable sightlines and pacing.',
+    pport: 'A blockout of an industrial harbour built to study verticality, cover placement and long-range engagements.',
+    pcourtyard: 'A compact courtyard combat space designed to test close-quarters encounters and multiple approach routes.'
+  };
+  data = {
+    cp: {
+      title: 'Cyberpunk 2077',
+      meta: 'CD Projekt Red · Kraków · 2019–2021 · RED Engine 4 · 86 Metacritic',
+      role: 'Senior Level Designer',
+      hero: '',
+      desc: 'Combat design across main quests, side quests, minor activities, street stories and combat events · on Cyberpunk 2077 and Phantom Liberty. Signature achievement: the Nomad lifepath opening and its car chase. Visual scripting of every owned location, in constant communication with the open world, environment and quest teams.',
+      resp: [
+        'Design and creation of levels in paper design and blockouts',
+        'Combat design in main quests, side quests, street stories and combat events',
+        'Visual scripting of all owned locations',
+        'Link between the Tools and Level Design departments to improve internal tools',
+        'Constant collaboration with open world, environment and quest teams'
+      ],
+      videos: ['https://www.youtube.com/embed/8X2kIfS6fb8'],
+      shots: []
+    },
+    rime: {
+      title: 'Rime',
+      meta: 'Tequila Works · Madrid · 2013–2017 · Unreal Engine 4 · 78 Metacritic',
+      role: 'Senior / Lead Level Designer',
+      hero: '',
+      desc: 'Four years shaping the island · from the first metrics and tilesets the whole team blocked out with, to shipped puzzles on PC, PS4, Xbox One and Switch.',
+      resp: [
+        'Creation of metrics and tileset to create blockouts',
+        'Design and creation of layouts in blockout',
+        'Puzzle design with game mechanics',
+        'Prototyping of new features and mechanics',
+        'Technical Level Designer in charge of game and Blueprint optimization',
+        'Internal management of the level design team'
+      ],
+      videos: ['https://www.youtube.com/embed/mZGXOBszs98','https://www.youtube.com/embed/h3huT_-Y_yE'],
+      shots: []
+    },
+    deadlight: {
+      title: 'Deadlight',
+      meta: 'Tequila Works · Madrid · 2011–2012 · Unreal Engine 3 · 78 Metacritic',
+      role: 'Senior Level Designer',
+      hero: '',
+      desc: 'Helped raise the original idea from the ground up · a cinematic survival platformer that left no one indifferent. Blockouts, combat, puzzles, plus scripting and camera work.',
+      resp: [
+        'Design and creation of blockouts',
+        'Combat design in several locations',
+        'Puzzle design with the game mechanics',
+        'Prototyping of new features and mechanics',
+        'Scripting and camera work'
+      ],
+      videos: ['https://www.youtube.com/embed/R5xK8Z6zSPE','https://www.youtube.com/embed/m9Q-QpBd5Yg'],
+      shots: []
+    },
+    gylt: {
+      title: 'Gylt',
+      meta: 'Tequila Works · Madrid · 2018 · Unreal Engine 4 · Stadia launch · 72 Metacritic',
+      role: 'Lead Level Designer',
+      hero: '',
+      desc: 'Led the level design team on a Stadia launch title: metrics, tilesets, blockout layouts, puzzle design and Blueprint optimization on a tight five-month runway.',
+      resp: [
+        'Creation of metrics and tileset to create blockouts',
+        'Design and creation of layouts in blockout version',
+        'Puzzle design with game mechanics',
+        'Prototyping of new features and mechanics',
+        'Technical Level Designer in charge of game and Blueprint optimization',
+        'Internal management of the level design team'
+      ],
+      videos: ['https://www.youtube.com/embed/OQo5XI2Xqog','https://www.youtube.com/embed/QCavdDw70zI'],
+      shots: []
+    },
+    nunu: {
+      title: 'Song of Nunu',
+      meta: 'Tequila Works · Madrid · Sep 2021–Nov 2023 · Unreal Engine 5 · PS4/5, Xbox, Switch, PC · 75 Metacritic',
+      role: 'Level Design Director',
+      hero: '',
+      desc: 'A League of Legends story set in the Freljord. Directed the level design of the project as Level Design Director at Tequila Works, alongside two more unannounced UE5 projects.',
+      resp: [
+        'Synchronization with leads and directors from other departments',
+        'Supervision of the work of the level design department',
+        'Internal management of the level design team'
+      ],
+      videos: ['https://www.youtube.com/embed/4b_tOernI1A'],
+      shots: []
+    },
+    tunein: {
+      title: 'Tuned In',
+      meta: 'Vercors Games · 2025–Now · Unreal Engine 5 · PC · Kickstarter coming soon',
+      role: 'Principal Level Designer',
+      hero: '',
+      desc: 'An original horror game based on a cursed TV: it holds you captive, and to break free you must survive the dark entity\u2019s programs of mind-bending puzzles, terror and impossible choices. In development at Vercors Games · Kickstarter campaign coming soon.',
+      resp: [
+        'Principal Level Designer in "Tuned In" (UE5, PC)',
+        'Principal Level Designer in an unannounced project'
+      ],
+      videos: ['https://www.youtube.com/embed/UfsR-6-E2Ko'],
+      shots: []
+    },
+    brutale: {
+      title: 'The Sexy Brutale',
+      meta: 'Tequila Works · Madrid · Apr 2015 · Unity 5 · PS4, Xbox One, Switch, PC · 83 Metacritic',
+      role: 'Additional Senior Level Designer',
+      hero: '',
+      desc: 'A murder-mystery adventure inside a haunted mansion. Built the systems that let the team iterate quickly on its intricate spaces.',
+      resp: [
+        'Creation and implementation of a metrics system fitting the visual style of the game',
+        'Tileset system so designers and artists could work more comfortably with the scenarios'
+      ],
+      videos: ['https://www.youtube.com/embed/F4F5Zeww1iU'],
+      shots: []
+    },
+    wanted: {
+      title: 'Wanted: Weapons of Fate',
+      meta: 'Grin · Barcelona · Dec 2007–Apr 2009 · Diesel Engine · PS3, Xbox 360, PC · 62 Metacritic',
+      role: 'Level Designer',
+      hero: '',
+      desc: 'Third-person action based on the film. Responsible for prototypes and six maps (Courtyard, Cargo, Sniper, Church Entry, Catacombs 1 & 2) · and for the optimization of the whole game on Xbox 360, PS3 and PC.',
+      resp: [
+        'World builder · six maps from prototype to ship',
+        'Mission design and scripting',
+        'Map optimization: occluders, LODs, portals, distance culling',
+        'Optimization with art team: assets, alphas, collisions, FX, lighting',
+        'Optimization with programming: stability, AI'
+      ],
+      videos: ['https://www.youtube.com/embed/aP9NRzgdz6A'],
+      shots: []
+    },
+    ut3: {
+      title: 'UT3: Ageia PhysX Mod',
+      meta: 'Grin · Barcelona · Jul–Dec 2007 · Unreal Engine 3 · Official mod · PC',
+      role: 'Level Designer',
+      hero: '',
+      desc: 'Official PhysX mod for Unreal Tournament 3, built with Ageia (later NVIDIA) in six months · physics-driven level design before it was standard.',
+      resp: [
+        'Implementation of physical objects: posters, walls, woods, snow, scaffolding, columns, debris',
+        'New gameplay using physical objects',
+        'Map optimization'
+      ],
+      videos: ['https://www.youtube.com/embed/lr4OQJgrKNY'],
+      shots: []
+    },
+    commandos: {
+      title: 'Commandos Strike Force',
+      meta: 'Pyro Studios · Madrid · Oct 2004–Mar 2006 · Renderware · PC, PS2, Xbox · 62 Metacritic',
+      role: 'QA Tester',
+      hero: '',
+      desc: 'Where it all started. Intensive testing of single player and multiplayer on PC and PS2 · and the internal test that opened the door into level design.',
+      resp: [
+        'Testing graphics: textures, collisions, lighting',
+        'Testing design: props, NPC behavior, destruction',
+        'Testing programming: stability, AI, multiplayer, menus'
+      ],
+      videos: ['https://www.youtube.com/embed/CdQXFTtPAEQ'],
+      shots: []
+    },
+    strider: {
+      title: 'Strider', meta: 'Grin · Barcelona · May 2009 · Diesel Engine · Xbox 360 · Cancelled', role: 'Level Designer', hero: '',
+      desc: 'One of four demos built in a month at Grin Barcelona trying to save the studio before it went bankrupt. I worked on two of them, including this Strider revival pitch for Xbox 360.',
+      resp: [
+        'Design and creation of the video demo layout in the engine',
+        'Dressing maps with the art department',
+        'Creation of combat situations'
+      ],
+      videos: ['https://www.youtube.com/embed/nilxz8uU1uI'],
+      shots: []
+    },
+    tower: {
+      title: 'Tower', meta: 'Grin · Barcelona · May–Jun 2009 · Diesel Engine · Xbox LIVE Arcade · Cancelled', role: 'Level Designer', hero: '',
+      desc: 'Second of the pitch demos built at Grin Barcelona before the studio closed: an Xbox LIVE Arcade concept.',
+      resp: [
+        'World builder of the video demo layout',
+        'Application of brushes',
+        'Creation of combat and trap situations',
+        'Visual and environment effects with the graphics department'
+      ],
+      videos: ['https://www.youtube.com/embed/hnZeo0uWIqA'],
+      shots: []
+    },
+    cops: {
+      title: 'Cops: The Police Experience', meta: 'Pyro Studios · Madrid · Mar 2006–Jul 2007 · Ignition / UE3 · PC, Xbox 360, PS3 · Cancelled', role: 'Junior Level Designer', hero: '',
+      desc: 'After shipping Commandos Strike Force and Imperial Glory as QA, I passed the internal test and spent a year and a half as Junior Level Designer on this open-world project — my first level design role.',
+      resp: [
+        'World builder in an open world',
+        'NPC scripting',
+        'Visual effects with the graphics department',
+        'Destructions: explosions, destroyed cars, RPG',
+        'Application of specific animation sets',
+        'Vehicle and building explosions',
+        'Environmental effects in the layout',
+        'Sound implementation with programming and sound departments',
+        'Physical objects'
+      ],
+      videos: ['https://www.youtube.com/embed/sJ5VLg7Glgo'],
+      shots: []
+    },
+    imperial: {
+      title: 'Imperial Glory',
+      meta: 'Pyro Studios · Madrid · Oct 2004–Jan 2005 · PC · 69 Metacritic',
+      role: 'QA Tester',
+      hero: '',
+      desc: 'Napoleonic-era strategy from Pyro Studios. Intensive single-player testing on PC across graphics, design and programming.',
+      resp: [
+        'Testing graphics: textures, collisions, lighting',
+        'Testing design: props, NPC behavior, economy',
+        'Testing programming: stability, AI, battles, menus'
+      ],
+      videos: ['https://www.youtube.com/embed/sBh1NeSBLm8'],
+      shots: []
+    }
+  };
+  personal = {
+    ptileset: {
+      title: 'Dynamic Tileset', meta: 'Personal · Unreal Engine 4 · Blueprint tool', role: 'Technical Level Designer', hero: '',
+      desc: 'After building three different tileset systems at Tequila Works, I created my own: a blueprint (based on the SuperGrid Starter Pack material) that modifies the appearance and size of a single cube usable as floor, wall, railing or interactive. Metrics live in the tileset itself, so anyone working with layouts learns them in-game without reading a document, and objects snap to fixed sizes, protecting performance from rescaled meshes.',
+      resp: [
+        'Grid material: size, opacity, colors and background texture',
+        'Normal mapping and roughness controls',
+        'Pulse system to highlight interactive objects',
+        'Layer system to show characters/objects with built-in basic metrics',
+        'Per-face color coding',
+        'Fixed-size scaling to preserve metrics and performance'
+      ],
+      videos: ['https://www.youtube.com/embed/eR-_E0hJsZI'], shots: []
+    },
+    pfinder: {
+      title: 'BP_ActorFinder', meta: 'Personal · Unreal Engine 4 · Blueprint tool · born on Rime', role: 'Technical Level Designer', hero: '',
+      desc: 'On Rime we had serious performance problems on an engine we didn\u2019t fully control. BP_ActorFinder scans the level and flags problem actors, making it much easier to find mistakes accumulated during map development.',
+      resp: [
+        'Detects objects at 0,0,0',
+        'Flags objects with more than X materials',
+        'Finds rescaled objects',
+        'Finds objects not visible in game or with null mesh',
+        'Reports Tick activated by default'
+      ],
+      videos: [],
+      shots: []
+    },
+    pdebug: {
+      title: 'BP_DebugMenu', meta: 'Personal · Unreal Engine 4 · Blueprint tool · WIP', role: 'Technical Level Designer', hero: '',
+      desc: 'A blueprint placed on the stage that opens a side panel with multiple options to speed up development: cheats for testing, viewport manipulation to find visual problems, filtering by objects added to levels, gameplay tweaks and engine values in the Debug tab.',
+      resp: [
+        'Cheat system to speed up testing',
+        'Viewport manipulation to spot visual problems',
+        'Object filtering per level',
+        'In-game gameplay modification',
+        'Engine value editing from a Debug tab'
+      ],
+      videos: [], shots: []
+    },
+    prebel: {
+      title: 'Rebel Assault', meta: 'Personal · Hammer 2 (Source) · custom map', role: 'Level Designer', hero: '',
+      desc: 'Custom map built in Hammer 2 (Source engine): layout, encounters and set dressing as a personal exercise.',
+      resp: ['Layout and blockout', 'Encounter placement', 'Set dressing and lighting'],
+      videos: [],
+      shots: []
+    },
+    pport: {
+      title: 'Port', meta: 'Personal · Hammer 2 (Source) · custom map', role: 'Level Designer', hero: '',
+      desc: 'Custom map built in Hammer 2 (Source engine): a harbor scenario built as a personal exercise.',
+      resp: ['Layout and blockout', 'Encounter placement', 'Set dressing and lighting'],
+      videos: [],
+      shots: []
+    },
+    pbank: {
+      title: 'Bank', meta: 'Personal · Hammer 2 (Source) · custom map', role: 'Level Designer', hero: '',
+      desc: 'Custom map built in Hammer 2 (Source engine): a bank scenario built as a personal exercise.',
+      resp: ['Layout and blockout', 'Encounter placement', 'Set dressing and lighting'],
+      videos: [],
+      shots: []
+    },
+    pwarehouse: {
+      title: 'Warehouse', meta: 'Personal · Hammer 2 (Source) · custom map', role: 'Level Designer', hero: '',
+      desc: 'Custom map built in Hammer 2 (Source engine): a warehouse scenario built as a personal exercise.',
+      resp: ['Layout and blockout', 'Encounter placement', 'Set dressing and lighting'],
+      videos: [],
+      shots: []
+    },
+    pcourtyard: {
+      title: 'Courtyard', meta: 'Personal · Hammer 2 (Source) · custom map', role: 'Level Designer', hero: '',
+      desc: 'Custom map built in Hammer 2 (Source engine): a courtyard combat space built as a personal exercise.',
+      resp: ['Layout and blockout', 'Encounter placement', 'Set dressing and lighting'],
+      videos: [],
+      shots: []
+    }
+  };
+  levelIds = ['tunein', 'nunu', 'cp', 'gylt', 'rime', 'brutale', 'deadlight', 'wanted', 'strider', 'tower', 'ut3', 'cops', 'commandos', 'imperial'];
+  workIds = ['ptileset', 'pfinder', 'pdebug', 'prebel', 'pport', 'pcourtyard'];
+  groups = {
+    all: { label: 'ALL', ids: null },
+    shipped: { label: 'SHIPPED', ids: ['tunein', 'nunu', 'cp', 'gylt', 'rime', 'brutale', 'deadlight', 'wanted', 'ut3', 'commandos', 'imperial'] },
+    lead: { label: 'LEAD / DIRECTOR', ids: ['nunu', 'gylt', 'rime'] },
+    cancelled: { label: 'CANCELLED', ids: ['strider', 'tower', 'cops'] }
+  };
+  componentDidMount() {
+    Object.assign(this.data, this.personal);
+
+    this.onKey = (e) => {
+      if (e.key === 'Escape') { this.setState({ active: null }); return; }
+      if (!this.state.active) return;
+      if (e.key === 'ArrowRight') this.stepMedia(1);
+      if (e.key === 'ArrowLeft') this.stepMedia(-1);
+    };
+    window.addEventListener('keydown', this.onKey);
+    this.startTimer();
+    const q = new URLSearchParams(window.location.search);
+    this.accessKey = q.get('access') || (window.location.hash || '').replace('#', '');
+    fetch('content.json').then(r => { if (!r.ok) throw new Error('content.json'); return r.json(); }).then(c => {
+      if (!c || typeof c !== 'object') return;
+      this.applyContent(c);
+      this.setState({ content: c, unlocked: !!(this.accessKey && Array.isArray(c.accessKeys) && c.accessKeys.some(k => k && k.key === this.accessKey && (!k.expires || Date.now() < Date.parse(k.expires)))) });
+    }).catch(() => {});
+    fetch('images.json').then(r => { if (!r.ok) throw new Error('images.json'); return r.json(); }).then(json => {
+      const bySlug = {};
+      (json.projects || []).forEach(p => { if (p && p.slug) bySlug[p.slug] = p; });
+      this.setState({ idx: { hero: json.hero || '', bySlug } }, () => {
+        this.checkList([json.hero].concat(Object.keys(bySlug).map(k => bySlug[k].cover)));
+      });
+    }).catch(() => this.setState({ idxFailed: true }));
+  }
+  componentDidUpdate(prev) { if (prev.cycleSeconds !== this.props.cycleSeconds) { clearInterval(this.timer); this.startTimer(); } }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); clearInterval(this.timer); }
+  startTimer() { this.timer = setInterval(() => this.setState(s => ({ tick: s.tick + 1 })), Math.max(500, (this.props.cycleSeconds ?? 1.8) * 1000)); }
+  ticks(sec, def) { const cyc = Math.max(0.5, this.props.cycleSeconds ?? 1.8); const n = parseFloat(sec); return Math.max(1, Math.round((isNaN(n) || n <= 0 ? def : n) / cyc)); }
+  num(v, def, lo, hi) { const n = parseFloat(v); return isNaN(n) ? def : Math.min(hi, Math.max(lo, n)); }
+  applyContent(c) {
+    const P = c.projects || {};
+    Object.keys(P).forEach(id => {
+      const o = P[id]; if (!o) return;
+      if (!this.data[id]) { this.data[id] = { title: id, meta: '', role: '', hero: '', desc: '', resp: [], videos: [], shots: [] }; }
+      const d = this.data[id];
+      ['title', 'meta', 'role', 'desc', 'start', 'end', 'status', 'released'].forEach(k => { if (typeof o[k] === 'string') d[k] = o[k]; });
+      if (Array.isArray(o.resp)) d.resp = o.resp;
+      if (Array.isArray(o.videos)) d.videos = o.videos;
+      if (typeof o.slug === 'string' && o.slug) this.slugs[id] = o.slug;
+      if (typeof o.about === 'string') this.abouts[id] = o.about;
+      if (typeof o.hook === 'string') this.hooks[id] = o.hook;
+      if (o.facts && typeof o.facts === 'object') this.facts[id] = Object.assign({}, this.facts[id] || {}, o.facts);
+    });
+    if (Array.isArray(c.levelOrder) && c.levelOrder.length) this.levelIds = c.levelOrder.filter(id => this.data[id]);
+    if (Array.isArray(c.workOrder) && c.workOrder.length) this.workIds = c.workOrder.filter(id => this.data[id]);
+    if (Array.isArray(c.hidden)) this.hiddenIds = c.hidden;
+    if (Array.isArray(c.phrases) && c.phrases.length) this.phrasesOverride = c.phrases.filter(p => Array.isArray(p) && p.length === 2);
+    if (c.site && typeof c.site === 'object') this.site = Object.assign({}, this.site || {}, c.site);
+    if (Array.isArray(c.changelog) && c.changelog.length) this.changelogOverride = c.changelog;
+    const extra = [].concat(this.site && Array.isArray(this.site.heroImages) ? this.site.heroImages : []).concat(...(this.changelogOverride || []).map(r => Array.isArray(r.bg) ? r.bg : []));
+    if (extra.length) this.checkList(extra);
+  }
+  defaultChangelog() {
+    return [
+      { company: 'Vercors Games', roles: 'Principal Level Designer', stints: [{ from: '2025-09', to: '', ids: ['tunein'] }] },
+      { company: 'Wonder Legends', roles: 'Principal Level Designer', stints: [{ from: '2025-02', to: '2025-08', ids: [], nda: 1 }] },
+      { company: 'CD Projekt Red', roles: 'Senior Level Designer', stints: [{ from: '2019-01', to: '2021-07', ids: ['cp'] }] },
+      { company: 'Tequila Works', roles: 'Senior Level Designer → Lead Level Designer / Level Design Director', stints: [{ from: '2011-05', to: '2018-12', ids: ['deadlight', 'brutale', 'rime', 'gylt'] }, { from: '2021-08', to: '2025-01', ids: ['nunu'] }] },
+      { company: 'Grin Barcelona', roles: 'Level Designer', stints: [{ from: '2007-07', to: '2009-08', ids: ['ut3', 'wanted'], unreleased: ['strider', 'tower'] }] },
+      { company: 'Pyro Studios', roles: 'QA Tester → Junior Level Designer', stints: [{ from: '2004-10', to: '2007-07', ids: ['imperial', 'commandos'], unreleased: ['cops'] }] }
+    ];
+  }
+  buildLog() {
+    const MON = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const rows = this.changelogOverride || this.defaultChangelog();
+    const hv = this.state.logHover || '', rh = this.state.logRowHover, tk = this.state.tick, bad = this.broken || {}, S = this.site || {};
+    const idleOp = this.num(S.logBgIdle, 0.08, 0, 1), hoverOp = this.num(S.logBgHover, 0.45, 0, 1), Rbg = this.ticks(S.logBgSeconds, 6);
+    const now = new Date(); const nowYM = now.getFullYear() * 12 + now.getMonth();
+    const ym = (str) => { const m = /^(\d{4})-(\d{2})/.exec(str || ''); return m ? parseInt(m[1]) * 12 + parseInt(m[2]) - 1 : null; };
+    let minY = Infinity, maxY = -Infinity;
+    rows.forEach(r => (r.stints || []).forEach(st => { const f = ym(st.from), t = st.to ? ym(st.to) : nowYM; if (f != null) { minY = Math.min(minY, f); maxY = Math.max(maxY, t == null ? f : t); } }));
+    if (!isFinite(minY)) { minY = 2004 * 12; maxY = nowYM; }
+    const startYear = Math.floor(minY / 12); const endYear = Math.max(Math.floor(maxY / 12), now.getFullYear()) + 1;
+    const cols = (endYear - startYear) * 12;
+    const col = (m) => m - startYear * 12 + 2;
+    const logos = this.logoMap();
+    const keyOf = (name) => (name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const logoKey = (name) => { const k = keyOf(name); const found = Object.keys(logos).find(lk => lk === k) || Object.keys(logos).find(lk => k.indexOf(lk) === 0); return found ? logos[found] : null; };
+    const fmt = (m) => MON[m % 12] + ' ' + Math.floor(m / 12);
+    const logRows = rows.map((r, ri) => {
+      const lg = logoKey(r.company);
+      const ini = (r.company || '').split(/\s+/).map(w => w[0]).join('').slice(0, 4).toUpperCase();
+      const stints = (r.stints || []).map(st => {
+        const f = ym(st.from); if (f == null) return null;
+        const t = st.to ? ym(st.to) : nowYM; const isNow = !st.to;
+        const c1 = col(f), c2 = col(Math.max(t, f)) + 1;
+        const nearEdge = c2 >= cols - 30;
+        const all = (st.ids || []).concat(st.unreleased || []).filter((id, i, arr) => arr.indexOf(id) === i && this.data[id] && !this.isHidden(id));
+        const cases = all.filter(id => ['released', 'indev', 'mod'].indexOf(this.statusKey(id)) > -1).map(id => this.cov(id));
+        const unre = all.filter(id => this.statusKey(id) === 'cancelled');
+        if (unre.length) cases.push(this.covGroup(unre, 'Unreleased', r.company + ':' + st.from));
+        const ndaCount = all.filter(id => this.statusKey(id) === 'nda').length + (st.nda ? 1 : 0);
+        for (let n = 0; n < ndaCount; n++) cases.push({ single: false, group: false, nda: true });
+        const marks = all.map(id => { const d = this.data[id] || {}; const rm = ym(d.released || this.defaultReleased[id]); if (rm == null) return null; return { col: Math.max(2, Math.min(cols + 1, col(rm))), title: (d.title || id) + ' · released ' + fmt(rm), open: () => this.open(id), bg: hv === id ? '#ff7a2f' : '#dfe6ee', scale: hv === id ? '1.6' : '1', enter: () => this.setState({ logHover: id }), leave: () => this.setState({ logHover: '' }) }; }).filter(Boolean);
+        return { marks, c1, c2, from: fmt(f), to: isNow ? 'NOW' : fmt(t), bg: isNow ? '#ff7a2f' : '#1b2230', toColor: isNow ? '#ff7a2f' : '#dfe6ee', k1: nearEdge ? Math.max(2, c1 - 40) : c1, k2: nearEdge ? cols + 2 : cols + 2, justify: nearEdge ? 'flex-end' : 'flex-start', cases };
+      }).filter(Boolean);
+      const rowIds = (r.stints || []).reduce((a, st) => a.concat(st.ids || [], st.unreleased || []), []).filter(id => this.data[id] && !this.isHidden(id));
+      const bgList = (Array.isArray(r.bg) && r.bg.length ? r.bg : rowIds.map(id => this.shotsOf(id)[0] || '')).filter((u, i, arr) => u && !bad[u] && arr.indexOf(u) === i);
+      const bg = this.slide(bgList, tk, 5 + ri * 2, Rbg);
+      return { company: r.company || '', roles: r.roles || '', logo: lg ? lg.img : '', logoHas: !!(lg && lg.has), logoNo: !(lg && lg.has), ini, stints, bottom: ri === rows.length - 1 ? '1px solid #1b2230' : 'none',
+        bgHas: bg.has, bgA: bg.a, bgB: bg.b, bgBo: bg.bo, bgBt: bg.bt, bgOp: rh === ri ? hoverOp : idleOp, enter: () => this.setState({ logRowHover: ri }), leave: () => this.setState({ logRowHover: -1 }) };
+    });
+    const logYears = []; for (let y = startYear; y < endYear; y += 4) logYears.push({ label: String(y), col: col(y * 12) });
+    const site = this.site || {};
+    const af = ym(site.availableFrom) || nowYM;
+    return { logRows, logYears, logCols: cols, logRange: startYear + ' → ' + (endYear - 1), availOn: !!site.available, availCol: col(Math.min(af, nowYM)), availFrom: fmt(Math.min(af, nowYM)), availTitle: site.availableTitle || 'Available for a new level', availRoles: site.availableRoles || 'Principal / Lead Level Design · remote or on-site' };
+  }
+  isHidden(id) { return !this.state.unlocked && (this.hiddenIds || []).indexOf(id) > -1; }
+  entry(id) {
+    const idx = this.state.idx, slug = this.slugs[id];
+    if (!idx || !slug) return { cover: '', images: [] };
+    const e = idx.bySlug[slug] || {};
+    const images = Array.isArray(e.images) ? e.images.filter(Boolean) : [];
+    return { cover: e.cover || images[0] || '', images };
+  }
+  shotsOf(id) {
+    const e = this.entry(id), list = e.images.slice();
+    if (e.cover && list.indexOf(e.cover) === -1) list.unshift(e.cover);
+    const bad = this.broken || {};
+    return list.filter(u => u && !bad[u]);
+  }
+  checkList(urls) {
+    this.broken = this.broken || {}; this.checked = this.checked || {};
+    (urls || []).forEach(u => {
+      if (!u || this.checked[u]) return;
+      this.checked[u] = true;
+      const img = new Image();
+      img.onerror = () => { this.broken[u] = true; this.forceUpdate(); };
+      img.src = u;
+    });
+  }
+  mediaOf(id) {
+    const d = this.data[id] || {};
+    return [].concat((d.videos || []).map(v => ({ type: 'video', url: v })), this.shotsOf(id).map(u => ({ type: 'image', url: u })));
+  }
+  yearsOf(id) { const d = this.data[id] || {}; if (d.start) { const a = d.start.slice(0, 4); const b = d.end ? d.end.slice(0, 4) : ''; return b ? [a, b] : [a]; } return (d.meta || '').match(/\d{4}/g) || []; }
+  lastYear(id) { const d = this.data[id] || {}; if (d.start && !d.end) return 'NOW'; const y = this.yearsOf(id); return y.length ? y[y.length - 1] : (id === 'tunein' ? 'TBA' : ''); }
+  logoMap() {
+    const idx = this.state.idx; const e = idx && idx.bySlug['00-logos']; const files = e && Array.isArray(e.images) ? e.images : [];
+    const out = {}; const bad = this.broken || {};
+    files.forEach(u => { if (!u || bad[u]) return; const base = (u.split('/').pop() || '').toLowerCase().replace(/\.[^.]+$/, ''); if (base) out[base] = { img: u, has: true }; });
+    return out;
+  }
+  defaultReleased = { imperial: '2005-05', commandos: '2006-03', ut3: '2007-12', wanted: '2009-03', deadlight: '2012-08', brutale: '2017-04', rime: '2017-05', gylt: '2019-11', cp: '2020-12', nunu: '2023-11' };
+  cov(id) { const d = this.data[id] || {}, img = this.shotsOf(id)[0] || ''; const sk = this.statusKey(id); const on = (this.state.logHover || '') === id; return { single: true, group: false, nda: false, title: d.title || id, img, has: !!img, badge: sk === 'indev' ? 'IN DEV' : (sk === 'mod' ? 'MOD' : ''), hasBadge: sk === 'indev' || sk === 'mod', open: () => this.open(id), border: on ? '#ff7a2f' : '#2a3344', tf: on ? 'translateY(-3px)' : 'none', shadow: on ? '0 10px 20px rgba(0,0,0,0.6)' : '0 6px 14px rgba(0,0,0,0.45)', enter: () => this.setState({ logHover: id }), leave: () => this.setState({ logHover: '' }) }; }
+  covGroup(ids, label, key) {
+    const on = this.state.openGroup === key;
+    return { single: false, group: true, nda: false, title: label, sign: on ? '−' : '+', plusW: 18,
+      show: () => this.setState({ openGroup: key }), hide: () => this.setState({ openGroup: '' }),
+      items: ids.map(id => { const d = this.data[id] || {}, img = this.shotsOf(id)[0] || ''; const hvOn = (this.state.logHover || '') === id; return { title: d.title || id, img, has: !!img, w: on ? 54 : 0, op: on ? 1 : 0, open: () => this.open(id), border: hvOn ? '#ff7a2f' : '#2a3344', enter: () => this.setState({ logHover: id }), leave: () => this.setState({ logHover: '' }) }; }) };
+  }
+  visibleIds() { return this.levelIds.filter(id => !this.isHidden(id)).slice(0, (this.site && this.site.latestCount) || 4); }
+  open(id) { this.checkList(this.shotsOf(id)); this.setState({ active: id, mediaIdx: 0 }); if (this.thumbsEl) this.thumbsEl.scrollTo({ left: 0 }); }
+  stepRoom(dir) { const list = this.levelIds.filter(id => !this.isHidden(id)).concat(this.workIds.filter(id => !this.isHidden(id))); const i = list.indexOf(this.state.active); this.open(list[(i + dir + list.length) % list.length]); }
+  stepMedia(dir) { const n = this.mediaOf(this.state.active).length; if (!n) return; this.setState(s => ({ mediaIdx: (s.mediaIdx + dir + n) % n })); }
+  slide(list, t, k, R) {
+    R = R || 7;
+    const n = list.length;
+    if (!n) return { has: false, a: '', b: '', bo: 0, bt: '0s', i: 0, n: 0 };
+    if (n === 1) return { has: true, a: list[0], b: list[0], bo: 0, bt: '0s', i: 0, n: 1 };
+    const c = t >= k ? Math.floor((t - k) / R) + 1 : 0;
+    const moving = t >= k && (t - k) % R === 0;
+    if (moving) return { has: true, a: list[(c - 1 + n) % n], b: list[c % n], bo: 1, bt: '1.2s', i: c % n, n };
+    return { has: true, a: list[c % n], b: list[c % n], bo: 0, bt: '0s', i: c % n, n };
+  }
+  statusKey(id) { const d = this.data[id] || {}; if (d.status) return d.status; const f = this.facts[id] || {}; if ((f.platforms || '').indexOf('Cancelled') > -1) return 'cancelled'; if ((f.platforms || '').indexOf('development') > -1) return 'indev'; if (id === 'ut3') return 'mod'; return 'released'; }
+  statusOf(id) {
+    const sk = this.statusKey(id); if (sk === 'cancelled') return 'CANCELLED'; if (sk === 'indev') return 'IN DEV'; if (sk === 'mod') return 'OFFICIAL MOD'; if (sk === 'nda') return 'UNANNOUNCED';
+    const f = this.facts[id] || {};
+    if ((f.platforms || '').indexOf('Cancelled') > -1) return 'CANCELLED';
+    if ((f.platforms || '').indexOf('development') > -1) return 'IN DEV';
+    if (id === 'ut3') return 'OFFICIAL MOD';
+    return 'SHIPPED';
+  }
+  renderVals() {
+    const pad = (n) => String(n).padStart(2, '0');
+    const t = this.state.tick, bad = this.broken || {};
+    const S = this.site || {};
+    const customHero = (Array.isArray(S.heroImages) ? S.heroImages : []).filter(u => u && !bad[u]);
+    const heroList = customHero.length ? customHero : [this.state.idx ? this.state.idx.hero : ''].concat(['cp', 'rime', 'deadlight', 'gylt', 'nunu', 'brutale', 'wanted'].map(id => this.entry(id).cover)).filter(u => u && !bad[u]);
+    const hero = this.slide(heroList, t, 0, this.ticks(S.heroImageSeconds, 5.4));
+    const phrases = this.phrasesOverride || [['Grey boxes in.', 'Shipped worlds out.'], ['Paper designs in.', 'Combat encounters out.'], ['Metrics in.', 'Playable spaces out.'], ['Blockouts in.', 'Memorable levels out.'], ['Ideas in.', 'Levels that ship.']];
+    const ph = phrases[Math.floor(t / this.ticks(S.heroTextSeconds, 5.4)) % phrases.length];
+    const ids = this.visibleIds();
+    const cards = ids.map((id, i) => {
+      const d = this.data[id] || {}, f = this.facts[id] || {};
+      const sl = this.slide(this.shotsOf(id), t, i + 1, 9);
+      const studio = (f.company || '').split('(')[0].trim();
+      return { num: 'LV_' + pad(this.levelIds.indexOf(id) + 1), title: d.title || id, studio: studio.toUpperCase(), role: f.position || d.role || '',
+        year: this.lastYear(id), score: f.score, hasScore: !!f.score, has: sl.has, noImg: !sl.has, a: sl.a, b: sl.b, bo: sl.bo, bt: sl.bt, open: () => this.open(id) };
+    });
+    const filters = Object.keys(this.groups).map(k => { const on = k === this.state.filter; return { label: this.groups[k].label, bg: on ? '#ff7a2f' : 'transparent', fg: on ? '#07090c' : '#8a94a3', pick: () => this.setState({ filter: k }) }; });
+    const workList = this.workIds.filter(id => !this.isHidden(id)).map(id => {
+      const d = this.data[id] || {}, f = this.facts[id] || {}, img = this.shotsOf(id)[0] || '';
+      return { title: d.title || id, sub: (f.engine || '').toUpperCase(), tag: /Hammer/.test(f.engine || '') ? 'MAP' : 'TOOL', img, has: !!img, noImg: !img, initials: (d.title || id).split(' ').map(w => w[0]).join('').slice(0, 3).toUpperCase(), open: () => this.open(id) };
+    });
+    const active = this.state.active;
+    const p = active ? this.data[active] : null;
+    const f = Object.assign({ score: '', company: '', platforms: '', time: '', position: '', engine: '' }, active ? (this.facts[active] || {}) : {});
+    if (p && !f.position) f.position = p.role || '';
+    const media = active ? this.mediaOf(active) : [];
+    const mi = Math.min(this.state.mediaIdx, Math.max(0, media.length - 1));
+    const sel = media[mi] || null;
+    const order = this.levelIds.filter(id => !this.isHidden(id)).concat(this.workIds.filter(id => !this.isHidden(id)));
+    return {
+      hero, phraseA: ph[0], phraseB: ph[1], siteHero: (this.site && this.site.hero) || '', siteHeroCustom: !!(this.site && this.site.hero), siteHeroDefault: !(this.site && this.site.hero),
+      recruiterMode: this.state.unlocked,
+      aboutQuote: (this.site && this.site.aboutQuote) || '', aboutQuoteCustom: !!(this.site && this.site.aboutQuote), aboutQuoteDefault: !(this.site && this.site.aboutQuote),
+      aboutBody: (this.site && this.site.aboutBody) || '', aboutBodyCustom: !!(this.site && this.site.aboutBody), aboutBodyDefault: !(this.site && this.site.aboutBody),
+      aboutRows: (this.site && Array.isArray(this.site.aboutRows) ? this.site.aboutRows : []).filter(r => r && (r.label || r.value)), aboutRowsCustom: !!(this.site && Array.isArray(this.site.aboutRows) && this.site.aboutRows.length), aboutRowsDefault: !(this.site && Array.isArray(this.site.aboutRows) && this.site.aboutRows.length),
+      contactTitle: (this.site && this.site.contactTitle) || '', contactTitleCustom: !!(this.site && this.site.contactTitle), contactTitleDefault: !(this.site && this.site.contactTitle),
+      contactBody: (this.site && this.site.contactBody) || '', contactBodyCustom: !!(this.site && this.site.contactBody), contactBodyDefault: !(this.site && this.site.contactBody),
+      emailHref: 'mailto:' + ((this.site && this.site.email) || 'Manuel.Mendiluce@gmail.com'), emailLabel: ((this.site && this.site.email) || 'Manuel.Mendiluce@gmail.com').toUpperCase(), linkedinHref: (this.site && this.site.linkedin) || 'http://www.linkedin.com/pub/manuel-mendiluce/2/86a/465', goTop: (e) => { e.preventDefault(); this.setState({ active: null }); window.scrollTo({ top: 0, behavior: 'smooth' }); }, navGo: () => { if (this.state.active) this.setState({ active: null }); },
+      reloadHome: (e) => { e.preventDefault(); const u = new URL(window.location.href); u.hash = ''; u.search = this.accessKey && this.state.unlocked ? '?access=' + encodeURIComponent(this.accessKey) : ''; if (u.href === window.location.href) window.location.reload(); else window.location.href = u.href; },
+      toolsRef: (el) => { this.toolsEl = el; }, toolsLeft: () => { if (this.toolsEl) this.toolsEl.scrollBy({ left: -424, behavior: 'smooth' }); }, toolsRight: () => { if (this.toolsEl) this.toolsEl.scrollBy({ left: 424, behavior: 'smooth' }); },
+      filters, cards, workList, logos: this.logoMap(), ...this.buildLog(),
+ histGrin: ['ut3', 'wanted'].map(id => this.cov(id)).concat([this.covGroup(['strider', 'tower'], 'Unreleased pitches', 'grin')]), histPyro: ['imperial', 'commandos'].map(id => this.cov(id)).concat([this.covGroup(['cops'], 'Unreleased', 'pyro')]),
+      hasActive: !!p,
+      pTitle: p ? p.title : '', pSlug: active ? (this.slugs[active] || '') : '',
+      pNum: active ? 'LV_' + pad(order.indexOf(active) + 1) + ' / ' + pad(order.length) : '',
+      prevTitle: active ? ((this.data[order[(order.indexOf(active) - 1 + order.length) % order.length]] || {}).title || '') : '',
+      nextTitle: active ? ((this.data[order[(order.indexOf(active) + 1) % order.length]] || {}).title || '') : '',
+      pScore: f.score, pHasScore: !!f.score, pCompany: f.company, pPlatforms: f.platforms,
+      pStatus: active ? this.statusOf(active) : '', pStatusBg: active && this.statusKey(active) === 'cancelled' ? '#1b2230' : (active && this.statusKey(active) === 'indev' ? '#ff7a2f' : '#dfe6ee'), pStatusFg: active && this.statusKey(active) === 'cancelled' ? '#8a94a3' : '#07090c',
+      pTime: f.time, pPosition: f.position, pEngine: f.engine,
+      pAbout: active ? (this.abouts[active] || (p ? p.desc : '') || '') : '',
+      pResp: p ? (p.resp || []) : [],
+      selNone: !sel, selIsVideo: !!sel && sel.type === 'video', selIsImage: !!sel && sel.type === 'image', selUrl: sel ? sel.url : '',
+      mediaCounter: media.length ? pad(mi + 1) + ' / ' + pad(media.length) : '00 / 00',
+      hasManyMedia: media.length > 1,
+      prevMedia: (e) => { e.stopPropagation(); this.stepMedia(-1); },
+      nextMedia: (e) => { e.stopPropagation(); this.stepMedia(1); },
+      thumbs: media.map((m, i) => ({ isVideo: m.type === 'video', isImage: m.type === 'image', img: m.url, border: i === mi ? '#ff7a2f' : '#1b2230', pick: () => this.setState({ mediaIdx: i }) })),
+      thumbsRef: (el) => { this.thumbsEl = el; },
+      prevProject: () => this.stepRoom(-1), nextProject: () => this.stepRoom(1),
+      closeProject: () => this.setState({ active: null })
+    };
+  }
+}
+</script>
+</body>
+</html>
