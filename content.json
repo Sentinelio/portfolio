@@ -6,8 +6,8 @@
       "slug": "01-Cyberpunk2077",
       "status": "released",
       "released": "2020-12",
-      "start": "",
-      "end": "",
+      "start": "2019-01",
+      "end": "2021-07",
       "meta": "CD Projekt Red · Kraków · 2019–2021 · RED Engine 4 · 86 Metacritic",
       "role": "Senior Level Designer",
       "desc": "Combat design across main quests, side quests, minor activities, street stories and combat events · on Cyberpunk 2077 and Phantom Liberty. Signature achievement: the Nomad lifepath opening and its car chase. Visual scripting of every owned location, in constant communication with the open world, environment and quest teams.",
@@ -29,7 +29,8 @@
         "platforms": "PC, PS4, PS5, Xbox One, Xbox Series, Stadia",
         "time": "January 2019 – July 2021",
         "position": "Senior Level Designer",
-        "engine": "RED Engine 4"
+        "engine": "RED Engine 4",
+        "workMode": "onsite"
       }
     },
     "rime": {
@@ -37,8 +38,8 @@
       "slug": "02-Rime",
       "status": "released",
       "released": "2017-05",
-      "start": "",
-      "end": "",
+      "start": "2013-09",
+      "end": "2017-05",
       "meta": "Tequila Works · Madrid · 2013–2017 · Unreal Engine 4 · 78 Metacritic",
       "role": "Senior / Lead Level Designer",
       "desc": "Four years shaping the island · from the first metrics and tilesets the whole team blocked out with, to shipped puzzles on PC, PS4, Xbox One and Switch.",
@@ -62,7 +63,8 @@
         "platforms": "PC, PS4, Xbox One, Nintendo Switch",
         "time": "September 2013 – May 2017",
         "position": "Senior → Lead Level Designer",
-        "engine": "Unreal Engine 4"
+        "engine": "Unreal Engine 4",
+        "workMode": "onsite"
       }
     },
     "deadlight": {
@@ -70,8 +72,8 @@
       "slug": "01-Deadlight",
       "status": "released",
       "released": "2012-08",
-      "start": "",
-      "end": "",
+      "start": "2011-05",
+      "end": "2012-08",
       "meta": "Tequila Works · Madrid · 2011–2012 · Unreal Engine 3 · 78 Metacritic",
       "role": "Senior Level Designer",
       "desc": "Helped raise the original idea from the ground up · a cinematic survival platformer that left no one indifferent. Blockouts, combat, puzzles, plus scripting and camera work.",
@@ -94,7 +96,8 @@
         "platforms": "PC, Xbox 360 (XBLA)",
         "time": "May 2011 – August 2012",
         "position": "Senior Level Designer",
-        "engine": "Unreal Engine 3"
+        "engine": "Unreal Engine 3",
+        "workMode": "onsite"
       }
     },
     "gylt": {
@@ -102,8 +105,8 @@
       "slug": "04-Gylt",
       "status": "released",
       "released": "2019-11",
-      "start": "",
-      "end": "",
+      "start": "2018-01",
+      "end": "2018-11",
       "meta": "Tequila Works · Madrid · 2018 · Unreal Engine 4 · Stadia launch · 72 Metacritic",
       "role": "Lead Level Designer",
       "desc": "Led the level design team on a Stadia launch title: metrics, tilesets, blockout layouts, puzzle design and Blueprint optimization on a tight five-month runway.",
@@ -127,7 +130,8 @@
         "platforms": "Stadia launch title · later PC, PS4/5, Xbox, Switch",
         "time": "January 2018 – November 2018",
         "position": "Lead Level Designer",
-        "engine": "Unreal Engine 4"
+        "engine": "Unreal Engine 4",
+        "workMode": "onsite"
       }
     },
     "nunu": {
@@ -135,8 +139,8 @@
       "slug": "05-SongOfNunu",
       "status": "released",
       "released": "2023-11",
-      "start": "",
-      "end": "",
+      "start": "2021-08",
+      "end": "2023-11",
       "meta": "Tequila Works · Madrid · Sep 2021–Nov 2023 · Unreal Engine 5 · PS4/5, Xbox, Switch, PC · 75 Metacritic",
       "role": "Level Design Director",
       "desc": "A League of Legends story set in the Freljord. Directed the level design of the project as Level Design Director at Tequila Works, alongside two more unannounced UE5 projects.",
@@ -156,7 +160,8 @@
         "platforms": "PC, PS4, PS5, Xbox One, Xbox Series, Nintendo Switch",
         "time": "2021 – 2023",
         "position": "Level Design Director",
-        "engine": "Unreal Engine 5"
+        "engine": "Unreal Engine 5",
+        "workMode": "hybrid"
       }
     },
     "tunein": {
@@ -164,7 +169,7 @@
       "slug": "02-TunedIn",
       "status": "indev",
       "released": "",
-      "start": "",
+      "start": "2025-09",
       "end": "",
       "meta": "Vercors Games · 2025–Now · Unreal Engine 5 · PC · Kickstarter coming soon",
       "role": "Principal Level Designer",
@@ -184,7 +189,8 @@
         "platforms": "PC · in development",
         "time": "2025 – Now",
         "position": "Principal Level Designer",
-        "engine": "Unreal Engine 5"
+        "engine": "Unreal Engine 5",
+        "workMode": "remote"
       }
     },
     "brutale": {
@@ -192,8 +198,8 @@
       "slug": "03-TheSexyBrutale",
       "status": "released",
       "released": "2017-04",
-      "start": "",
-      "end": "",
+      "start": "2015-04",
+      "end": "2015-09",
       "meta": "Tequila Works · Madrid · Apr 2015 · Unity 5 · PS4, Xbox One, Switch, PC · 83 Metacritic",
       "role": "Additional Senior Level Designer",
       "desc": "A murder-mystery adventure inside a haunted mansion. Built the systems that let the team iterate quickly on its intricate spaces.",
@@ -212,7 +218,8 @@
         "platforms": "PC, PS4, Xbox One, Nintendo Switch",
         "time": "April 2015 – September 2015",
         "position": "Additional Senior Level Designer",
-        "engine": "Unity 5"
+        "engine": "Unity 5",
+        "workMode": "onsite"
       }
     },
     "wanted": {
@@ -220,8 +227,8 @@
       "slug": "02-WantedWeaponsOfFate",
       "status": "released",
       "released": "2009-03",
-      "start": "",
-      "end": "",
+      "start": "2007-07",
+      "end": "2009-03",
       "meta": "Grin · Barcelona · Dec 2007–Apr 2009 · Diesel Engine · PS3, Xbox 360, PC · 62 Metacritic",
       "role": "Level Designer",
       "desc": "Third-person action based on the film. Responsible for prototypes and six maps (Courtyard, Cargo, Sniper, Church Entry, Catacombs 1 & 2) · and for the optimization of the whole game on Xbox 360, PS3 and PC.",
@@ -239,11 +246,12 @@
       ],
       "facts": {
         "score": "62",
-        "company": "Grin (Barcelona, Spain)",
+        "company": "Grin Barcelona (Barcelona, Spain)",
         "platforms": "PC, PS3, Xbox 360",
         "time": "2007 – 2009",
         "position": "Level Designer",
-        "engine": "Diesel Engine"
+        "engine": "Diesel Engine",
+        "workMode": "onsite"
       }
     },
     "ut3": {
@@ -251,8 +259,8 @@
       "slug": "01-UT3PhysXMod",
       "status": "mod",
       "released": "2007-12",
-      "start": "",
-      "end": "",
+      "start": "2007-07",
+      "end": "2007-12",
       "meta": "Grin · Barcelona · Jul–Dec 2007 · Unreal Engine 3 · Official mod · PC",
       "role": "Level Designer",
       "desc": "Official PhysX mod for Unreal Tournament 3, built with Ageia (later NVIDIA) in six months · physics-driven level design before it was standard.",
@@ -268,11 +276,12 @@
       ],
       "facts": {
         "score": "",
-        "company": "Grin (Barcelona, Spain)",
+        "company": "Grin Barcelona (Barcelona, Spain)",
         "platforms": "PC, PS3 · official mod",
         "time": "2007",
         "position": "Level Designer",
-        "engine": "Unreal Engine 3"
+        "engine": "Unreal Engine 3",
+        "workMode": "onsite"
       }
     },
     "commandos": {
@@ -280,8 +289,8 @@
       "slug": "01-CommandosStrikeForce",
       "status": "released",
       "released": "2006-03",
-      "start": "",
-      "end": "",
+      "start": "2004-10",
+      "end": "2006-03",
       "meta": "Pyro Studios · Madrid · Oct 2004–Mar 2006 · Renderware · PC, PS2, Xbox · 62 Metacritic",
       "role": "QA Tester",
       "desc": "Where it all started. Intensive testing of single player and multiplayer on PC and PS2 · and the internal test that opened the door into level design.",
@@ -301,7 +310,8 @@
         "platforms": "PC, PS2, Xbox",
         "time": "2004 – 2006",
         "position": "QA Tester",
-        "engine": "In-house engine"
+        "engine": "In-house engine",
+        "workMode": "onsite"
       }
     },
     "strider": {
@@ -309,8 +319,8 @@
       "slug": "03-Strider",
       "status": "cancelled",
       "released": "",
-      "start": "",
-      "end": "",
+      "start": "2009-01",
+      "end": "2009-08",
       "meta": "Grin · Barcelona · May 2009 · Diesel Engine · Xbox 360 · Cancelled",
       "role": "Level Designer",
       "desc": "One of four demos built in a month at Grin Barcelona trying to save the studio before it went bankrupt. I worked on two of them, including this Strider revival pitch for Xbox 360.",
@@ -326,11 +336,12 @@
       ],
       "facts": {
         "score": "",
-        "company": "Grin (Barcelona, Spain)",
+        "company": "Grin Barcelona (Barcelona, Spain)",
         "platforms": "Cancelled · Xbox 360 pitch demo",
         "time": "2009",
         "position": "Level Designer",
-        "engine": "Diesel Engine"
+        "engine": "Diesel Engine",
+        "workMode": "onsite"
       }
     },
     "tower": {
@@ -338,8 +349,8 @@
       "slug": "04-Tower",
       "status": "cancelled",
       "released": "",
-      "start": "",
-      "end": "",
+      "start": "2009-01",
+      "end": "2009-08",
       "meta": "Grin · Barcelona · May–Jun 2009 · Diesel Engine · Xbox LIVE Arcade · Cancelled",
       "role": "Level Designer",
       "desc": "Second of the pitch demos built at Grin Barcelona before the studio closed: an Xbox LIVE Arcade concept.",
@@ -356,11 +367,12 @@
       ],
       "facts": {
         "score": "",
-        "company": "Grin (Barcelona, Spain)",
+        "company": "Grin Barcelona (Barcelona, Spain)",
         "platforms": "Cancelled · XBLA pitch demo",
         "time": "2009",
         "position": "Level Designer",
-        "engine": "Diesel Engine"
+        "engine": "Diesel Engine",
+        "workMode": "onsite"
       }
     },
     "cops": {
@@ -368,8 +380,8 @@
       "slug": "03-Cops",
       "status": "cancelled",
       "released": "",
-      "start": "",
-      "end": "",
+      "start": "2006-01",
+      "end": "2007-07",
       "meta": "Pyro Studios · Madrid · Mar 2006–Jul 2007 · Ignition / UE3 · PC, Xbox 360, PS3 · Cancelled",
       "role": "Junior Level Designer",
       "desc": "After shipping Commandos Strike Force and Imperial Glory as QA, I passed the internal test and spent a year and a half as Junior Level Designer on this open-world project — my first level design role.",
@@ -395,7 +407,8 @@
         "platforms": "Cancelled",
         "time": "2006 – 2007",
         "position": "Junior Level Designer",
-        "engine": "Ignition Engine / Unreal Engine 3"
+        "engine": "Ignition Engine / Unreal Engine 3",
+        "workMode": "onsite"
       }
     },
     "imperial": {
@@ -403,8 +416,8 @@
       "slug": "02-ImperialGlory",
       "status": "released",
       "released": "2005-05",
-      "start": "",
-      "end": "",
+      "start": "2004-10",
+      "end": "2005-05",
       "meta": "Pyro Studios · Madrid · Oct 2004–Jan 2005 · PC · 69 Metacritic",
       "role": "QA Tester",
       "desc": "Napoleonic-era strategy from Pyro Studios. Intensive single-player testing on PC across graphics, design and programming.",
@@ -424,7 +437,8 @@
         "platforms": "PC",
         "time": "2004 – 2005",
         "position": "QA Tester",
-        "engine": "In-house engine"
+        "engine": "In-house engine",
+        "workMode": "onsite"
       }
     },
     "ptileset": {
@@ -437,15 +451,16 @@
       "meta": "Personal · Unreal Engine 4 · Blueprint tool",
       "role": "Technical Level Designer",
       "desc": "After building three different tileset systems at Tequila Works, I created my own: a blueprint (based on the SuperGrid Starter Pack material) that modifies the appearance and size of a single cube usable as floor, wall, railing or interactive. Metrics live in the tileset itself, so anyone working with layouts learns them in-game without reading a document, and objects snap to fixed sizes, protecting performance from rescaled meshes.",
-      "about": "A Blueprint tool that generates modular level pieces on the fly, so designers can block out spaces with consistent metrics.",
+      "about": "During my years at Tequila Works I built three different tileset systems, one per project, improving the idea with every iteration. Browsing the Unreal Marketplace I found the SuperGridStarter Pack: a pack I loved, but everything in it came as separate materials, so you ended up juggling many of them. I adapted one of those materials to the system I had in mind.\n\nThe result is a single Blueprint cube whose look and size you change from the Details panel: floor, wall, railing, interactive prop, whatever the blockout needs. For performance, every material parameter is locked by default. Unreal renders a non-editable instance far more cheaply, so you only unlock what you really need.\n\nWith the metrics baked into the tileset, anyone working on layouts learns them in-game, without reading a document.",
       "hook": "",
       "resp": [
-        "Grid material: size, opacity, colors and background texture",
-        "Normal mapping and roughness controls",
-        "Pulse system to highlight interactive objects",
-        "Layer system to show characters/objects with built-in basic metrics",
-        "Per-face color coding",
-        "Fixed-size scaling to preserve metrics and performance"
+        "Grid drawn on the object: size, opacity, colours and background texture",
+        "Normal map on/off, swappable normal texture and roughness, from smooth to marked",
+        "Pulses with their own colour, brightness and speed, so small interactive props catch the eye",
+        "Layer texture that shows an object or character with the base metrics: scale, tile, offset and flip it",
+        "A different colour per face, so one object can mean different things by colour code",
+        "Fixed scale steps (Manual Scale off): metrics cannot drift by accident between blockout and environment",
+        "Rescaled meshes raise draw calls, so the actor only scales to approved sizes"
       ],
       "videos": [
         "https://www.youtube.com/embed/eR-_E0hJsZI"
@@ -456,7 +471,8 @@
         "platforms": "Editor tool",
         "time": "Personal work",
         "position": "Technical Level Designer",
-        "engine": "Unreal Engine 4 · Blueprints"
+        "engine": "Unreal Engine 4 · Blueprints",
+        "workMode": ""
       }
     },
     "pfinder": {
@@ -469,14 +485,16 @@
       "meta": "Personal · Unreal Engine 4 · Blueprint tool · born on Rime",
       "role": "Technical Level Designer",
       "desc": "On Rime we had serious performance problems on an engine we didn’t fully control. BP_ActorFinder scans the level and flags problem actors, making it much easier to find mistakes accumulated during map development.",
-      "about": "An editor utility that finds and filters actors across a level, cutting the time spent hunting for references in large maps.",
+      "about": "On Rime we had serious performance problems and little idea of what was going on: we had paid to move to an engine we did not fully control. Objects were disappearing, there were more draw calls than usual, too many unknowns. So I built BP_ActorFinder, a Blueprint that helped us learn as we went along.\n\nIt made it much easier to catch the mistakes we were making while developing the maps and to know which object had which problem. It helped find and fix many small issues that had piled up over time.",
       "hook": "",
       "resp": [
-        "Detects objects at 0,0,0",
-        "Flags objects with more than X materials",
-        "Finds rescaled objects",
-        "Finds objects not visible in game or with null mesh",
-        "Reports Tick activated by default"
+        "Objects sitting at 0,0,0",
+        "Objects with more than X materials",
+        "Rescaled objects",
+        "Objects not visible in game",
+        "Objects with the mesh set to null",
+        "Tick enabled, or disabled, by default",
+        "Any other check we needed as the project went on"
       ],
       "videos": [],
       "facts": {
@@ -485,7 +503,8 @@
         "platforms": "Editor tool",
         "time": "Personal work",
         "position": "Technical Level Designer",
-        "engine": "Unreal Engine 4 · Blueprints"
+        "engine": "Unreal Engine 4 · Blueprints",
+        "workMode": ""
       }
     },
     "pdebug": {
@@ -498,14 +517,14 @@
       "meta": "Personal · Unreal Engine 4 · Blueprint tool · WIP",
       "role": "Technical Level Designer",
       "desc": "A blueprint placed on the stage that opens a side panel with multiple options to speed up development: cheats for testing, viewport manipulation to find visual problems, filtering by objects added to levels, gameplay tweaks and engine values in the Debug tab.",
-      "about": "An in-game debug menu built in Blueprints to toggle gameplay states, spawn actors and test scenarios without rebuilding.",
+      "about": "BP_DebugMenu is a Blueprint you drop into the level: with a configurable button combination it opens a side panel with multiple options meant to make the project easier to develop.\n\nIt is unfinished and several functions do not work properly yet, but the idea stands: everything that helps a developer do the job faster and with less friction, in one place.",
       "hook": "",
       "resp": [
-        "Cheat system to speed up testing",
-        "Viewport manipulation to spot visual problems",
-        "Object filtering per level",
-        "In-game gameplay modification",
-        "Engine value editing from a Debug tab"
+        "Cheats that help test things quickly",
+        "Viewport manipulation to find visual problems",
+        "Filters by the objects added to each level",
+        "In-game gameplay modifiers",
+        "Engine values editable from the Debug tab"
       ],
       "videos": [],
       "facts": {
@@ -514,7 +533,8 @@
         "platforms": "Editor tool",
         "time": "Personal work",
         "position": "Technical Level Designer",
-        "engine": "Unreal Engine 4 · Blueprints"
+        "engine": "Unreal Engine 4 · Blueprints",
+        "workMode": ""
       }
     },
     "prebel": {
@@ -541,7 +561,8 @@
         "platforms": "PC",
         "time": "Personal work",
         "position": "Level Designer",
-        "engine": "Hammer 2 (Source)"
+        "engine": "Hammer 2 (Source)",
+        "workMode": ""
       }
     },
     "pport": {
@@ -568,7 +589,8 @@
         "platforms": "PC",
         "time": "Personal work",
         "position": "Level Designer",
-        "engine": "Hammer 2 (Source)"
+        "engine": "Hammer 2 (Source)",
+        "workMode": ""
       }
     },
     "pcourtyard": {
@@ -595,7 +617,8 @@
         "platforms": "PC",
         "time": "Personal work",
         "position": "Level Designer",
-        "engine": "Hammer 2 (Source)"
+        "engine": "Hammer 2 (Source)",
+        "workMode": ""
       }
     }
   },
@@ -677,10 +700,16 @@
     "linkedin": "http://www.linkedin.com/pub/manuel-mendiluce/2/86a/465",
     "contactTitle": "",
     "contactBody": "",
-    "available": false,
-    "availableFrom": "",
+    "available": true,
+    "availableFrom": "2026-11",
     "availableTitle": "",
-    "availableRoles": ""
+    "availableRoles": "Level Designer",
+    "heroImages": [
+      "images/07-VercorsGames/TuneIn_bg.jpg",
+      "images/04-TequilaWorks/rime_bg.jpg"
+    ],
+    "heroRandom": true,
+    "heroRandomCount": 8
   },
   "changelog": [
     {
@@ -689,23 +718,32 @@
       "stints": [
         {
           "from": "2025-09",
-          "to": "",
+          "to": "2026-08",
           "ids": [
             "tunein"
           ]
         }
-      ]
+      ],
+      "logo": "images/07-VercorsGames/VercorsGames.jpg",
+      "bg": [
+        "images/07-VercorsGames/TuneIn_bg.jpg"
+      ],
+      "bgPos": "50% 50%"
     },
     {
-      "company": "Wonder Legends",
+      "company": "Wonder Legends Studios",
       "roles": "Principal Level Designer",
       "stints": [
         {
-          "from": "2025-02",
+          "from": "2025-01",
           "to": "2025-08",
           "ids": [],
           "nda": 1
         }
+      ],
+      "logo": "images/06-WonderLegends/WonderLegendsStudio.jpg",
+      "bg": [
+        "images/06-WonderLegends/wonder_legends_studio_bg.jpg"
       ]
     },
     {
@@ -719,7 +757,12 @@
             "cp"
           ]
         }
-      ]
+      ],
+      "logo": "images/05-CDProjektRed/CDPR.png",
+      "bg": [
+        "images/05-CDProjektRed/cyberpunk_bg.png"
+      ],
+      "bgPos": "96% 56%"
     },
     {
       "company": "Tequila Works",
@@ -742,7 +785,12 @@
             "nunu"
           ]
         }
-      ]
+      ],
+      "logo": "images/04-TequilaWorks/TequilaWorks.jpg",
+      "bg": [
+        "images/04-TequilaWorks/rime_bg.jpg"
+      ],
+      "bgPos": "84% 72%"
     },
     {
       "company": "Grin Barcelona",
@@ -760,6 +808,11 @@
             "tower"
           ]
         }
+      ],
+      "logo": "images/02-GrinBarcelona/GrinBarcelona.png",
+      "bgPos": "51% 43%",
+      "bg": [
+        "images/02-GrinBarcelona/wanted_bg.jpg"
       ]
     },
     {
@@ -777,6 +830,11 @@
             "cops"
           ]
         }
+      ],
+      "logo": "images/01-PyroStudios/PyroStudios.jpg",
+      "bgPos": "50% 11%",
+      "bg": [
+        "images/01-PyroStudios/CSF_bg.jpg"
       ]
     }
   ],
