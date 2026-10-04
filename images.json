@@ -1,5 +1,5 @@
 {
-  "hero": null,
+  "hero": "images/hero.jpg",
   "projects": [
     {
       "slug": "01-RebelAssault",
@@ -52,6 +52,30 @@
       ]
     },
     {
+      "slug": "03-BPDebugMenu",
+      "cover": "images/00-Personal/Tools/03-BPDebugMenu/01.jpg",
+      "images": [
+        "images/00-Personal/Tools/03-BPDebugMenu/01.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/02.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/03.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/04.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/05.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/06.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/07.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/08.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/09.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/10.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/11.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/12.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/13.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/14.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/15.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/16.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/17.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/18.jpg"
+      ]
+    },
+    {
       "slug": "01-CommandosStrikeForce",
       "cover": "images/01-PyroStudios/01-CommandosStrikeForce/01.jpg",
       "images": [
@@ -77,6 +101,42 @@
         "images/01-PyroStudios/02-ImperialGlory/07.jpg",
         "images/01-PyroStudios/02-ImperialGlory/08.jpg",
         "images/01-PyroStudios/02-ImperialGlory/09.jpg"
+      ]
+    },
+    {
+      "slug": "03-Cops",
+      "cover": "images/01-PyroStudios/03-Cops/01.jpg",
+      "images": [
+        "images/01-PyroStudios/03-Cops/01.jpg",
+        "images/01-PyroStudios/03-Cops/02.jpg",
+        "images/01-PyroStudios/03-Cops/03.jpg",
+        "images/01-PyroStudios/03-Cops/04.jpg",
+        "images/01-PyroStudios/03-Cops/05.jpg",
+        "images/01-PyroStudios/03-Cops/06.jpg",
+        "images/01-PyroStudios/03-Cops/07.jpg",
+        "images/01-PyroStudios/03-Cops/08.jpg",
+        "images/01-PyroStudios/03-Cops/09.jpg",
+        "images/01-PyroStudios/03-Cops/10.jpg",
+        "images/01-PyroStudios/03-Cops/11.jpg",
+        "images/01-PyroStudios/03-Cops/12.jpg",
+        "images/01-PyroStudios/03-Cops/13.jpg",
+        "images/01-PyroStudios/03-Cops/14.jpg",
+        "images/01-PyroStudios/03-Cops/15.jpg",
+        "images/01-PyroStudios/03-Cops/16.jpg",
+        "images/01-PyroStudios/03-Cops/17.jpg",
+        "images/01-PyroStudios/03-Cops/18.jpg",
+        "images/01-PyroStudios/03-Cops/19.jpg",
+        "images/01-PyroStudios/03-Cops/20.jpg",
+        "images/01-PyroStudios/03-Cops/21.jpg",
+        "images/01-PyroStudios/03-Cops/22.jpg",
+        "images/01-PyroStudios/03-Cops/23.jpg",
+        "images/01-PyroStudios/03-Cops/24.jpg",
+        "images/01-PyroStudios/03-Cops/25.jpg",
+        "images/01-PyroStudios/03-Cops/26.jpg",
+        "images/01-PyroStudios/03-Cops/27.jpg",
+        "images/01-PyroStudios/03-Cops/28.jpg",
+        "images/01-PyroStudios/03-Cops/29.jpg",
+        "images/01-PyroStudios/03-Cops/30.jpg"
       ]
     },
     {
