@@ -3,7 +3,7 @@
   "projects": {
     "cp": {
       "title": "Cyberpunk 2077",
-      "slug": "cyberpunk-2077",
+      "slug": "01-Cyberpunk2077",
       "status": "released",
       "released": "2020-12",
       "start": "",
@@ -34,7 +34,7 @@
     },
     "rime": {
       "title": "Rime",
-      "slug": "rime",
+      "slug": "02-Rime",
       "status": "released",
       "released": "2017-05",
       "start": "",
@@ -67,7 +67,7 @@
     },
     "deadlight": {
       "title": "Deadlight",
-      "slug": "deadlight",
+      "slug": "01-Deadlight",
       "status": "released",
       "released": "2012-08",
       "start": "",
@@ -99,7 +99,7 @@
     },
     "gylt": {
       "title": "Gylt",
-      "slug": "gylt",
+      "slug": "04-Gylt",
       "status": "released",
       "released": "2019-11",
       "start": "",
@@ -132,7 +132,7 @@
     },
     "nunu": {
       "title": "Song of Nunu",
-      "slug": "song-of-nunu",
+      "slug": "05-SongOfNunu",
       "status": "released",
       "released": "2023-11",
       "start": "",
@@ -161,7 +161,7 @@
     },
     "tunein": {
       "title": "Tuned In",
-      "slug": "tuned-in",
+      "slug": "01-TunedIn",
       "status": "indev",
       "released": "",
       "start": "",
@@ -189,7 +189,7 @@
     },
     "brutale": {
       "title": "The Sexy Brutale",
-      "slug": "the-sexy-brutale",
+      "slug": "03-TheSexyBrutale",
       "status": "released",
       "released": "2017-04",
       "start": "",
@@ -217,7 +217,7 @@
     },
     "wanted": {
       "title": "Wanted: Weapons of Fate",
-      "slug": "wanted-weapons-of-fate",
+      "slug": "02-WantedWeaponsOfFate",
       "status": "released",
       "released": "2009-03",
       "start": "",
@@ -248,7 +248,7 @@
     },
     "ut3": {
       "title": "UT3: Ageia PhysX Mod",
-      "slug": "ut3-physx-mod",
+      "slug": "01-UT3PhysXMod",
       "status": "mod",
       "released": "2007-12",
       "start": "",
@@ -277,7 +277,7 @@
     },
     "commandos": {
       "title": "Commandos Strike Force",
-      "slug": "commandos-strike-force",
+      "slug": "01-CommandosStrikeForce",
       "status": "released",
       "released": "2006-03",
       "start": "",
@@ -306,7 +306,7 @@
     },
     "strider": {
       "title": "Strider",
-      "slug": "strider",
+      "slug": "03-Strider",
       "status": "cancelled",
       "released": "",
       "start": "",
@@ -335,7 +335,7 @@
     },
     "tower": {
       "title": "Tower",
-      "slug": "tower",
+      "slug": "04-Tower",
       "status": "cancelled",
       "released": "",
       "start": "",
@@ -365,7 +365,7 @@
     },
     "cops": {
       "title": "Cops: The Police Experience",
-      "slug": "cops",
+      "slug": "03-Cops",
       "status": "cancelled",
       "released": "",
       "start": "",
@@ -400,7 +400,7 @@
     },
     "imperial": {
       "title": "Imperial Glory",
-      "slug": "imperial-glory",
+      "slug": "02-ImperialGlory",
       "status": "released",
       "released": "2005-05",
       "start": "",
@@ -429,7 +429,7 @@
     },
     "ptileset": {
       "title": "Dynamic Tileset",
-      "slug": "dynamic-tileset",
+      "slug": "01-DynamicTileset",
       "status": "released",
       "released": "",
       "start": "",
@@ -461,7 +461,7 @@
     },
     "pfinder": {
       "title": "BP_ActorFinder",
-      "slug": "bp-actorfinder",
+      "slug": "02-BPActorFinder",
       "status": "released",
       "released": "",
       "start": "",
@@ -490,7 +490,7 @@
     },
     "pdebug": {
       "title": "BP_DebugMenu",
-      "slug": "bp-debugmenu",
+      "slug": "03-BPDebugMenu",
       "status": "released",
       "released": "",
       "start": "",
@@ -519,7 +519,7 @@
     },
     "prebel": {
       "title": "Rebel Assault",
-      "slug": "rebel-assault",
+      "slug": "01-RebelAssault",
       "status": "released",
       "released": "",
       "start": "",
@@ -546,7 +546,7 @@
     },
     "pport": {
       "title": "Port",
-      "slug": "port",
+      "slug": "02-Port",
       "status": "released",
       "released": "",
       "start": "",
@@ -573,7 +573,7 @@
     },
     "pcourtyard": {
       "title": "Courtyard",
-      "slug": "courtyard",
+      "slug": "03-Courtyard",
       "status": "released",
       "released": "",
       "start": "",
