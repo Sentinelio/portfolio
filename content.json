@@ -31,7 +31,8 @@
         "position": "Senior Level Designer",
         "engine": "RED Engine 4",
         "workMode": "onsite"
-      }
+      },
+      "cover": "images/05-CDProjektRed/01-Cyberpunk2077/Cyberpunk2077_cover.jpg"
     },
     "rime": {
       "title": "Rime",
@@ -65,7 +66,8 @@
         "position": "Senior → Lead Level Designer",
         "engine": "Unreal Engine 4",
         "workMode": "onsite"
-      }
+      },
+      "cover": "images/04-TequilaWorks/02-Rime/Rime_cover.jpg"
     },
     "deadlight": {
       "title": "Deadlight",
@@ -98,7 +100,8 @@
         "position": "Senior Level Designer",
         "engine": "Unreal Engine 3",
         "workMode": "onsite"
-      }
+      },
+      "cover": "images/04-TequilaWorks/01-Deadlight/Deadlight_cover.jpg"
     },
     "gylt": {
       "title": "Gylt",
@@ -132,7 +135,8 @@
         "position": "Lead Level Designer",
         "engine": "Unreal Engine 4",
         "workMode": "onsite"
-      }
+      },
+      "cover": "images/04-TequilaWorks/04-Gylt/Gylt_cover.jpg"
     },
     "nunu": {
       "title": "Song of Nunu",
@@ -161,8 +165,9 @@
         "time": "2021 – 2023",
         "position": "Level Design Director",
         "engine": "Unreal Engine 5",
-        "workMode": "hybrid"
-      }
+        "workMode": "remote"
+      },
+      "cover": "images/04-TequilaWorks/05-SongOfNunu/SongOfNunu_cover.jpg"
     },
     "tunein": {
       "title": "Tuned In",
@@ -191,7 +196,8 @@
         "position": "Principal Level Designer",
         "engine": "Unreal Engine 5",
         "workMode": "remote"
-      }
+      },
+      "cover": "images/07-VercorsGames/02-TunedIn/TuneIn_cover.png"
     },
     "brutale": {
       "title": "The Sexy Brutale",
@@ -220,7 +226,8 @@
         "position": "Additional Senior Level Designer",
         "engine": "Unity 5",
         "workMode": "onsite"
-      }
+      },
+      "cover": "images/04-TequilaWorks/03-TheSexyBrutale/TeSexyBrutale_Cover.jpg"
     },
     "wanted": {
       "title": "Wanted: Weapons of Fate",
@@ -252,7 +259,8 @@
         "position": "Level Designer",
         "engine": "Diesel Engine",
         "workMode": "onsite"
-      }
+      },
+      "cover": "images/02-GrinBarcelona/02-WantedWeaponsOfFate/Wanted_cover.jpg"
     },
     "ut3": {
       "title": "UT3: Ageia PhysX Mod",
@@ -282,7 +290,8 @@
         "position": "Level Designer",
         "engine": "Unreal Engine 3",
         "workMode": "onsite"
-      }
+      },
+      "cover": "images/02-GrinBarcelona/01-UT3PhysXMod/01.jpg"
     },
     "commandos": {
       "title": "Commandos Strike Force",
@@ -312,7 +321,8 @@
         "position": "QA Tester",
         "engine": "In-house engine",
         "workMode": "onsite"
-      }
+      },
+      "cover": "images/01-PyroStudios/01-CommandosStrikeForce/CSF_cover.jpg"
     },
     "strider": {
       "title": "Strider",
@@ -342,7 +352,8 @@
         "position": "Level Designer",
         "engine": "Diesel Engine",
         "workMode": "onsite"
-      }
+      },
+      "cover": "images/02-GrinBarcelona/03-Strider/04.jpg"
     },
     "tower": {
       "title": "Tower",
@@ -373,7 +384,8 @@
         "position": "Level Designer",
         "engine": "Diesel Engine",
         "workMode": "onsite"
-      }
+      },
+      "cover": "images/02-GrinBarcelona/04-Tower/03.jpg"
     },
     "cops": {
       "title": "Cops: The Police Experience",
@@ -409,7 +421,8 @@
         "position": "Junior Level Designer",
         "engine": "Ignition Engine / Unreal Engine 3",
         "workMode": "onsite"
-      }
+      },
+      "cover": "images/01-PyroStudios/03-Cops/05.jpg"
     },
     "imperial": {
       "title": "Imperial Glory",
@@ -439,7 +452,8 @@
         "position": "QA Tester",
         "engine": "In-house engine",
         "workMode": "onsite"
-      }
+      },
+      "cover": "images/01-PyroStudios/02-ImperialGlory/IG_cover.jpg"
     },
     "ptileset": {
       "title": "Dynamic Tileset",
@@ -630,9 +644,9 @@
     "rime",
     "brutale",
     "deadlight",
-    "wanted",
-    "strider",
     "tower",
+    "strider",
+    "wanted",
     "ut3",
     "cops",
     "commandos",
