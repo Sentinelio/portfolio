@@ -2255,7 +2255,7 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
     </sc-if>
     <div style="position:absolute;inset:0;background:rgba(7,9,12,0.78);"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,9,12,0.7) 0%,rgba(7,9,12,0.2) 60%,rgba(7,9,12,0) 100%),linear-gradient(180deg,rgba(7,9,12,0.5) 0%,transparent 30%,rgba(7,9,12,0.85) 100%);"></div>
-    <div style="position:relative;max-width:1360px;margin:0 auto;padding:56px 32px 44px;box-sizing:border-box;">
+    <div style="position:relative;margin:0 15%;padding:56px 0 44px;box-sizing:border-box;">
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.3em;color:#ff7a2f;">// LEVEL DESIGNER · SINCE 2004</div>
       <h1 style="margin:18px 0 0;font-weight:700;font-size:clamp(38px,5vw,68px);line-height:1.04;letter-spacing:-0.03em;min-height:2.1em;">{{ phraseA }}<br><span style="color:#ff7a2f;">{{ phraseB }}</span></h1>
       <sc-if value="{{ siteHeroCustom }}" hint-placeholder-val="{{ false }}"><p style="max-width:620px;margin:18px 0 0;font-size:16px;line-height:1.7;color:#8a94a3;">{{ siteHero }}</p></sc-if>
@@ -2263,14 +2263,14 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
     </div>
   </section>
 
-  <section id="levels" style="max-width:1360px;margin:0 auto;padding:40px 32px 20px;">
+  <section id="levels" style="margin:0 15%;padding:40px 0 20px;">
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
       <h2 style="margin:0;font-weight:700;font-size:22px;letter-spacing:-0.02em;">Latest levels</h2>
       <div style="flex:1;border-top:1px dashed #1b2230;"></div>
       <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#52607a;">LATEST 4 · FULL LIST IN THE <a href="#log" style="color:#ff7a2f;">CHANGELOG</a></div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;">
-      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="14">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:14px;">
+      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="4">
         <div onClick="{{ c.open }}" style="cursor:pointer;display:flex;flex-direction:column;gap:10px;" style-hover="transform:translateY(-4px);">
           <div style="position:relative;aspect-ratio:3/4;border-radius:4px;overflow:hidden;background:#0c1017;border:1px solid #1b2230;box-shadow:0 14px 28px rgba(0,0,0,0.45);transition:box-shadow 0.25s ease;">
             <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,122,47,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,47,0.12) 1px,transparent 1px);background-size:24px 24px;"></div>
@@ -2296,7 +2296,7 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
     </div>
   </section>
 
-  <section id="log" style="max-width:1360px;margin:0 auto;padding:50px 32px 30px;">
+  <section id="log" style="margin:0 15%;padding:50px 0 30px;">
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;">
       <h2 style="margin:0;font-weight:700;font-size:22px;letter-spacing:-0.02em;">Changelog</h2>
       <div style="flex:1;border-top:1px dashed #1b2230;"></div>
@@ -2390,7 +2390,7 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
     </sc-for>
   </section>
 
-  <section id="tools" style="max-width:1360px;margin:0 auto;padding:50px 32px 20px;">
+  <section id="tools" style="margin:0 15%;padding:50px 0 20px;">
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
       <h2 style="margin:0;font-weight:700;font-size:22px;letter-spacing:-0.02em;">Tools &amp; personal maps</h2>
       <div style="flex:1;border-top:1px dashed #1b2230;"></div>
@@ -2419,7 +2419,7 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
     </div>
   </section>
 
-  <section id="about" style="max-width:1360px;margin:0 auto;padding:60px 32px 40px;">
+  <section id="about" style="margin:0 15%;padding:60px 0 40px;">
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px;">
       <h2 style="margin:0;font-weight:700;font-size:22px;letter-spacing:-0.02em;">About</h2>
       <div style="flex:1;border-top:1px dashed #1b2230;"></div>
@@ -2452,7 +2452,7 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
   </section>
 
   <section id="contact" style="border-top:1px solid #1b2230;background:#0c1017;">
-    <div style="max-width:1360px;margin:0 auto;padding:64px 32px 96px;display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;">
+    <div style="margin:0 15%;padding:64px 0 96px;display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;">
       <div>
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#ff7a2f;">// NEXT LEVEL</div>
         <sc-if value="{{ contactTitleCustom }}" hint-placeholder-val="{{ false }}"><h2 style="margin:12px 0 0;font-weight:700;font-size:clamp(32px,4.4vw,60px);line-height:0.98;letter-spacing:-0.03em;">{{ contactTitle }}</h2></sc-if>
@@ -2469,6 +2469,29 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
   <footer style="position:fixed;left:0;right:0;bottom:0;z-index:40;height:36px;box-sizing:border-box;border-top:1px solid #1b2230;background:rgba(7,9,12,0.92);backdrop-filter:blur(10px);padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#52607a;"><span>MANUEL MENDILUCE · LEVEL DESIGNER</span><span>BUILD 2004 → NOW</span></footer>
 </div>
 
+<sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;z-index:200;background:rgba(7,9,12,0.96);backdrop-filter:blur(6px);display:grid;grid-template-rows:48px minmax(0,1fr) auto;box-sizing:border-box;">
+    <div onClick="{{ stopClick }}" style="display:flex;align-items:center;gap:14px;padding:0 24px;border-bottom:1px solid #1b2230;background:rgba(7,9,12,0.9);">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8a94a3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FULL VIEW · <span style="color:#dfe6ee;">{{ pTitle }}</span> · {{ lbCounter }}</div>
+      <div style="margin-left:auto;display:flex;gap:8px;">
+        <button onClick="{{ closeLightbox }}" title="Close (Esc)" style="background:transparent;border:1px solid #ff7a2f;color:#ff7a2f;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:8px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;" style-hover="background:#ff7a2f;color:#07090c;">✕ CLOSE <span style="font-size:9px;opacity:0.7;border:1px solid currentColor;border-radius:3px;padding:1px 4px;">ESC</span></button>
+      </div>
+    </div>
+    <div style="position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:16px 72px;">
+      <div role="img" aria-label="{{ pTitle }}" onClick="{{ stopClick }}" style="width:100%;height:100%;background-image:url('{{ lbUrl }}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
+      <sc-if value="{{ lbMany }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ lbPrev }}" title="Previous image (←)" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid #2a3344;background:rgba(7,9,12,0.8);color:#dfe6ee;font-size:20px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">‹</button>
+        <button onClick="{{ lbNext }}" title="Next image (→)" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid #2a3344;background:rgba(7,9,12,0.8);color:#dfe6ee;font-size:20px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">›</button>
+      </sc-if>
+    </div>
+    <div onClick="{{ stopClick }}" style="display:flex;gap:6px;justify-content:center;overflow-x:auto;scrollbar-width:none;padding:10px 24px 14px;border-top:1px solid #1b2230;background:rgba(7,9,12,0.9);">
+      <sc-for list="{{ lbThumbs }}" as="lt" hint-placeholder-count="0">
+        <div onClick="{{ lt.pick }}" style="flex:0 0 96px;aspect-ratio:16/9;border:1px solid {{ lt.border }};background-color:#0c1017;background-image:url('{{ lt.img }}');background-size:cover;background-position:center;cursor:pointer;opacity:{{ lt.op }};" style-hover="opacity:1;border-color:#ff7a2f;"></div>
+      </sc-for>
+    </div>
+  </div>
+</sc-if>
+
 <sc-if value="{{ hasActive }}" hint-placeholder-val="{{ false }}">
   <div style="position:fixed;left:0;right:0;top:52px;bottom:36px;z-index:35;background:#07090c;overflow-y:auto;">
     <div style="position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:14px;padding:0 24px;height:52px;background:rgba(7,9,12,0.95);backdrop-filter:blur(8px);border-bottom:1px solid #1b2230;">
@@ -2477,12 +2500,12 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
         <button onClick="{{ closeProject }}" title="Close (Esc)" style="background:transparent;border:1px solid #ff7a2f;color:#ff7a2f;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:10px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background 0.15s ease,color 0.15s ease,transform 0.15s ease;" style-hover="background:#ff7a2f;color:#07090c;transform:translateY(-1px);" style-active="transform:translateY(0);">✕ CLOSE <span style="font-size:9px;opacity:0.7;border:1px solid currentColor;border-radius:3px;padding:1px 4px;">ESC</span></button>
       </div>
     </div>
-    <div style="padding:24px 24px 96px;display:flex;flex-wrap:wrap;gap:20px;align-items:stretch;">
-      <div style="flex:1000 1 560px;min-width:0;display:flex;flex-direction:column;">
+    <div style="padding:24px 15% 96px;display:flex;flex-wrap:nowrap;gap:20px;align-items:stretch;">
+      <div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;">
         <div style="position:relative;aspect-ratio:16/9;background:#000;border:1px solid #1b2230;overflow:hidden;">
           <sc-if value="{{ selNone }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background-color:#0c1017;background-image:linear-gradient(rgba(255,122,47,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,47,0.12) 1px,transparent 1px);background-size:32px 32px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:rgba(255,122,47,0.6);text-align:center;line-height:1.8;">NO TEXTURE<br>{{ pSlug }}</div></sc-if>
           <sc-if value="{{ selIsVideo }}" hint-placeholder-val="{{ false }}"><iframe src="{{ selUrl }}" title="{{ pTitle }}" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe></sc-if>
-          <sc-if value="{{ selIsImage }}" hint-placeholder-val="{{ false }}"><div role="img" aria-label="{{ pTitle }}" style="position:absolute;inset:0;background-image:url('{{ selUrl }}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div></sc-if>
+          <sc-if value="{{ selIsImage }}" hint-placeholder-val="{{ false }}"><div role="img" aria-label="{{ pTitle }}" onClick="{{ openLightbox }}" title="Click to view full size" style="position:absolute;inset:0;background-image:url('{{ selUrl }}');background-size:contain;background-repeat:no-repeat;background-position:center;cursor:zoom-in;"></div></sc-if>
           <div style="position:absolute;top:12px;left:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#dfe6ee;background:rgba(7,9,12,0.6);padding:3px 7px;">VIEWPORT · {{ pTitle }}</div>
           <div style="position:absolute;top:12px;right:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#dfe6ee;background:rgba(7,9,12,0.6);padding:3px 7px;">{{ mediaCounter }}</div>
           <sc-if value="{{ hasManyMedia }}" hint-placeholder-val="{{ false }}">
@@ -2500,7 +2523,7 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
           </sc-for>
         </div>
       </div>
-      <aside style="flex:1 1 340px;min-width:340px;max-width:100%;align-self:stretch;display:flex;flex-direction:column;gap:2px;background:#1b2230;border:1px solid #1b2230;">
+      <aside style="flex:0 0 clamp(260px,32%,380px);min-width:0;align-self:stretch;display:flex;flex-direction:column;gap:2px;background:#1b2230;border:1px solid #1b2230;">
         <div style="background:#0c1017;padding:22px 24px;">
           <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;">
             <div style="font-weight:700;font-size:26px;line-height:1;letter-spacing:-0.02em;">{{ pTitle }}</div>
@@ -2892,7 +2915,7 @@ class Component extends DCLogic {
     Object.assign(this.data, this.personal);
 
     this.onKey = (e) => {
-      if (e.key === 'Escape') { this.setState({ active: null }); return; }
+      if (e.key === 'Escape') { if (this.state.lightbox) this.setState({ lightbox: false }); else this.setState({ active: null }); return; }
       if (!this.state.active) return;
       if (e.key === 'ArrowRight') this.stepMedia(1);
       if (e.key === 'ArrowLeft') this.stepMedia(-1);
@@ -2901,16 +2924,29 @@ class Component extends DCLogic {
     this.startTimer();
     const q = new URLSearchParams(window.location.search);
     this.accessKey = q.get('access') || (window.location.hash || '').replace('#', '');
-    fetch('content.json').then(r => { if (!r.ok) throw new Error('content.json'); return r.json(); }).then(c => {
+    // Data loading: relative first (production, unchanged). If a file fails, retry it from the live site (preview / local file);
+    // paths coming from LIVE_BASE get that prefix. Embedded texts + slugs remain the last resort.
+    const LIVE_BASE = 'https://sentinelio.github.io/portfolio/';
+    const getJson = (url) => fetch(url).then(r => { if (!r.ok) throw new Error(url); return r.json(); });
+    const loadJson = (name) => getJson(name).then(j => ({ json: j, base: '' })).catch(() => getJson(LIVE_BASE + name).then(j => ({ json: j, base: LIVE_BASE })));
+    const absFrom = (base) => (u) => (base && typeof u === 'string' && u && !/^(?:[a-z]+:)?\/\//i.test(u)) ? base + u.replace(/^\.?\//, '') : u;
+    loadJson('content.json').then(({ json: c, base }) => {
       if (!c || typeof c !== 'object') return;
+      if (base) {
+        const abs = absFrom(base);
+        if (c.site && Array.isArray(c.site.heroImages)) c.site.heroImages = c.site.heroImages.map(abs);
+        if (Array.isArray(c.changelog)) c.changelog.forEach(r => { if (r && Array.isArray(r.bg)) r.bg = r.bg.map(abs); });
+      }
       this.applyContent(c);
       this.setState({ content: c, unlocked: !!(this.accessKey && Array.isArray(c.accessKeys) && c.accessKeys.some(k => k && k.key === this.accessKey && (!k.expires || Date.now() < Date.parse(k.expires)))) });
     }).catch(() => {});
-    fetch('images.json').then(r => { if (!r.ok) throw new Error('images.json'); return r.json(); }).then(json => {
+    loadJson('images.json').then(({ json, base }) => {
+      const abs = absFrom(base);
       const bySlug = {};
-      (json.projects || []).forEach(p => { if (p && p.slug) bySlug[p.slug] = p; });
-      this.setState({ idx: { hero: json.hero || '', bySlug } }, () => {
-        this.checkList([json.hero].concat(Object.keys(bySlug).map(k => bySlug[k].cover)));
+      (json.projects || []).forEach(p => { if (p && p.slug) bySlug[p.slug] = { slug: p.slug, cover: abs(p.cover || ''), images: Array.isArray(p.images) ? p.images.map(abs) : [] }; });
+      const hero = abs(json.hero || '');
+      this.setState({ idx: { hero, bySlug } }, () => {
+        this.checkList([hero].concat(Object.keys(bySlug).map(k => bySlug[k].cover)));
       });
     }).catch(() => this.setState({ idxFailed: true }));
   }
@@ -3044,7 +3080,14 @@ class Component extends DCLogic {
   visibleIds() { return this.levelIds.filter(id => !this.isHidden(id)).slice(0, (this.site && this.site.latestCount) || 4); }
   open(id) { this.checkList(this.shotsOf(id)); this.setState({ active: id, mediaIdx: 0 }); if (this.thumbsEl) this.thumbsEl.scrollTo({ left: 0 }); }
   stepRoom(dir) { const list = this.levelIds.filter(id => !this.isHidden(id)).concat(this.workIds.filter(id => !this.isHidden(id))); const i = list.indexOf(this.state.active); this.open(list[(i + dir + list.length) % list.length]); }
-  stepMedia(dir) { const n = this.mediaOf(this.state.active).length; if (!n) return; this.setState(s => ({ mediaIdx: (s.mediaIdx + dir + n) % n })); }
+  stepMedia(dir) {
+    const media = this.mediaOf(this.state.active); const n = media.length; if (!n) return;
+    if (this.state.lightbox) { // inside the full view only images count
+      const imgs = media.map((m, i) => m.type === 'image' ? i : -1).filter(i => i > -1); if (!imgs.length) return;
+      const k = Math.max(0, imgs.indexOf(this.state.mediaIdx)); this.setState({ mediaIdx: imgs[(k + dir + imgs.length) % imgs.length] }); return;
+    }
+    this.setState(s => ({ mediaIdx: (s.mediaIdx + dir + n) % n }));
+  }
   slide(list, t, k, R) {
     R = R || 7;
     const n = list.length;
@@ -3125,7 +3168,15 @@ class Component extends DCLogic {
       thumbs: media.map((m, i) => ({ isVideo: m.type === 'video', isImage: m.type === 'image', img: m.url, border: i === mi ? '#ff7a2f' : '#1b2230', pick: () => this.setState({ mediaIdx: i }) })),
       thumbsRef: (el) => { this.thumbsEl = el; },
       prevProject: () => this.stepRoom(-1), nextProject: () => this.stepRoom(1),
-      closeProject: () => this.setState({ active: null })
+      closeProject: () => this.setState({ active: null, lightbox: false }),
+      lightboxOpen: !!(this.state.lightbox && sel && sel.type === 'image'), lbUrl: sel ? sel.url : '',
+      lbCounter: (() => { const imgs = media.filter(m => m.type === 'image'); const k = sel ? imgs.indexOf(sel) : -1; return imgs.length ? pad(k + 1) + ' / ' + pad(imgs.length) : ''; })(),
+      lbMany: media.filter(m => m.type === 'image').length > 1,
+      lbThumbs: media.map((m, i) => ({ m, i })).filter(x => x.m.type === 'image').map(({ m, i }) => ({ img: m.url, border: i === mi ? '#ff7a2f' : '#1b2230', op: i === mi ? '1' : '0.55', pick: (e) => { e.stopPropagation(); this.setState({ mediaIdx: i }); } })),
+      openLightbox: (e) => { e.stopPropagation(); this.setState({ lightbox: true }); },
+      closeLightbox: () => this.setState({ lightbox: false }),
+      lbPrev: (e) => { e.stopPropagation(); this.stepMedia(-1); }, lbNext: (e) => { e.stopPropagation(); this.stepMedia(1); },
+      stopClick: (e) => e.stopPropagation()
     };
   }
 }
