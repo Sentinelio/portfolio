@@ -2231,9 +2231,13 @@ html{scrollbar-gutter:stable;}
 a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
 ::selection{background:#ff7a2f;color:#07090c;}
 @keyframes mmScan{0%{transform:translateY(-100%);}100%{transform:translateY(100%);}}
+@keyframes mmAvailPulse{0%,100%{opacity:0.35;}50%{opacity:1;}}
 @keyframes mmPulseHdr{0%,100%{background-color:rgba(255,122,47,0.22);box-shadow:0 0 0 0 rgba(255,122,47,0.7);}50%{background-color:rgba(255,122,47,0.78);box-shadow:0 0 0 7px rgba(255,122,47,0);}}
 @keyframes mmPulseLi{0%,100%{background-color:rgba(10,102,194,0.28);box-shadow:0 0 0 0 rgba(56,139,230,0.75);}50%{background-color:rgba(28,124,220,0.88);box-shadow:0 0 0 7px rgba(56,139,230,0);}}
-@media (prefers-reduced-motion: reduce){ .mm-pulse{animation:none !important;} }
+@media (prefers-reduced-motion: reduce){ .mm-pulse,.mm-avail-bg{animation:none !important;} }
+@media (hover: none){ .mm-plus{width:34px !important;} }
+@media (max-width: 1100px){ .mm-avail-word{display:none;} }
+header{overflow:hidden;}
 /* Tablets and narrow desktops: render the whole site at 70% (desktop zoom-out). Phones keep the fluid layout at 100%. */
 @media (min-width: 600px) and (max-width: 1280px) and (hover: none){ html{zoom:0.7;} }
 </style>
@@ -2241,14 +2245,14 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
 <div style="position:relative;min-height:100vh;background-color:#07090c;">
 
   <header style="position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:0;height:52px;background:rgba(7,9,12,0.94);backdrop-filter:blur(10px);border-bottom:1px solid #1b2230;">
-    <a href="." onClick="{{ reloadHome }}" title="Reload the portfolio" style="display:flex;align-items:center;gap:12px;padding:0 24px;height:100%;border-right:1px solid #1b2230;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.1em;color:#dfe6ee;cursor:pointer;" style-hover="color:#ff7a2f;background:#0c1017;"><span style="display:inline-block;width:8px;height:8px;background:#ff7a2f;"></span>MANUEL_MENDILUCE_PORTFOLIO.umap</a>
-    <nav style="display:flex;height:100%;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;">
+    <a href="." onClick="{{ reloadHome }}" title="Reload the portfolio" style="display:flex;align-items:center;gap:12px;padding:0 24px;height:100%;flex:0 0 auto;white-space:nowrap;border-right:1px solid #1b2230;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.1em;color:#dfe6ee;cursor:pointer;" style-hover="color:#ff7a2f;background:#0c1017;"><span style="display:inline-block;width:8px;height:8px;background:#ff7a2f;"></span>MANUEL_MENDILUCE_PORTFOLIO.umap</a>
+    <nav style="display:flex;height:100%;min-width:0;flex:0 1 auto;overflow-x:auto;scrollbar-width:none;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;white-space:nowrap;">
       <a href="#" onClick="{{ goTop }}" style="display:flex;align-items:center;padding:0 18px;border-right:1px solid #1b2230;color:#8a94a3;" style-hover="color:#ff7a2f;background:#0c1017;">OVERVIEW</a>
       <a href="#levels" onClick="{{ navGo }}" style="display:flex;align-items:center;padding:0 18px;border-right:1px solid #1b2230;color:#8a94a3;" style-hover="color:#ff7a2f;background:#0c1017;">LEVELS</a>
       <a href="#log" onClick="{{ navGo }}" style="display:flex;align-items:center;padding:0 18px;border-right:1px solid #1b2230;color:#8a94a3;" style-hover="color:#ff7a2f;background:#0c1017;">CHANGELOG</a>
       <a href="#tools" onClick="{{ navGo }}" style="display:flex;align-items:center;padding:0 18px;border-right:1px solid #1b2230;color:#8a94a3;" style-hover="color:#ff7a2f;background:#0c1017;">TOOLS</a>
     </nav>
-    <div style="margin-left:auto;display:flex;align-items:center;gap:14px;padding:0 24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#8a94a3;"><sc-if value="{{ recruiterMode }}" hint-placeholder-val="{{ false }}"><span style="background:#ff7a2f;color:#07090c;font-weight:700;padding:3px 8px;">RECRUITER ACCESS</span></sc-if><sc-if value="{{ availOn }}" hint-placeholder-val="{{ false }}"><span style="color:#ff7a2f;">●</span> AVAILABLE · </sc-if><a href="{{ emailHref }}" title="{{ emailLabel }}" class="mm-pulse" style="display:flex;align-items:center;height:28px;padding:0 10px;color:#dfe6ee;animation:mmPulseHdr 2.4s ease-in-out infinite;" style-hover="color:#07090c;background:#ff7a2f;animation:none;">CONTACT</a><a href="{{ linkedinHref }}" target="_blank" rel="noopener" title="LinkedIn profile" class="mm-pulse" style="display:flex;align-items:center;height:28px;padding:0 10px;color:#dfe6ee;animation:mmPulseLi 2.4s ease-in-out 1.2s infinite;" style-hover="color:#ffffff;background:#0a66c2;animation:none;">LINKEDIN</a></div>
+    <div style="margin-left:auto;min-width:0;flex:0 1 auto;display:flex;align-items:center;gap:10px;padding:0 16px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#8a94a3;white-space:nowrap;"><sc-if value="{{ recruiterMode }}" hint-placeholder-val="{{ false }}"><span style="background:#ff7a2f;color:#07090c;font-weight:700;padding:3px 8px;">RECRUITER ACCESS{{ recruiterLeft }}</span></sc-if><sc-if value="{{ availOn }}" hint-placeholder-val="{{ false }}"><span title="Available for work" style="display:inline-flex;align-items:center;gap:6px;white-space:nowrap;"><span style="color:#ff7a2f;">●</span><span class="mm-avail-word">AVAILABLE</span></span></sc-if><a href="{{ emailHref }}" title="{{ emailLabel }}" class="mm-pulse" style="display:flex;align-items:center;height:28px;padding:0 10px;color:#dfe6ee;animation:mmPulseHdr 2.4s ease-in-out infinite;" style-hover="color:#07090c;background:#ff7a2f;animation:none;">CONTACT</a><a href="{{ linkedinHref }}" target="_blank" rel="noopener" title="LinkedIn profile" class="mm-pulse" style="display:flex;align-items:center;height:28px;padding:0 10px;color:#dfe6ee;animation:mmPulseLi 2.4s ease-in-out 1.2s infinite;" style-hover="color:#ffffff;background:#0a66c2;animation:none;">LINKEDIN</a></div>
   </header>
 
 <sc-if value="{{ noActive }}" hint-placeholder-val="{{ true }}">
@@ -2258,8 +2262,8 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
       <div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ hero.a }}');"></div>
       <div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ hero.b }}');opacity:{{ hero.bo }};transition:opacity {{ hero.bt }};"></div>
     </sc-if>
-    <div style="position:absolute;inset:0;background:rgba(7,9,12,0.78);"></div>
-    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,9,12,0.7) 0%,rgba(7,9,12,0.2) 60%,rgba(7,9,12,0) 100%),linear-gradient(180deg,rgba(7,9,12,0.5) 0%,transparent 30%,rgba(7,9,12,0.85) 100%);"></div>
+    <div style="position:absolute;inset:0;background:rgba(7,9,12,0.58);"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,9,12,0.82) 0%,rgba(7,9,12,0.45) 45%,rgba(7,9,12,0.05) 100%),linear-gradient(180deg,rgba(7,9,12,0.45) 0%,transparent 30%,rgba(7,9,12,0.8) 100%);"></div>
     <div style="position:relative;margin:0 15%;padding:56px 0 44px;box-sizing:border-box;">
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.3em;color:#ff7a2f;">// LEVEL DESIGNER · SINCE 2004</div>
       <h1 style="margin:18px 0 0;font-weight:700;font-size:clamp(38px,5vw,68px);line-height:1.04;letter-spacing:-0.03em;min-height:2.1em;">{{ phraseA }}<br><span style="color:#ff7a2f;">{{ phraseB }}</span></h1>
@@ -2276,14 +2280,14 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:14px;">
       <sc-for list="{{ cards }}" as="c" hint-placeholder-count="4">
-        <div onClick="{{ c.open }}" style="cursor:pointer;display:flex;flex-direction:column;gap:10px;" style-hover="transform:translateY(-4px);">
+        <div onClick="{{ c.open }}" style="cursor:{{ c.cursor }};display:flex;flex-direction:column;gap:10px;" style-hover="transform:translateY(-4px);">
           <div style="position:relative;aspect-ratio:3/4;border-radius:4px;overflow:hidden;background:#0c1017;border:1px solid #1b2230;box-shadow:0 14px 28px rgba(0,0,0,0.45);transition:box-shadow 0.25s ease;">
             <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,122,47,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,47,0.12) 1px,transparent 1px);background-size:24px 24px;"></div>
             <sc-if value="{{ c.has }}" hint-placeholder-val="{{ false }}">
               <div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ c.a }}');"></div>
               <div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ c.b }}');opacity:{{ c.bo }};transition:opacity {{ c.bt }};"></div>
             </sc-if>
-            <sc-if value="{{ c.noImg }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;left:0;right:0;top:40%;height:20%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:rgba(255,122,47,0.55);">NO TEXTURE</div></sc-if>
+            <sc-if value="{{ c.noImg }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;left:0;right:0;top:40%;height:20%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:rgba(255,122,47,0.55);">{{ c.noImgLabel }}</div></sc-if>
             <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,9,12,0.55) 0%,transparent 28%,transparent 55%,rgba(7,9,12,0.95) 100%);"></div>
             <div style="position:absolute;left:0;top:0;bottom:0;width:7px;background:linear-gradient(90deg,#ff7a2f 0px,#ff7a2f 1px,rgba(255,122,47,0.22) 1px,rgba(255,122,47,0) 100%);"></div>
             <div style="position:absolute;top:10px;left:14px;right:10px;display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;">
@@ -2312,13 +2316,15 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
       <sc-for list="{{ logYears }}" as="y" hint-placeholder-count="6"><div style="grid-column:{{ y.col }} / span 24;">{{ y.label }}</div></sc-for>
     </div>
     <sc-if value="{{ availOn }}" hint-placeholder-val="{{ false }}">
-      <div style="display:grid;grid-template-columns:minmax(170px,250px) repeat({{ logCols }},minmax(0,1fr));align-items:center;padding:16px 0;border-top:1px solid #1b2230;">
+      <div style="position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(170px,250px) repeat({{ logCols }},minmax(0,1fr));align-items:center;padding:16px 0;border-top:1px solid #1b2230;">
+        <div class="mm-avail-bg" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(255,122,47,0.10) 0%,rgba(255,122,47,0.03) 45%,rgba(255,122,47,0) 100%);animation:{{ availPulse }};"></div>
         <div style="grid-column:1;padding-right:14px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center;">
           <div style="width:40px;height:40px;border:1px dashed #ff7a2f;background:#0c1017;display:flex;align-items:center;justify-content:center;"><span style="width:10px;height:10px;border-radius:50%;background:#ff7a2f;box-shadow:0 0 0 4px rgba(255,122,47,0.2);"></span></div>
-          <div><div style="font-weight:700;font-size:16px;line-height:1.1;color:#ff7a2f;">{{ availTitle }}</div><div style="font-size:12px;color:#8a94a3;margin-top:6px;line-height:1.5;">{{ availRoles }}</div></div>
+          <div><div style="font-weight:700;font-size:16px;line-height:1.1;color:#ff7a2f;">{{ availTitle }}</div><div style="font-size:12px;color:#8a94a3;margin-top:6px;line-height:1.5;">{{ availRoles }}</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#ff7a2f;margin-top:6px;">{{ availCountdown }}</div></div>
         </div>
-        <div style="grid-column:{{ availCol }} / -1;position:relative;height:14px;">
-          <span style="position:absolute;left:0;bottom:100%;margin-bottom:4px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;color:#dfe6ee;white-space:nowrap;">{{ availFrom }}</span>
+        <sc-if value="{{ availFuture }}" hint-placeholder-val="{{ false }}"><div title="Today" style="grid-column:{{ availNowCol }} / span 1;grid-row:1;justify-self:start;position:relative;height:22px;width:1px;background:#52607a;"><span style="position:absolute;right:5px;bottom:100%;margin-bottom:3px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;color:#52607a;white-space:nowrap;">TODAY</span></div></sc-if>
+        <div style="grid-column:{{ availCol }} / -1;grid-row:1;position:relative;height:14px;">
+          <span style="position:absolute;{{ availFromSide }}font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;color:#dfe6ee;white-space:nowrap;">{{ availFrom }}</span>
           <div style="position:absolute;inset:0;border:1px dashed #ff7a2f;border-right:none;box-sizing:border-box;background:repeating-linear-gradient(90deg,rgba(255,122,47,0.25) 0 6px,transparent 6px 12px);"></div>
           <span style="position:absolute;right:0;top:100%;margin-top:4px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;color:#ff7a2f;white-space:nowrap;">→ OPEN</span>
         </div>
@@ -2328,8 +2334,8 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
       <div onMouseEnter="{{ row.enter }}" onMouseLeave="{{ row.leave }}" style="position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(170px,250px) repeat({{ logCols }},minmax(0,1fr));row-gap:22px;align-items:center;padding:30px 0 16px;border-top:1px solid #1b2230;border-bottom:{{ row.bottom }};">
         <sc-if value="{{ row.bgHas }}" hint-placeholder-val="{{ false }}">
           <div style="position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:{{ row.bgOp }};transition:opacity 0.6s ease;">
-            <div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ row.bgA }}');"></div>
-            <div style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('{{ row.bgB }}');opacity:{{ row.bgBo }};transition:opacity {{ row.bgBt }};"></div>
+            <div style="position:absolute;inset:0;background-size:cover;background-position:{{ row.bgPos }};background-image:url('{{ row.bgA }}');"></div>
+            <div style="position:absolute;inset:0;background-size:cover;background-position:{{ row.bgPos }};background-image:url('{{ row.bgB }}');opacity:{{ row.bgBo }};transition:opacity {{ row.bgBt }};"></div>
             <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,9,12,0.85) 0%,rgba(7,9,12,0.15) 45%,rgba(7,9,12,0.5) 100%);"></div>
           </div>
         </sc-if>
@@ -2348,6 +2354,7 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
           </div>
           <sc-for list="{{ st.marks }}" as="mk" hint-placeholder-count="0">
             <div onClick="{{ mk.open }}" onMouseEnter="{{ mk.enter }}" onMouseLeave="{{ mk.leave }}" title="{{ mk.title }}" style="grid-column:{{ mk.col }} / span 1;grid-row:1;justify-self:center;position:relative;z-index:2;width:10px;height:10px;cursor:pointer;">
+              <div style="position:absolute;left:-14px;top:-14px;width:38px;height:38px;"></div>
               <div style="width:10px;height:10px;background:{{ mk.bg }};border:2px solid #07090c;box-sizing:border-box;transform:rotate(45deg) scale({{ mk.scale }});box-shadow:0 0 0 1px #ff7a2f;transition:transform 0.2s ease,background 0.2s ease;" style-hover="background:#ff7a2f;"></div>
             </div>
           </sc-for>
@@ -2373,8 +2380,8 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
                 </div>
               </sc-if>
               <sc-if value="{{ k.group }}" hint-placeholder-val="{{ false }}">
-                <div onMouseEnter="{{ k.show }}" onMouseLeave="{{ k.hide }}" style="display:flex;gap:8px;align-items:stretch;">
-                  <div title="{{ k.title }}" style="position:relative;width:18px;height:72px;flex:0 0 auto;border-radius:3px;border:1px dashed #2a3344;background:#0c1017;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;" style-hover="border-color:#ff7a2f;">
+                <div onPointerEnter="{{ k.show }}" onMouseLeave="{{ k.hide }}" style="display:flex;gap:8px;align-items:stretch;">
+                  <div onClick="{{ k.toggle }}" title="{{ k.title }}" class="mm-plus" style="position:relative;width:18px;height:72px;flex:0 0 auto;border-radius:3px;border:1px dashed #2a3344;background:#0c1017;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;" style-hover="border-color:#ff7a2f;">
                     <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;line-height:1;color:#ff7a2f;">{{ k.sign }}</div>
                   </div>
                   <sc-for list="{{ k.items }}" as="j" hint-placeholder-count="0">
@@ -2407,7 +2414,7 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
     </div>
     <div ref="{{ toolsRef }}" style="display:flex;gap:12px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px;">
       <sc-for list="{{ workList }}" as="w" hint-placeholder-count="6">
-        <div onClick="{{ w.open }}" style="cursor:pointer;flex:0 0 200px;border:1px solid #1b2230;overflow:hidden;background:#0c1017;" style-hover="border-color:#ff7a2f;">
+        <div onClick="{{ w.open }}" style="cursor:{{ w.cursor }};flex:0 0 200px;border:1px solid #1b2230;overflow:hidden;background:#0c1017;" style-hover="border-color:#ff7a2f;">
           <div style="position:relative;width:200px;height:200px;">
             <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,122,47,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,47,0.12) 1px,transparent 1px);background-size:20px 20px;"></div>
             <sc-if value="{{ w.has }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background-image:url('{{ w.img }}');background-size:cover;background-position:center;"></div></sc-if>
@@ -2492,6 +2499,7 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:8px 40px;font-size:13px;line-height:1.5;">
               <div style="display:grid;grid-template-columns:88px 1fr;gap:8px 14px;align-content:start;">
                 <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">STUDIO</div><div>{{ pCompany }}</div>
+                <sc-if value="{{ pHasWorkMode }}" hint-placeholder-val="{{ false }}"><div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">WORKED</div><div>{{ pWorkMode }}</div></sc-if>
                 <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">PLATFORMS</div><div>{{ pPlatforms }}</div>
                 <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">STATUS</div><div><span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.12em;padding:3px 7px;color:{{ pStatusFg }};background:{{ pStatusBg }};">{{ pStatus }}</span></div>
               </div>
@@ -2560,7 +2568,7 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
         <button onClick="{{ closeLightbox }}" title="Close (Esc)" style="background:transparent;border:1px solid #ff7a2f;color:#ff7a2f;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:8px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;" style-hover="background:#ff7a2f;color:#07090c;">✕ CLOSE <span style="font-size:9px;opacity:0.7;border:1px solid currentColor;border-radius:3px;padding:1px 4px;">ESC</span></button>
       </div>
     </div>
-    <div style="position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:16px 72px;">
+    <div onTouchStart="{{ lbTouchStart }}" onTouchEnd="{{ lbTouchEnd }}" style="position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:16px 72px;">
       <sc-if value="{{ lbIsImage }}" hint-placeholder-val="{{ true }}"><div role="img" aria-label="{{ pTitle }}" onClick="{{ stopClick }}" style="width:100%;height:100%;background-image:url('{{ lbUrl }}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div></sc-if>
       <sc-if value="{{ lbIsVideo }}" hint-placeholder-val="{{ false }}"><div onClick="{{ stopClick }}" style="position:relative;width:min(100%,calc((100vh - 180px) * 16 / 9));aspect-ratio:16/9;background:#000;border:1px solid #1b2230;"><iframe src="{{ lbUrl }}" title="{{ pTitle }}" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe></div></sc-if>
       <sc-if value="{{ lbMany }}" hint-placeholder-val="{{ false }}">
@@ -2596,13 +2604,13 @@ class Component extends DCLogic {
     nunu: { score: '75', company: 'Tequila Works (Madrid, Spain)', platforms: 'PC, PS4, PS5, Xbox One, Xbox Series, Nintendo Switch', time: '2021 – 2023', position: 'Level Design Director', engine: 'Unreal Engine 5' },
     tunein: { score: '', company: 'Vercors Games (Madrid, Spain)', platforms: 'PC · in development', time: '2025 – Now', position: 'Principal Level Designer', engine: 'Unreal Engine 5' },
     brutale: { score: '83', company: 'Tequila Works (Madrid, Spain)', platforms: 'PC, PS4, Xbox One, Nintendo Switch', time: 'April 2015 – September 2015', position: 'Additional Senior Level Designer', engine: 'Unity 5' },
-    wanted: { score: '62', company: 'Grin (Barcelona, Spain)', platforms: 'PC, PS3, Xbox 360', time: '2007 – 2009', position: 'Level Designer', engine: 'Diesel Engine' },
-    ut3: { score: '', company: 'Grin (Barcelona, Spain)', platforms: 'PC, PS3 · official mod', time: '2007', position: 'Level Designer', engine: 'Unreal Engine 3' },
+    wanted: { score: '62', company: 'Grin Barcelona (Barcelona, Spain)', platforms: 'PC, PS3, Xbox 360', time: '2007 – 2009', position: 'Level Designer', engine: 'Diesel Engine' },
+    ut3: { score: '', company: 'Grin Barcelona (Barcelona, Spain)', platforms: 'PC, PS3 · official mod', time: '2007', position: 'Level Designer', engine: 'Unreal Engine 3' },
     cops: { score: '', company: 'Pyro Studios (Madrid, Spain)', platforms: 'Cancelled', time: '2006 – 2007', position: 'Junior Level Designer', engine: 'Ignition Engine / Unreal Engine 3' },
     commandos: { score: '62', company: 'Pyro Studios (Madrid, Spain)', platforms: 'PC, PS2, Xbox', time: '2004 – 2006', position: 'QA Tester', engine: 'In-house engine' },
     imperial: { score: '69', company: 'Pyro Studios (Madrid, Spain)', platforms: 'PC', time: '2004 – 2005', position: 'QA Tester', engine: 'In-house engine' },
-    strider: { score: '', company: 'Grin (Barcelona, Spain)', platforms: 'Cancelled · Xbox 360 pitch demo', time: '2009', position: 'Level Designer', engine: 'Diesel Engine' },
-    tower: { score: '', company: 'Grin (Barcelona, Spain)', platforms: 'Cancelled · XBLA pitch demo', time: '2009', position: 'Level Designer', engine: 'Diesel Engine' },
+    strider: { score: '', company: 'Grin Barcelona (Barcelona, Spain)', platforms: 'Cancelled · Xbox 360 pitch demo', time: '2009', position: 'Level Designer', engine: 'Diesel Engine' },
+    tower: { score: '', company: 'Grin Barcelona (Barcelona, Spain)', platforms: 'Cancelled · XBLA pitch demo', time: '2009', position: 'Level Designer', engine: 'Diesel Engine' },
     ptileset: { score: '', company: 'Personal project', platforms: 'Editor tool', time: 'Personal work', position: 'Technical Level Designer', engine: 'Unreal Engine 4 · Blueprints' },
     pfinder: { score: '', company: 'Personal project', platforms: 'Editor tool', time: 'Personal work', position: 'Technical Level Designer', engine: 'Unreal Engine 4 · Blueprints' },
     pdebug: { score: '', company: 'Personal project', platforms: 'Editor tool', time: 'Personal work', position: 'Technical Level Designer', engine: 'Unreal Engine 4 · Blueprints' },
@@ -2945,25 +2953,31 @@ class Component extends DCLogic {
     const getJson = (url) => fetch(url).then(r => { if (!r.ok) throw new Error(url); return r.json(); });
     const loadJson = (name) => getJson(name).then(j => ({ json: j, base: '' })).catch(() => getJson(LIVE_BASE + name).then(j => ({ json: j, base: LIVE_BASE })));
     const absFrom = (base) => (u) => (base && typeof u === 'string' && u && !/^(?:[a-z]+:)?\/\//i.test(u)) ? base + u.replace(/^\.?\//, '') : u;
-    loadJson('content.json').then(({ json: c, base }) => {
-      if (!c || typeof c !== 'object') return;
+    const contentP = loadJson('content.json').catch((err) => { console.warn('content.json not applied — using the texts built into the page.', err); return null; });
+    const imagesP = loadJson('images.json').catch(() => null);
+    Promise.all([contentP, imagesP]).then(([cr, ir]) => {
+      const c = cr && cr.json; if (!c || typeof c !== 'object') return;
+      const base = (ir && ir.base) || cr.base; // image paths in content.json live in the same images/ tree as images.json
       if (base) {
         const abs = absFrom(base);
         if (c.site && Array.isArray(c.site.heroImages)) c.site.heroImages = c.site.heroImages.map(abs);
-        if (Array.isArray(c.changelog)) c.changelog.forEach(r => { if (r && Array.isArray(r.bg)) r.bg = r.bg.map(abs); });
+        if (Array.isArray(c.changelog)) c.changelog.forEach(r => { if (!r) return; if (Array.isArray(r.bg)) r.bg = r.bg.map(abs); if (typeof r.logo === 'string' && r.logo) r.logo = abs(r.logo); });
       }
-      this.applyContent(c);
-      this.setState({ content: c, unlocked: !!(this.accessKey && Array.isArray(c.accessKeys) && c.accessKeys.some(k => k && k.key === this.accessKey && (!k.expires || Date.now() < Date.parse(k.expires)))) });
-    }).catch(() => {});
-    loadJson('images.json').then(({ json, base }) => {
-      const abs = absFrom(base);
+      try { this.applyContent(c); } catch (err) { console.warn('content.json: partially applied —', err); }
+      const hit = this.accessKey && Array.isArray(c.accessKeys) ? c.accessKeys.find(k => k && k.key === this.accessKey && (!k.expires || Date.now() < Date.parse(k.expires))) : null;
+      this.accessExpires = hit && hit.expires ? Date.parse(hit.expires) : 0;
+      this.setState({ content: c, unlocked: !!hit });
+    });
+    imagesP.then((ir) => {
+      if (!ir) { this.setState({ idxFailed: true }); return; }
+      const { json, base } = ir; const abs = absFrom(base);
       const bySlug = {};
       (json.projects || []).forEach(p => { if (p && p.slug) bySlug[p.slug] = { slug: p.slug, cover: abs(p.cover || ''), images: Array.isArray(p.images) ? p.images.map(abs) : [] }; });
       const hero = abs(json.hero || '');
       this.setState({ idx: { hero, bySlug } }, () => {
         this.checkList([hero].concat(Object.keys(bySlug).map(k => bySlug[k].cover)));
       });
-    }).catch(() => this.setState({ idxFailed: true }));
+    });
   }
   componentDidUpdate(prev, prevState) {
     if (prev.cycleSeconds !== this.props.cycleSeconds) { clearInterval(this.timer); this.startTimer(); }
@@ -2973,7 +2987,8 @@ class Component extends DCLogic {
     }
   }
   componentWillUnmount() { window.removeEventListener('keydown', this.onKey); clearInterval(this.timer); }
-  startTimer() { this.timer = setInterval(() => this.setState(s => ({ tick: s.tick + 1 })), Math.max(500, (this.props.cycleSeconds ?? 1.8) * 1000)); }
+  startTimer() { this.timer = setInterval(() => { if (this.state.unlocked && this.accessExpires && Date.now() > this.accessExpires) this.setState({ unlocked: false, active: null }); this.setState(s => ({ tick: s.tick + 1 })); }, Math.max(500, (this.props.cycleSeconds ?? 1.8) * 1000)); }
+  leftText(ms) { if (ms <= 0) return 'EXPIRED'; const m = Math.floor(ms / 60000), h = Math.floor(m / 60), d = Math.floor(h / 24); return d >= 1 ? d + 'D ' + (h % 24) + 'H LEFT' : (h >= 1 ? h + 'H ' + (m % 60) + 'M LEFT' : Math.max(1, m) + 'M LEFT'); }
   ticks(sec, def) { const cyc = Math.max(0.5, this.props.cycleSeconds ?? 1.8); const n = parseFloat(sec); return Math.max(1, Math.round((isNaN(n) || n <= 0 ? def : n) / cyc)); }
   num(v, def, lo, hi) { const n = parseFloat(v); return isNaN(n) ? def : Math.min(hi, Math.max(lo, n)); }
   applyContent(c) {
@@ -2987,7 +3002,7 @@ class Component extends DCLogic {
       if (Array.isArray(o.videos)) d.videos = o.videos;
       if (typeof o.slug === 'string' && o.slug) this.slugs[id] = o.slug;
       if (typeof o.about === 'string') this.abouts[id] = o.about;
-      if (typeof o.hook === 'string') this.hooks[id] = o.hook;
+      if (typeof o.hook === 'string') (this.hooks = this.hooks || {})[id] = o.hook;
       if (o.facts && typeof o.facts === 'object') this.facts[id] = Object.assign({}, this.facts[id] || {}, o.facts);
     });
     if (Array.isArray(c.levelOrder) && c.levelOrder.length) this.levelIds = c.levelOrder.filter(id => this.data[id]);
@@ -2996,29 +3011,56 @@ class Component extends DCLogic {
     if (Array.isArray(c.phrases) && c.phrases.length) this.phrasesOverride = c.phrases.filter(p => Array.isArray(p) && p.length === 2);
     if (c.site && typeof c.site === 'object') this.site = Object.assign({}, this.site || {}, c.site);
     if (Array.isArray(c.changelog) && c.changelog.length) this.changelogOverride = c.changelog;
-    const extra = [].concat(this.site && Array.isArray(this.site.heroImages) ? this.site.heroImages : []).concat(...(this.changelogOverride || []).map(r => Array.isArray(r.bg) ? r.bg : []));
+    const extra = [].concat(this.site && Array.isArray(this.site.heroImages) ? this.site.heroImages : []).concat(...(this.changelogOverride || []).map(r => (Array.isArray(r.bg) ? r.bg : []).concat(typeof r.logo === 'string' && r.logo.trim() ? [r.logo.trim()] : [])));
     if (extra.length) this.checkList(extra);
   }
   defaultChangelog() {
     return [
-      { company: 'Vercors Games', roles: 'Principal Level Designer', stints: [{ from: '2025-09', to: '', ids: ['tunein'] }] },
+      { company: 'Vercors Games', roles: '', stints: [{ from: '2025-09', to: '', ids: ['tunein'] }] },
       { company: 'Wonder Legends', roles: 'Principal Level Designer', stints: [{ from: '2025-02', to: '2025-08', ids: [], nda: 1 }] },
-      { company: 'CD Projekt Red', roles: 'Senior Level Designer', stints: [{ from: '2019-01', to: '2021-07', ids: ['cp'] }] },
+      { company: 'CD Projekt Red', roles: '', stints: [{ from: '2019-01', to: '2021-07', ids: ['cp'] }] },
       { company: 'Tequila Works', roles: 'Senior Level Designer → Lead Level Designer / Level Design Director', stints: [{ from: '2011-05', to: '2018-12', ids: ['deadlight', 'brutale', 'rime', 'gylt'] }, { from: '2021-08', to: '2025-01', ids: ['nunu'] }] },
-      { company: 'Grin Barcelona', roles: 'Level Designer', stints: [{ from: '2007-07', to: '2009-08', ids: ['ut3', 'wanted'], unreleased: ['strider', 'tower'] }] },
-      { company: 'Pyro Studios', roles: 'QA Tester → Junior Level Designer', stints: [{ from: '2004-10', to: '2007-07', ids: ['imperial', 'commandos'], unreleased: ['cops'] }] }
+      { company: 'Grin Barcelona', roles: '', stints: [{ from: '2007-07', to: '2009-08', ids: ['ut3', 'wanted'], unreleased: ['strider', 'tower'] }] },
+      { company: 'Pyro Studios', roles: '', stints: [{ from: '2004-10', to: '2007-07', ids: ['imperial', 'commandos'], unreleased: ['cops'] }] }
     ];
+  }
+  studioOf(id) { const f = this.facts[id] || {}; return (f.company || '').split('(')[0].trim().toLowerCase(); }
+  stintIds(rows, r, st) { // explicit ids (legacy content.json) + every project whose studio is this company and whose start date falls in this period
+    const ym = (v) => { const m = /^(\d{4})-(\d{2})/.exec(v || ''); return m ? parseInt(m[1]) * 12 + parseInt(m[2]) - 1 : null; };
+    const now = new Date(); const nowYM = now.getFullYear() * 12 + now.getMonth();
+    const key = (r.company || '').trim().toLowerCase(); if (!key) return (st.ids || []).concat(st.unreleased || []);
+    const periods = (r.stints || []).map(x => ({ x, f: ym(x.from), t: x.to ? ym(x.to) : nowYM })).filter(p => p.f != null).sort((p, q) => p.f - q.f);
+    const mine = Object.keys(this.data).filter(id => this.studioOf(id) === key).filter(id => {
+      const d = this.data[id] || {}; const sp = this.defaultSpans[id]; const f0 = this.facts[id] || {};
+      const s0 = ym(d.start) != null ? ym(d.start) : (sp ? ym(sp[0]) : null); const y = s0 == null ? (((f0.time || '') + ' ' + (d.meta || '')).match(/\d{4}/) || [])[0] : null;
+      const at = s0 != null ? s0 : (y ? parseInt(y) * 12 : null);
+      if (at == null || periods.length <= 1) return periods.length ? periods[0].x === st : true;
+      const best = periods.find(p => at >= p.f && at <= p.t) || periods.reduce((b, p) => Math.abs(p.f - at) < Math.abs(b.f - at) ? p : b, periods[0]);
+      return best.x === st;
+    });
+    return (st.ids || []).concat(st.unreleased || []).concat(mine).filter((id, i, arr) => arr.indexOf(id) === i);
+  }
+  rolesOf(rows, r) { // positions held at this company, read from its projects (04 · POSITION), oldest first; "roles" on the company is an optional override
+    if (typeof r.roles === 'string' && r.roles.trim()) return r.roles.trim();
+    const ym = (v) => { const m = /^(\d{4})-(\d{2})/.exec(v || ''); return m ? parseInt(m[1]) * 12 + parseInt(m[2]) - 1 : 1e9; };
+    const ids = (r.stints || []).reduce((acc, st) => acc.concat(this.stintIds(rows, r, st)), []).filter((id, i, arr) => arr.indexOf(id) === i && this.data[id] && !this.isHidden(id) && !this.isMasked(id));
+    const startOf = (id) => { const d = this.data[id] || {}, sp = this.defaultSpans[id]; return ym(d.start || (sp && sp[0]) || ''); };
+    const split = (pos) => { const parts = (pos || '').split(/\s*(?:→|->)\s*/).map(x => x.replace(/^Additional\s+/i, '').trim()).filter(Boolean); if (!parts.length) return []; const last = parts[parts.length - 1]; const tm = /^(.*?)\s+((?:Level\s+Design(?:er)?|Designer|Director|Tester|Artist|Programmer|Producer)(?:\s+\w+)*)$/i.exec(last); const tail = tm ? tm[2] : ''; return parts.map((p, i) => i < parts.length - 1 && tail && !/designer|director|tester|artist|programmer|producer/i.test(p) ? p + ' ' + tail : p); };
+    const seen = []; ids.sort((x, y) => startOf(x) - startOf(y)).forEach(id => { split((this.facts[id] || {}).position).forEach(p => { if (seen.indexOf(p) < 0) seen.push(p); }); });
+    return seen.join(' → ');
   }
   buildLog() {
     const MON = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     const rows = this.changelogOverride || this.defaultChangelog();
     const hv = this.state.logHover || '', rh = this.state.logRowHover, tk = this.state.tick, bad = this.broken || {}, S = this.site || {};
-    const idleOp = this.num(S.logBgIdle, 0.08, 0, 1), hoverOp = this.num(S.logBgHover, 0.45, 0, 1), Rbg = this.ticks(S.logBgSeconds, 6);
+    const idleOp = this.num(S.logBgIdle, 0.16, 0, 1), hoverOp = this.num(S.logBgHover, 0.5, 0, 1), Rbg = this.ticks(S.logBgSeconds, 6);
     const now = new Date(); const nowYM = now.getFullYear() * 12 + now.getMonth();
     const ym = (str) => { const m = /^(\d{4})-(\d{2})/.exec(str || ''); return m ? parseInt(m[1]) * 12 + parseInt(m[2]) - 1 : null; };
     let minY = Infinity, maxY = -Infinity;
     rows.forEach(r => (r.stints || []).forEach(st => { const f = ym(st.from), t = st.to ? ym(st.to) : nowYM; if (f != null) { minY = Math.min(minY, f); maxY = Math.max(maxY, t == null ? f : t); } }));
     if (!isFinite(minY)) { minY = 2004 * 12; maxY = nowYM; }
+    const availYM = this.site && this.site.available ? (ym(this.site.availableFrom) || nowYM) : null;
+    if (availYM != null) maxY = Math.max(maxY, availYM + 12);
     const startYear = Math.floor(minY / 12); const endYear = Math.max(Math.floor(maxY / 12), now.getFullYear()) + 1;
     const cols = (endYear - startYear) * 12;
     const col = (m) => m - startYear * 12 + 2;
@@ -3027,34 +3069,37 @@ class Component extends DCLogic {
     const logoKey = (name) => { const k = keyOf(name); const found = Object.keys(logos).find(lk => lk === k) || Object.keys(logos).find(lk => k.indexOf(lk) === 0); return found ? logos[found] : null; };
     const fmt = (m) => MON[m % 12] + ' ' + Math.floor(m / 12);
     const logRows = rows.map((r, ri) => {
-      const lg = logoKey(r.company);
+      const lgPath = typeof r.logo === 'string' && r.logo.trim() && !bad[r.logo.trim()] ? r.logo.trim() : '';
+      const lg = lgPath ? { img: lgPath, has: true } : logoKey(r.company);
       const ini = (r.company || '').split(/\s+/).map(w => w[0]).join('').slice(0, 4).toUpperCase();
       const stints = (r.stints || []).map(st => {
         const f = ym(st.from); if (f == null) return null;
         const t = st.to ? ym(st.to) : nowYM; const isNow = !st.to;
         const c1 = col(f), c2 = col(Math.max(t, f)) + 1;
         const nearEdge = c2 >= cols - 30;
-        const all = (st.ids || []).concat(st.unreleased || []).filter((id, i, arr) => arr.indexOf(id) === i && this.data[id] && !this.isHidden(id));
+        const all = this.stintIds(rows, r, st).filter((id, i, arr) => arr.indexOf(id) === i && this.data[id] && !this.isHidden(id));
         const cases = all.filter(id => ['released', 'indev', 'mod'].indexOf(this.statusKey(id)) > -1).map(id => this.cov(id));
         const unre = all.filter(id => this.statusKey(id) === 'cancelled');
         if (unre.length) cases.push(this.covGroup(unre, 'Unreleased', r.company + ':' + st.from));
         const ndaCount = all.filter(id => this.statusKey(id) === 'nda').length + (st.nda ? 1 : 0);
         for (let n = 0; n < ndaCount; n++) cases.push({ single: false, group: false, nda: true });
-        const marks = all.map(id => { const d = this.data[id] || {}; const rm = ym(d.released || this.defaultReleased[id]); if (rm == null) return null; return { col: Math.max(2, Math.min(cols + 1, col(rm))), title: (d.title || id) + ' · released ' + fmt(rm), open: () => this.open(id), bg: hv === id ? '#ff7a2f' : '#dfe6ee', scale: hv === id ? '1.6' : '1', enter: () => this.setState({ logHover: id }), leave: () => this.setState({ logHover: '' }) }; }).filter(Boolean);
-        return { marks, c1, c2, from: fmt(f), to: isNow ? 'NOW' : fmt(t), bg: isNow ? '#ff7a2f' : '#1b2230', toColor: isNow ? '#ff7a2f' : '#dfe6ee', k1: nearEdge ? Math.max(2, c1 - 40) : c1, k2: nearEdge ? cols + 2 : cols + 2, justify: nearEdge ? 'flex-end' : 'flex-start', cases };
+        const marks = all.filter(id => !this.isMasked(id)).map(id => { const d = this.data[id] || {}; const rm = ym(d.released || this.defaultReleased[id]); if (rm == null) return null; return { col: Math.max(2, Math.min(cols + 1, col(rm))), title: (d.title || id) + ' · released ' + fmt(rm), open: () => this.open(id), bg: hv === id ? '#ff7a2f' : '#dfe6ee', scale: hv === id ? '1.6' : '1', enter: () => this.setState({ logHover: id }), leave: () => this.setState({ logHover: '' }) }; }).filter(Boolean);
+        return { marks, c1, c2, from: fmt(f), to: isNow ? 'NOW' : fmt(t), bg: isNow ? '#ff7a2f' : '#1b2230', toColor: isNow ? '#ff7a2f' : '#dfe6ee', k1: nearEdge ? Math.max(2, Math.min(c1, c2 - 36)) : c1, k2: nearEdge ? c2 : cols + 2, justify: nearEdge ? 'flex-end' : 'flex-start', cases };
       }).filter(Boolean);
-      const rowIds = (r.stints || []).reduce((a, st) => a.concat(st.ids || [], st.unreleased || []), []).filter(id => this.data[id] && !this.isHidden(id));
+      const rowIds = (r.stints || []).reduce((a, st) => a.concat(this.stintIds(rows, r, st)), []).filter((id, i, arr) => arr.indexOf(id) === i && this.data[id] && !this.isHidden(id));
       const bgList = (Array.isArray(r.bg) && r.bg.length ? r.bg : rowIds.map(id => this.shotsOf(id)[0] || '')).filter((u, i, arr) => u && !bad[u] && arr.indexOf(u) === i);
       const bg = this.slide(bgList, tk, 5 + ri * 2, Rbg);
-      return { company: r.company || '', roles: r.roles || '', logo: lg ? lg.img : '', logoHas: !!(lg && lg.has), logoNo: !(lg && lg.has), ini, stints, bottom: ri === rows.length - 1 ? '1px solid #1b2230' : 'none',
-        bgHas: bg.has, bgA: bg.a, bgB: bg.b, bgBo: bg.bo, bgBt: bg.bt, bgOp: rh === ri ? hoverOp : idleOp, enter: () => this.setState({ logRowHover: ri }), leave: () => this.setState({ logRowHover: -1 }) };
+      return { company: r.company || '', roles: this.rolesOf(rows, r), logo: lg ? lg.img : '', logoHas: !!(lg && lg.has), logoNo: !(lg && lg.has), ini, stints, bottom: ri === rows.length - 1 ? '1px solid #1b2230' : 'none',
+        bgHas: bg.has, bgA: bg.a, bgB: bg.b, bgBo: bg.bo, bgBt: bg.bt, bgPos: /^\s*\d{1,3}%\s+\d{1,3}%\s*$/.test(r.bgPos || '') ? r.bgPos.trim() : 'center', bgOp: rh === ri ? hoverOp : idleOp, enter: () => this.setState({ logRowHover: ri }), leave: () => this.setState({ logRowHover: -1 }) };
     });
     const logYears = []; for (let y = startYear; y < endYear; y += 4) logYears.push({ label: String(y), col: col(y * 12) });
     const site = this.site || {};
-    const af = ym(site.availableFrom) || nowYM;
-    return { logRows, logYears, logCols: cols, logRange: startYear + ' → ' + (endYear - 1), availOn: !!site.available, availCol: col(Math.min(af, nowYM)), availFrom: fmt(Math.min(af, nowYM)), availTitle: site.availableTitle || 'Available for a new level', availRoles: site.availableRoles || 'Principal / Lead Level Design · remote or on-site' };
+    const af = availYM != null ? availYM : nowYM; const future = af > nowYM; const monthsAway = af - nowYM;
+    return { logRows, logYears, logCols: cols, logRange: startYear + ' → ' + (endYear - 1), availOn: !!site.available, availCol: col(af), availFrom: (future ? 'FROM ' : 'SINCE ') + fmt(af), availNowCol: col(nowYM), availFromSide: (col(af) >= cols - 30 ? 'right:0;text-align:right;' : 'left:0;') + (future && (af - nowYM) < 14 ? 'bottom:calc(100% + 18px);' : 'bottom:calc(100% + 4px);'), availFuture: future, availCountdown: future ? 'FROM ' + fmt(af) : 'SINCE ' + fmt(af), availPulse: (this.state.logRowHover == null || this.state.logRowHover < 0) ? 'mmAvailPulse 3.2s ease-in-out infinite' : 'none', availTitle: site.availableTitle || 'Available for a new level', availRoles: site.availableRoles || 'Principal / Lead Level Design · remote or on-site' };
   }
   isHidden(id) { return !this.state.unlocked && (this.hiddenIds || []).indexOf(id) > -1; }
+  isMasked(id) { return !this.state.unlocked && this.statusKey(id) === 'nda'; } // unannounced: listed, but name, media and texts stay hidden
+  titleOf(id) { const d = this.data[id] || {}; return this.isMasked(id) ? 'Unannounced project' : (d.title || id); }
   entry(id) {
     const idx = this.state.idx, slug = this.slugs[id];
     if (!idx || !slug) return { cover: '', images: [] };
@@ -3063,6 +3108,7 @@ class Component extends DCLogic {
     return { cover: e.cover || images[0] || '', images };
   }
   shotsOf(id) {
+    if (this.isMasked(id)) return [];
     const e = this.entry(id), list = e.images.slice();
     if (e.cover && list.indexOf(e.cover) === -1) list.unshift(e.cover);
     const bad = this.broken || {};
@@ -3079,10 +3125,12 @@ class Component extends DCLogic {
     });
   }
   galleryOf(id) { // detail view: every image except the cover (the cover is index-only)
+    if (this.isMasked(id)) return [];
     const e = this.entry(id), bad = this.broken || {};
     return e.images.filter(u => u && u !== e.cover && !bad[u]);
   }
   mediaOf(id) {
+    if (this.isMasked(id)) return [];
     const d = this.data[id] || {};
     return [].concat((d.videos || []).filter(Boolean).map(v => ({ type: 'video', url: this.ytEmbed(v) })), this.galleryOf(id).map(u => ({ type: 'image', url: u })));
   }
@@ -3094,22 +3142,42 @@ class Component extends DCLogic {
     files.forEach(u => { if (!u || bad[u]) return; const base = (u.split('/').pop() || '').toLowerCase().replace(/\.[^.]+$/, ''); if (base) out[base] = { img: u, has: true }; });
     return out;
   }
+  defaultWorkMode = { cp: 'onsite', rime: 'onsite', deadlight: 'onsite', gylt: 'onsite', brutale: 'onsite', nunu: 'hybrid', tunein: 'remote', wanted: 'onsite', ut3: 'onsite', strider: 'onsite', tower: 'onsite', commandos: 'onsite', imperial: 'onsite', cops: 'onsite' };
+  defaultSpans = { cp: ['2019-01', '2021-07'], rime: ['2013-09', '2017-05'], deadlight: ['2011-05', '2012-08'], gylt: ['2018-01', '2018-11'], nunu: ['2021-08', '2023-11'], tunein: ['2025-09', ''], brutale: ['2015-04', '2015-09'], wanted: ['2007-07', '2009-03'], ut3: ['2007-07', '2007-12'], cops: ['2006-01', '2007-07'], commandos: ['2004-10', '2006-03'], imperial: ['2004-10', '2005-05'], strider: ['2009-01', '2009-08'], tower: ['2009-01', '2009-08'] };
   defaultReleased = { imperial: '2005-05', commandos: '2006-03', ut3: '2007-12', wanted: '2009-03', deadlight: '2012-08', brutale: '2017-04', rime: '2017-05', gylt: '2019-11', cp: '2020-12', nunu: '2023-11' };
   cov(id) { const d = this.data[id] || {}, img = this.shotsOf(id)[0] || ''; const sk = this.statusKey(id); const on = (this.state.logHover || '') === id; return { single: true, group: false, nda: false, title: d.title || id, img, has: !!img, badge: sk === 'indev' ? 'IN DEV' : (sk === 'mod' ? 'MOD' : ''), hasBadge: sk === 'indev' || sk === 'mod', open: () => this.open(id), border: on ? '#ff7a2f' : '#2a3344', tf: on ? 'translateY(-3px)' : 'none', shadow: on ? '0 10px 20px rgba(0,0,0,0.6)' : '0 6px 14px rgba(0,0,0,0.45)', enter: () => this.setState({ logHover: id }), leave: () => this.setState({ logHover: '' }) }; }
   covGroup(ids, label, key) {
     const on = this.state.openGroup === key;
     return { single: false, group: true, nda: false, title: label, sign: on ? '−' : '+', plusW: 18,
-      show: () => this.setState({ openGroup: key }), hide: () => this.setState({ openGroup: '' }),
+      show: (e) => { if (e && e.pointerType === 'touch') return; this.setState({ openGroup: key }); }, hide: () => this.setState({ openGroup: '' }),
+      toggle: (e) => { e.stopPropagation(); this.setState(st => ({ openGroup: st.openGroup === key ? '' : key })); },
       items: ids.map(id => { const d = this.data[id] || {}, img = this.shotsOf(id)[0] || ''; const hvOn = (this.state.logHover || '') === id; return { title: d.title || id, img, has: !!img, w: on ? 54 : 0, op: on ? 1 : 0, open: () => this.open(id), border: hvOn ? '#ff7a2f' : '#2a3344', enter: () => this.setState({ logHover: id }), leave: () => this.setState({ logHover: '' }) }; }) };
   }
   visibleIds() { return this.levelIds.filter(id => !this.isHidden(id)).slice(0, (this.site && this.site.latestCount) || 4); }
-  open(id) { if (!this.state.active) this.indexScroll = window.scrollY; this.checkList(this.shotsOf(id)); this.setState({ active: id, mediaIdx: 0 }); if (this.thumbsEl) this.thumbsEl.scrollTo({ left: 0 }); }
-  stepRoom(dir) { const list = this.levelIds.filter(id => !this.isHidden(id)).concat(this.workIds.filter(id => !this.isHidden(id))); const i = list.indexOf(this.state.active); this.open(list[(i + dir + list.length) % list.length]); }
+  open(id) { if (this.isMasked(id)) return; if (!this.state.active) this.indexScroll = window.scrollY; this.checkList(this.shotsOf(id)); this.setState({ active: id, mediaIdx: 0 }); if (this.thumbsEl) this.thumbsEl.scrollTo({ left: 0 }); }
+  stepRoom(dir) { const list = this.levelIds.filter(id => !this.isHidden(id) && !this.isMasked(id)).concat(this.workIds.filter(id => !this.isHidden(id) && !this.isMasked(id))); const i = list.indexOf(this.state.active); this.open(list[(i + dir + list.length) % list.length]); }
   ytEmbed(u) { const m = /(?:youtube\.com\/(?:embed\/|watch\?(?:.*&)?v=|shorts\/|live\/)|youtu\.be\/)([\w-]{6,})/.exec(u || ''); return m ? 'https://www.youtube.com/embed/' + m[1] : (u || ''); }
   ytThumb(url) { const m = /(?:embed\/|v=|youtu\.be\/)([\w-]{6,})/.exec(url || ''); return m ? 'https://img.youtube.com/vi/' + m[1] + '/hqdefault.jpg' : ''; }
   stepMedia(dir) {
     const media = this.mediaOf(this.state.active); const n = media.length; if (!n) return;
     this.setState(s => ({ mediaIdx: (s.mediaIdx + dir + n) % n }));
+  }
+  heroPool() { // every image of every visible project (levels + tools + maps), covers included, masked/hidden ones excluded
+    const bad = this.broken || {}; const out = [];
+    this.levelIds.concat(this.workIds).forEach(id => { if (this.isHidden(id) || this.isMasked(id)) return; this.shotsOf(id).forEach(u => { if (u && !bad[u] && out.indexOf(u) < 0) out.push(u); }); });
+    return out;
+  }
+  heroCycle(fixed, randN, step) { // fixed images + randN random ones; a new random draw only when the whole cycle has been shown; no repeats inside a draw
+    const pool = this.heroPool().filter(u => fixed.indexOf(u) < 0);
+    const n = Math.min(randN, pool.length); if (!n) return fixed;
+    const len = fixed.length + n; const round = Math.floor(step / len);
+    if (!this.heroDraw || this.heroDraw.round !== round || this.heroDraw.len !== len || this.heroDraw.poolSize !== pool.length) {
+      const prev = this.heroDraw ? this.heroDraw.picks : [];
+      const cand = pool.filter(u => prev.indexOf(u) < 0); const src = cand.length >= n ? cand : pool; // avoid repeating the previous draw while the pool allows it
+      const arr = src.slice(); for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp; }
+      this.heroDraw = { round, len, poolSize: pool.length, picks: arr.slice(0, n) };
+    }
+    return fixed.concat(this.heroDraw.picks);
   }
   slide(list, t, k, R) {
     R = R || 7;
@@ -3135,8 +3203,10 @@ class Component extends DCLogic {
     const t = this.state.tick, bad = this.broken || {};
     const S = this.site || {};
     const customHero = (Array.isArray(S.heroImages) ? S.heroImages : []).filter(u => u && !bad[u]);
-    const heroList = customHero.length ? customHero : [this.state.idx ? this.state.idx.hero : ''].concat(['cp', 'rime', 'deadlight', 'gylt', 'nunu', 'brutale', 'wanted'].map(id => this.entry(id).cover)).filter(u => u && !bad[u]);
-    const hero = this.slide(heroList, t, 0, this.ticks(S.heroImageSeconds, 5.4));
+    const heroR = this.ticks(S.heroImageSeconds, 5.4);
+    const randN = S.heroRandom ? Math.max(0, parseInt(S.heroRandomCount) || 6) : 0;
+    const heroList = randN ? this.heroCycle(customHero, randN, Math.floor(t / heroR)) : (customHero.length ? customHero : [this.state.idx ? this.state.idx.hero : ''].concat(['cp', 'rime', 'deadlight', 'gylt', 'nunu', 'brutale', 'wanted'].filter(id => !this.isMasked(id)).map(id => this.entry(id).cover)).filter(u => u && !bad[u]));
+    const hero = this.slide(heroList, t, 0, heroR);
     const phrases = this.phrasesOverride || [['Grey boxes in.', 'Shipped worlds out.'], ['Paper designs in.', 'Combat encounters out.'], ['Metrics in.', 'Playable spaces out.'], ['Blockouts in.', 'Memorable levels out.'], ['Ideas in.', 'Levels that ship.']];
     const ph = phrases[Math.floor(t / this.ticks(S.heroTextSeconds, 5.4)) % phrases.length];
     const ids = this.visibleIds();
@@ -3144,25 +3214,27 @@ class Component extends DCLogic {
       const d = this.data[id] || {}, f = this.facts[id] || {};
       const sl = this.slide(this.shotsOf(id), t, i + 1, 9);
       const studio = (f.company || '').split('(')[0].trim();
-      return { num: 'LV_' + pad(this.levelIds.indexOf(id) + 1), title: d.title || id, studio: studio.toUpperCase(), role: f.position || d.role || '',
-        year: this.lastYear(id), score: f.score, hasScore: !!f.score, has: sl.has, noImg: !sl.has, a: sl.a, b: sl.b, bo: sl.bo, bt: sl.bt, open: () => this.open(id) };
+      const masked = this.isMasked(id);
+      return { num: 'LV_' + pad(this.levelIds.indexOf(id) + 1), title: this.titleOf(id), studio: studio.toUpperCase(), role: f.position || d.role || '',
+        year: this.lastYear(id), score: masked ? '' : f.score, hasScore: !masked && !!f.score, has: sl.has, noImg: !sl.has, noImgLabel: masked ? 'UNANNOUNCED · NDA' : 'NO TEXTURE', a: sl.a, b: sl.b, bo: sl.bo, bt: sl.bt, cursor: masked ? 'default' : 'pointer', open: () => this.open(id) };
     });
     const filters = Object.keys(this.groups).map(k => { const on = k === this.state.filter; return { label: this.groups[k].label, bg: on ? '#ff7a2f' : 'transparent', fg: on ? '#07090c' : '#8a94a3', pick: () => this.setState({ filter: k }) }; });
     const workList = this.workIds.filter(id => !this.isHidden(id)).map(id => {
       const d = this.data[id] || {}, f = this.facts[id] || {}, img = this.shotsOf(id)[0] || '';
-      return { title: d.title || id, sub: (f.engine || '').toUpperCase(), tag: /Hammer/.test(f.engine || '') ? 'MAP' : 'TOOL', img, has: !!img, noImg: !img, initials: (d.title || id).split(' ').map(w => w[0]).join('').slice(0, 3).toUpperCase(), open: () => this.open(id) };
+      const masked = this.isMasked(id);
+      return { title: this.titleOf(id), sub: masked ? 'NDA' : (f.engine || '').toUpperCase(), tag: masked ? 'NDA' : (/Hammer/.test(f.engine || '') ? 'MAP' : 'TOOL'), img, has: !!img, noImg: !img, initials: masked ? '?' : (d.title || id).split(' ').map(w => w[0]).join('').slice(0, 3).toUpperCase(), cursor: masked ? 'default' : 'pointer', open: () => this.open(id) };
     });
     const active = this.state.active;
     const p = active ? this.data[active] : null;
-    const f = Object.assign({ score: '', company: '', platforms: '', time: '', position: '', engine: '' }, active ? (this.facts[active] || {}) : {});
+    const f = Object.assign({ score: '', company: '', platforms: '', time: '', position: '', engine: '', workMode: active ? (this.defaultWorkMode[active] || '') : '' }, active ? (this.facts[active] || {}) : {});
     if (p && !f.position) f.position = p.role || '';
     const media = active ? this.mediaOf(active) : [];
     const mi = Math.min(this.state.mediaIdx, Math.max(0, media.length - 1));
     const sel = media[mi] || null;
-    const order = this.levelIds.filter(id => !this.isHidden(id)).concat(this.workIds.filter(id => !this.isHidden(id)));
+    const order = this.levelIds.filter(id => !this.isHidden(id) && !this.isMasked(id)).concat(this.workIds.filter(id => !this.isHidden(id) && !this.isMasked(id)));
     return {
       hero, phraseA: ph[0], phraseB: ph[1], siteHero: (this.site && this.site.hero) || '', siteHeroCustom: !!(this.site && this.site.hero), siteHeroDefault: !(this.site && this.site.hero),
-      recruiterMode: this.state.unlocked,
+      recruiterMode: this.state.unlocked, recruiterLeft: this.state.unlocked && this.accessExpires ? ' · ' + this.leftText(this.accessExpires - Date.now()) : '',
       aboutQuote: (this.site && this.site.aboutQuote) || '', aboutQuoteCustom: !!(this.site && this.site.aboutQuote), aboutQuoteDefault: !(this.site && this.site.aboutQuote),
       aboutBody: (this.site && this.site.aboutBody) || '', aboutBodyCustom: !!(this.site && this.site.aboutBody), aboutBodyDefault: !(this.site && this.site.aboutBody),
       aboutRows: (this.site && Array.isArray(this.site.aboutRows) ? this.site.aboutRows : []).filter(r => r && (r.label || r.value)), aboutRowsCustom: !!(this.site && Array.isArray(this.site.aboutRows) && this.site.aboutRows.length), aboutRowsDefault: !(this.site && Array.isArray(this.site.aboutRows) && this.site.aboutRows.length),
@@ -3180,6 +3252,7 @@ class Component extends DCLogic {
       prevTitle: active ? ((this.data[order[(order.indexOf(active) - 1 + order.length) % order.length]] || {}).title || '') : '',
       nextTitle: active ? ((this.data[order[(order.indexOf(active) + 1) % order.length]] || {}).title || '') : '',
       pScore: f.score, pHasScore: !!f.score, pCompany: f.company, pPlatforms: f.platforms,
+      pWorkMode: ({ onsite: 'On-site', hybrid: 'Hybrid', remote: 'Remote' })[f.workMode] || '', pHasWorkMode: !!({ onsite: 1, hybrid: 1, remote: 1 })[f.workMode],
       pCover: active ? (this.shotsOf(active)[0] || '') : '', pHasCover: !!(active && this.shotsOf(active)[0]),
       pStatus: active ? this.statusOf(active) : '', pStatusBg: active && this.statusKey(active) === 'cancelled' ? '#1b2230' : (active && this.statusKey(active) === 'indev' ? '#ff7a2f' : '#dfe6ee'), pStatusFg: active && this.statusKey(active) === 'cancelled' ? '#8a94a3' : '#07090c',
       pTime: f.time, pPosition: f.position, pEngine: f.engine,
@@ -3202,6 +3275,8 @@ class Component extends DCLogic {
       lbMany: media.length > 1,
       lbThumbs: media.map((m, i) => ({ isVideo: m.type === 'video', img: m.type === 'video' ? this.ytThumb(m.url) : m.url, border: i === mi ? '#ff7a2f' : '#1b2230', op: i === mi ? '1' : '0.55', pick: (e) => { e.stopPropagation(); this.setState({ mediaIdx: i }); } })),
       openLightbox: (e) => { e.stopPropagation(); this.setState({ lightbox: true }); },
+      lbTouchStart: (e) => { const t = e.touches && e.touches[0]; this.swipeX = t ? t.clientX : null; this.swipeY = t ? t.clientY : null; },
+      lbTouchEnd: (e) => { const t = e.changedTouches && e.changedTouches[0]; if (!t || this.swipeX == null) return; const dx = t.clientX - this.swipeX, dy = t.clientY - this.swipeY; this.swipeX = null; if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.5) this.stepMedia(dx < 0 ? 1 : -1); },
       closeLightbox: () => this.setState({ lightbox: false }),
       lbPrev: (e) => { e.stopPropagation(); this.stepMedia(-1); }, lbNext: (e) => { e.stopPropagation(); this.stepMedia(1); },
       stopClick: (e) => e.stopPropagation()
