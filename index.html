@@ -2227,6 +2227,7 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <style>
 html,body{margin:0;padding:0;background:#07090c;color:#dfe6ee;font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;}
+html{scrollbar-gutter:stable;}
 a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
 ::selection{background:#ff7a2f;color:#07090c;}
 @keyframes mmScan{0%{transform:translateY(-100%);}100%{transform:translateY(100%);}}
@@ -2250,6 +2251,7 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
     <div style="margin-left:auto;display:flex;align-items:center;gap:14px;padding:0 24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#8a94a3;"><sc-if value="{{ recruiterMode }}" hint-placeholder-val="{{ false }}"><span style="background:#ff7a2f;color:#07090c;font-weight:700;padding:3px 8px;">RECRUITER ACCESS</span></sc-if><sc-if value="{{ availOn }}" hint-placeholder-val="{{ false }}"><span style="color:#ff7a2f;">●</span> AVAILABLE · </sc-if><a href="{{ emailHref }}" title="{{ emailLabel }}" class="mm-pulse" style="display:flex;align-items:center;height:28px;padding:0 10px;color:#dfe6ee;animation:mmPulseHdr 2.4s ease-in-out infinite;" style-hover="color:#07090c;background:#ff7a2f;animation:none;">CONTACT</a><a href="{{ linkedinHref }}" target="_blank" rel="noopener" title="LinkedIn profile" class="mm-pulse" style="display:flex;align-items:center;height:28px;padding:0 10px;color:#dfe6ee;animation:mmPulseLi 2.4s ease-in-out 1.2s infinite;" style-hover="color:#ffffff;background:#0a66c2;animation:none;">LINKEDIN</a></div>
   </header>
 
+<sc-if value="{{ noActive }}" hint-placeholder-val="{{ true }}">
   <section id="overview" style="position:relative;overflow:hidden;border-bottom:1px solid #1b2230;">
     <div style="position:absolute;inset:0;background:#0c1017;"></div>
     <sc-if value="{{ hero.has }}" hint-placeholder-val="{{ false }}">
@@ -2469,36 +2471,10 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
       </div>
     </div>
   </section>
-  <footer style="position:fixed;left:0;right:0;bottom:0;z-index:40;height:36px;box-sizing:border-box;border-top:1px solid #1b2230;background:rgba(7,9,12,0.92);backdrop-filter:blur(10px);padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#52607a;"><span>MANUEL MENDILUCE · LEVEL DESIGNER</span><span>BUILD 2004 → NOW</span></footer>
-</div>
-
-<sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
-  <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;z-index:200;background:rgba(7,9,12,0.96);backdrop-filter:blur(6px);display:grid;grid-template-rows:48px minmax(0,1fr) auto;box-sizing:border-box;">
-    <div onClick="{{ stopClick }}" style="display:flex;align-items:center;gap:14px;padding:0 24px;border-bottom:1px solid #1b2230;background:rgba(7,9,12,0.9);">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8a94a3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FULL VIEW · <span style="color:#dfe6ee;">{{ pTitle }}</span> · {{ lbCounter }}</div>
-      <div style="margin-left:auto;display:flex;gap:8px;">
-        <button onClick="{{ closeLightbox }}" title="Close (Esc)" style="background:transparent;border:1px solid #ff7a2f;color:#ff7a2f;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:8px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;" style-hover="background:#ff7a2f;color:#07090c;">✕ CLOSE <span style="font-size:9px;opacity:0.7;border:1px solid currentColor;border-radius:3px;padding:1px 4px;">ESC</span></button>
-      </div>
-    </div>
-    <div style="position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:16px 72px;">
-      <sc-if value="{{ lbIsImage }}" hint-placeholder-val="{{ true }}"><div role="img" aria-label="{{ pTitle }}" onClick="{{ stopClick }}" style="width:100%;height:100%;background-image:url('{{ lbUrl }}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div></sc-if>
-      <sc-if value="{{ lbIsVideo }}" hint-placeholder-val="{{ false }}"><div onClick="{{ stopClick }}" style="position:relative;width:min(100%,calc((100vh - 180px) * 16 / 9));aspect-ratio:16/9;background:#000;border:1px solid #1b2230;"><iframe src="{{ lbUrl }}" title="{{ pTitle }}" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe></div></sc-if>
-      <sc-if value="{{ lbMany }}" hint-placeholder-val="{{ false }}">
-        <button onClick="{{ lbPrev }}" title="Previous (←)" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid #2a3344;background:rgba(7,9,12,0.8);color:#dfe6ee;font-size:20px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">‹</button>
-        <button onClick="{{ lbNext }}" title="Next (→)" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid #2a3344;background:rgba(7,9,12,0.8);color:#dfe6ee;font-size:20px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">›</button>
-      </sc-if>
-    </div>
-    <div onClick="{{ stopClick }}" style="display:flex;gap:6px;justify-content:center;overflow-x:auto;scrollbar-width:none;padding:10px 24px 14px;border-top:1px solid #1b2230;background:rgba(7,9,12,0.9);">
-      <sc-for list="{{ lbThumbs }}" as="lt" hint-placeholder-count="0">
-        <div onClick="{{ lt.pick }}" style="position:relative;flex:0 0 96px;aspect-ratio:16/9;border:1px solid {{ lt.border }};background-color:#0c1017;background-image:url('{{ lt.img }}');background-size:cover;background-position:center;cursor:pointer;opacity:{{ lt.op }};" style-hover="opacity:1;border-color:#ff7a2f;"><sc-if value="{{ lt.isVideo }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.14em;color:#ff7a2f;background:rgba(7,9,12,0.35);">▶ VIDEO</div></sc-if></div>
-      </sc-for>
-    </div>
-  </div>
 </sc-if>
-
 <sc-if value="{{ hasActive }}" hint-placeholder-val="{{ false }}">
-  <div style="position:fixed;left:0;right:0;top:52px;bottom:36px;z-index:35;background:#07090c;overflow-y:auto;">
-    <div style="position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:14px;padding:0 24px;height:52px;background:rgba(7,9,12,0.95);backdrop-filter:blur(8px);border-bottom:1px solid #1b2230;">
+  <div style="position:relative;z-index:35;background:#07090c;min-height:calc(100vh - 88px);">
+    <div style="position:sticky;top:52px;z-index:5;display:flex;align-items:center;gap:14px;padding:0 24px;height:52px;background:rgba(7,9,12,0.95);backdrop-filter:blur(8px);border-bottom:1px solid #1b2230;">
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8a94a3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ pNum }} <span style="color:#dfe6ee;">/ {{ pTitle }}</span></div>
       <div style="margin-left:auto;display:flex;gap:8px;">
         <button onClick="{{ closeProject }}" title="Close (Esc)" style="background:transparent;border:1px solid #ff7a2f;color:#ff7a2f;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:10px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background 0.15s ease,color 0.15s ease,transform 0.15s ease;" style-hover="background:#ff7a2f;color:#07090c;transform:translateY(-1px);" style-active="transform:translateY(0);">✕ CLOSE <span style="font-size:9px;opacity:0.7;border:1px solid currentColor;border-radius:3px;padding:1px 4px;">ESC</span></button>
@@ -2530,7 +2506,11 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:20px;align-items:stretch;">
         <div style="min-width:0;background:#0c1017;border:1px solid #1b2230;padding:22px 24px;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#ff7a2f;margin-bottom:10px;">// BRIEFING</div>
-          <p style="margin:0;color:#8a94a3;font-size:14px;line-height:1.7;">{{ pAbout }}</p>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <sc-for list="{{ pAboutParas }}" as="para" hint-placeholder-count="1">
+              <p style="margin:0;color:#8a94a3;font-size:14px;line-height:1.7;">{{ para }}</p>
+            </sc-for>
+          </div>
         </div>
         <div style="min-width:0;background:#0c1017;border:1px solid #1b2230;padding:22px 24px;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#ff7a2f;margin-bottom:10px;">// OBJECTIVES COMPLETED</div>
@@ -2569,6 +2549,34 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
     </div>
   </div>
 </sc-if>
+  <footer style="position:fixed;left:0;right:0;bottom:0;z-index:40;height:36px;box-sizing:border-box;border-top:1px solid #1b2230;background:rgba(7,9,12,0.92);backdrop-filter:blur(10px);padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#52607a;"><span>MANUEL MENDILUCE · LEVEL DESIGNER</span><span>BUILD 2004 → NOW</span></footer>
+</div>
+
+<sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;z-index:200;background:rgba(7,9,12,0.96);backdrop-filter:blur(6px);display:grid;grid-template-rows:48px minmax(0,1fr) auto;box-sizing:border-box;">
+    <div onClick="{{ stopClick }}" style="display:flex;align-items:center;gap:14px;padding:0 24px;border-bottom:1px solid #1b2230;background:rgba(7,9,12,0.9);">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8a94a3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FULL VIEW · <span style="color:#dfe6ee;">{{ pTitle }}</span> · {{ lbCounter }}</div>
+      <div style="margin-left:auto;display:flex;gap:8px;">
+        <button onClick="{{ closeLightbox }}" title="Close (Esc)" style="background:transparent;border:1px solid #ff7a2f;color:#ff7a2f;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:8px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;" style-hover="background:#ff7a2f;color:#07090c;">✕ CLOSE <span style="font-size:9px;opacity:0.7;border:1px solid currentColor;border-radius:3px;padding:1px 4px;">ESC</span></button>
+      </div>
+    </div>
+    <div style="position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:16px 72px;">
+      <sc-if value="{{ lbIsImage }}" hint-placeholder-val="{{ true }}"><div role="img" aria-label="{{ pTitle }}" onClick="{{ stopClick }}" style="width:100%;height:100%;background-image:url('{{ lbUrl }}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div></sc-if>
+      <sc-if value="{{ lbIsVideo }}" hint-placeholder-val="{{ false }}"><div onClick="{{ stopClick }}" style="position:relative;width:min(100%,calc((100vh - 180px) * 16 / 9));aspect-ratio:16/9;background:#000;border:1px solid #1b2230;"><iframe src="{{ lbUrl }}" title="{{ pTitle }}" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe></div></sc-if>
+      <sc-if value="{{ lbMany }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ lbPrev }}" title="Previous (←)" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid #2a3344;background:rgba(7,9,12,0.8);color:#dfe6ee;font-size:20px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">‹</button>
+        <button onClick="{{ lbNext }}" title="Next (→)" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid #2a3344;background:rgba(7,9,12,0.8);color:#dfe6ee;font-size:20px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">›</button>
+      </sc-if>
+    </div>
+    <div onClick="{{ stopClick }}" style="display:flex;gap:6px;justify-content:center;overflow-x:auto;scrollbar-width:none;padding:10px 24px 14px;border-top:1px solid #1b2230;background:rgba(7,9,12,0.9);">
+      <sc-for list="{{ lbThumbs }}" as="lt" hint-placeholder-count="0">
+        <div onClick="{{ lt.pick }}" style="position:relative;flex:0 0 96px;aspect-ratio:16/9;border:1px solid {{ lt.border }};background-color:#0c1017;background-image:url('{{ lt.img }}');background-size:cover;background-position:center;cursor:pointer;opacity:{{ lt.op }};" style-hover="opacity:1;border-color:#ff7a2f;"><sc-if value="{{ lt.isVideo }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.14em;color:#ff7a2f;background:rgba(7,9,12,0.35);">▶ VIDEO</div></sc-if></div>
+      </sc-for>
+    </div>
+  </div>
+</sc-if>
+
+
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;cycleSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1.8,&quot;min&quot;:0.8,&quot;max&quot;:6,&quot;step&quot;:0.2,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
 class Component extends DCLogic {
@@ -2619,9 +2627,9 @@ class Component extends DCLogic {
     imperial: 'A Napoleonic grand strategy game combining turn-based empire management with real-time battles across Europe.',
     strider: 'A pitch demo for an action-platformer reboot, built in a single month in an attempt to win new funding for the studio. Never greenlit.',
     tower: 'An XBLA pitch demo about climbing a hostile tower full of traps, hazards and combat encounters. Never greenlit.',
-    ptileset: 'A Blueprint tool that generates modular level pieces on the fly, so designers can block out spaces with consistent metrics.',
-    pfinder: 'An editor utility that finds and filters actors across a level, cutting the time spent hunting for references in large maps.',
-    pdebug: 'An in-game debug menu built in Blueprints to toggle gameplay states, spawn actors and test scenarios without rebuilding.',
+    ptileset: 'During my years at Tequila Works I built three different tileset systems, one per project, improving the idea with every iteration. Browsing the Unreal Marketplace I found the SuperGridStarter Pack: a pack I loved, but everything in it came as separate materials, so you ended up juggling many of them. I adapted one of those materials to the system I had in mind.\n\nThe result is a single Blueprint cube whose look and size you change from the Details panel: floor, wall, railing, interactive prop, whatever the blockout needs. For performance, every material parameter is locked by default. Unreal renders a non-editable instance far more cheaply, so you only unlock what you really need.\n\nWith the metrics baked into the tileset, anyone working on layouts learns them in-game, without reading a document.',
+    pfinder: 'On Rime we had serious performance problems and little idea of what was going on: we had paid to move to an engine we did not fully control. Objects were disappearing, there were more draw calls than usual, too many unknowns. So I built BP_ActorFinder, a Blueprint that helped us learn as we went along.\n\nIt made it much easier to catch the mistakes we were making while developing the maps and to know which object had which problem. It helped find and fix many small issues that had piled up over time.',
+    pdebug: 'BP_DebugMenu is a Blueprint you drop into the level: with a configurable button combination it opens a side panel with multiple options meant to make the project easier to develop.\n\nIt is unfinished and several functions do not work properly yet, but the idea stands: everything that helps a developer do the job faster and with less friction, in one place.',
     prebel: 'A level recreation exercise inspired by classic Star Wars combat spaces, focused on readable sightlines and pacing.',
     pport: 'A blockout of an industrial harbour built to study verticality, cover placement and long-range engagements.',
     pcourtyard: 'A compact courtyard combat space designed to test close-quarters encounters and multiple approach routes.'
@@ -2837,12 +2845,13 @@ class Component extends DCLogic {
       title: 'Dynamic Tileset', meta: 'Personal · Unreal Engine 4 · Blueprint tool', role: 'Technical Level Designer', hero: '',
       desc: 'After building three different tileset systems at Tequila Works, I created my own: a blueprint (based on the SuperGrid Starter Pack material) that modifies the appearance and size of a single cube usable as floor, wall, railing or interactive. Metrics live in the tileset itself, so anyone working with layouts learns them in-game without reading a document, and objects snap to fixed sizes, protecting performance from rescaled meshes.',
       resp: [
-        'Grid material: size, opacity, colors and background texture',
-        'Normal mapping and roughness controls',
-        'Pulse system to highlight interactive objects',
-        'Layer system to show characters/objects with built-in basic metrics',
-        'Per-face color coding',
-        'Fixed-size scaling to preserve metrics and performance'
+        'Grid drawn on the object: size, opacity, colours and background texture',
+        'Normal map on/off, swappable normal texture and roughness, from smooth to marked',
+        'Pulses with their own colour, brightness and speed, so small interactive props catch the eye',
+        'Layer texture that shows an object or character with the base metrics: scale, tile, offset and flip it',
+        'A different colour per face, so one object can mean different things by colour code',
+        'Fixed scale steps (Manual Scale off): metrics cannot drift by accident between blockout and environment',
+        'Rescaled meshes raise draw calls, so the actor only scales to approved sizes'
       ],
       videos: ['https://www.youtube.com/embed/eR-_E0hJsZI'], shots: []
     },
@@ -2850,11 +2859,13 @@ class Component extends DCLogic {
       title: 'BP_ActorFinder', meta: 'Personal · Unreal Engine 4 · Blueprint tool · born on Rime', role: 'Technical Level Designer', hero: '',
       desc: 'On Rime we had serious performance problems on an engine we didn\u2019t fully control. BP_ActorFinder scans the level and flags problem actors, making it much easier to find mistakes accumulated during map development.',
       resp: [
-        'Detects objects at 0,0,0',
-        'Flags objects with more than X materials',
-        'Finds rescaled objects',
-        'Finds objects not visible in game or with null mesh',
-        'Reports Tick activated by default'
+        'Objects sitting at 0,0,0',
+        'Objects with more than X materials',
+        'Rescaled objects',
+        'Objects not visible in game',
+        'Objects with the mesh set to null',
+        'Tick enabled, or disabled, by default',
+        'Any other check we needed as the project went on'
       ],
       videos: [],
       shots: []
@@ -2863,11 +2874,11 @@ class Component extends DCLogic {
       title: 'BP_DebugMenu', meta: 'Personal · Unreal Engine 4 · Blueprint tool · WIP', role: 'Technical Level Designer', hero: '',
       desc: 'A blueprint placed on the stage that opens a side panel with multiple options to speed up development: cheats for testing, viewport manipulation to find visual problems, filtering by objects added to levels, gameplay tweaks and engine values in the Debug tab.',
       resp: [
-        'Cheat system to speed up testing',
-        'Viewport manipulation to spot visual problems',
-        'Object filtering per level',
-        'In-game gameplay modification',
-        'Engine value editing from a Debug tab'
+        'Cheats that help test things quickly',
+        'Viewport manipulation to find visual problems',
+        'Filters by the objects added to each level',
+        'In-game gameplay modifiers',
+        'Engine values editable from the Debug tab'
       ],
       videos: [], shots: []
     },
@@ -2956,6 +2967,10 @@ class Component extends DCLogic {
   }
   componentDidUpdate(prev, prevState) {
     if (prev.cycleSeconds !== this.props.cycleSeconds) { clearInterval(this.timer); this.startTimer(); }
+    if (this.lastActive !== this.state.active) { // one page scrollbar: open → top of the project, close → back where the index was (runtime passes no prevState, so track it here)
+      if (this.state.active) window.scrollTo(0, 0); else if (this.lastActive !== undefined) window.scrollTo(0, this.indexScroll || 0);
+      this.lastActive = this.state.active;
+    }
   }
   componentWillUnmount() { window.removeEventListener('keydown', this.onKey); clearInterval(this.timer); }
   startTimer() { this.timer = setInterval(() => this.setState(s => ({ tick: s.tick + 1 })), Math.max(500, (this.props.cycleSeconds ?? 1.8) * 1000)); }
@@ -3088,7 +3103,7 @@ class Component extends DCLogic {
       items: ids.map(id => { const d = this.data[id] || {}, img = this.shotsOf(id)[0] || ''; const hvOn = (this.state.logHover || '') === id; return { title: d.title || id, img, has: !!img, w: on ? 54 : 0, op: on ? 1 : 0, open: () => this.open(id), border: hvOn ? '#ff7a2f' : '#2a3344', enter: () => this.setState({ logHover: id }), leave: () => this.setState({ logHover: '' }) }; }) };
   }
   visibleIds() { return this.levelIds.filter(id => !this.isHidden(id)).slice(0, (this.site && this.site.latestCount) || 4); }
-  open(id) { this.checkList(this.shotsOf(id)); this.setState({ active: id, mediaIdx: 0 }); if (this.thumbsEl) this.thumbsEl.scrollTo({ left: 0 }); }
+  open(id) { if (!this.state.active) this.indexScroll = window.scrollY; this.checkList(this.shotsOf(id)); this.setState({ active: id, mediaIdx: 0 }); if (this.thumbsEl) this.thumbsEl.scrollTo({ left: 0 }); }
   stepRoom(dir) { const list = this.levelIds.filter(id => !this.isHidden(id)).concat(this.workIds.filter(id => !this.isHidden(id))); const i = list.indexOf(this.state.active); this.open(list[(i + dir + list.length) % list.length]); }
   ytEmbed(u) { const m = /(?:youtube\.com\/(?:embed\/|watch\?(?:.*&)?v=|shorts\/|live\/)|youtu\.be\/)([\w-]{6,})/.exec(u || ''); return m ? 'https://www.youtube.com/embed/' + m[1] : (u || ''); }
   ytThumb(url) { const m = /(?:embed\/|v=|youtu\.be\/)([\w-]{6,})/.exec(url || ''); return m ? 'https://img.youtube.com/vi/' + m[1] + '/hqdefault.jpg' : ''; }
@@ -3153,12 +3168,13 @@ class Component extends DCLogic {
       aboutRows: (this.site && Array.isArray(this.site.aboutRows) ? this.site.aboutRows : []).filter(r => r && (r.label || r.value)), aboutRowsCustom: !!(this.site && Array.isArray(this.site.aboutRows) && this.site.aboutRows.length), aboutRowsDefault: !(this.site && Array.isArray(this.site.aboutRows) && this.site.aboutRows.length),
       contactTitle: (this.site && this.site.contactTitle) || '', contactTitleCustom: !!(this.site && this.site.contactTitle), contactTitleDefault: !(this.site && this.site.contactTitle),
       contactBody: (this.site && this.site.contactBody) || '', contactBodyCustom: !!(this.site && this.site.contactBody), contactBodyDefault: !(this.site && this.site.contactBody),
-      emailHref: 'mailto:' + ((this.site && this.site.email) || 'Manuel.Mendiluce@gmail.com'), emailLabel: ((this.site && this.site.email) || 'Manuel.Mendiluce@gmail.com').toUpperCase(), linkedinHref: (this.site && this.site.linkedin) || 'http://www.linkedin.com/pub/manuel-mendiluce/2/86a/465', goTop: (e) => { e.preventDefault(); this.setState({ active: null }); window.scrollTo({ top: 0, behavior: 'smooth' }); }, navGo: () => { if (this.state.active) this.setState({ active: null }); },
+      emailHref: 'mailto:' + ((this.site && this.site.email) || 'Manuel.Mendiluce@gmail.com'), emailLabel: ((this.site && this.site.email) || 'Manuel.Mendiluce@gmail.com').toUpperCase(), linkedinHref: (this.site && this.site.linkedin) || 'http://www.linkedin.com/pub/manuel-mendiluce/2/86a/465', goTop: (e) => { e.preventDefault(); this.indexScroll = 0; this.setState({ active: null }); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+      navGo: (e) => { if (!this.state.active) return; e.preventDefault(); const h = e.currentTarget.getAttribute('href'); this.setState({ active: null }, () => { const el = h && document.querySelector(h); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 52 }); }); },
       reloadHome: (e) => { e.preventDefault(); const u = new URL(window.location.href); u.hash = ''; u.search = this.accessKey && this.state.unlocked ? '?access=' + encodeURIComponent(this.accessKey) : ''; if (u.href === window.location.href) window.location.reload(); else window.location.href = u.href; },
       toolsRef: (el) => { this.toolsEl = el; }, toolsLeft: () => { if (this.toolsEl) this.toolsEl.scrollBy({ left: -424, behavior: 'smooth' }); }, toolsRight: () => { if (this.toolsEl) this.toolsEl.scrollBy({ left: 424, behavior: 'smooth' }); },
       filters, cards, workList, logos: this.logoMap(), ...this.buildLog(),
  histGrin: ['ut3', 'wanted'].map(id => this.cov(id)).concat([this.covGroup(['strider', 'tower'], 'Unreleased pitches', 'grin')]), histPyro: ['imperial', 'commandos'].map(id => this.cov(id)).concat([this.covGroup(['cops'], 'Unreleased', 'pyro')]),
-      hasActive: !!p,
+      hasActive: !!p, noActive: !p,
       pTitle: p ? p.title : '', pSlug: active ? (this.slugs[active] || '') : '',
       pNum: active ? 'LV_' + pad(order.indexOf(active) + 1) + ' / ' + pad(order.length) : '',
       prevTitle: active ? ((this.data[order[(order.indexOf(active) - 1 + order.length) % order.length]] || {}).title || '') : '',
@@ -3168,6 +3184,7 @@ class Component extends DCLogic {
       pStatus: active ? this.statusOf(active) : '', pStatusBg: active && this.statusKey(active) === 'cancelled' ? '#1b2230' : (active && this.statusKey(active) === 'indev' ? '#ff7a2f' : '#dfe6ee'), pStatusFg: active && this.statusKey(active) === 'cancelled' ? '#8a94a3' : '#07090c',
       pTime: f.time, pPosition: f.position, pEngine: f.engine,
       pAbout: active ? (this.abouts[active] || (p ? p.desc : '') || '') : '',
+      pAboutParas: (active ? (this.abouts[active] || (p ? p.desc : '') || '') : '').split(/\n\s*\n/).map(x => x.trim()).filter(Boolean),
       pResp: p ? (p.resp || []) : [],
       selNone: !sel, selIsVideo: !!sel && sel.type === 'video', selIsImage: !!sel && sel.type === 'image', selUrl: sel ? sel.url : '',
       grid: media.map((m, i) => ({ isVideo: m.type === 'video', img: m.type === 'video' ? this.ytThumb(m.url) : m.url, title: m.type === 'video' ? 'Play video' : 'View full size', open: () => this.setState({ mediaIdx: i, lightbox: true }) })),
