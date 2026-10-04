@@ -28,34 +28,46 @@ jobs:
           from pathlib import Path
 
           EXTS = {".jpg", ".jpeg", ".png", ".webp", ".avif", ".gif"}
+          LOGO_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".svg"}
+          LOGOS = "00-logos"
           root = Path("images")
 
-          def is_image(p):
-              return p.is_file() and not p.name.startswith(".") and p.suffix.lower() in EXTS
+          def visible(p):
+              return not p.name.startswith(".")
+
+          def files(d, exts):
+              return [rel(p) for p in sorted(d.iterdir(), key=lambda p: p.name)
+                      if p.is_file() and visible(p) and p.suffix.lower() in exts]
+
+          def subdirs(d):
+              return sorted((c for c in d.iterdir() if c.is_dir() and visible(c)), key=lambda c: c.name)
 
           def rel(p):
               # Relative path, forward slashes, no leading slash
               return p.as_posix().lstrip("/")
 
+          def entry(slug, images):
+              return {"slug": slug, "cover": images[0] if images else None, "images": images}
+
           data = {"hero": None, "projects": []}
 
           if root.is_dir():
-              heroes = sorted(p for p in root.glob("hero.*") if is_image(p))
+              heroes = sorted(rel(p) for p in root.glob("hero.*")
+                              if p.is_file() and p.suffix.lower() in EXTS)
               if heroes:
-                  data["hero"] = rel(heroes[0])
+                  data["hero"] = heroes[0]
 
-              projects_dir = root / "projects"
-              if projects_dir.is_dir():
-                  for d in sorted(
-                      (d for d in projects_dir.iterdir() if d.is_dir() and not d.name.startswith(".")),
-                      key=lambda d: d.name,
-                  ):
-                      images = [rel(p) for p in sorted(d.iterdir(), key=lambda p: p.name) if is_image(p)]
-                      data["projects"].append({
-                          "slug": d.name,
-                          "cover": images[0] if images else None,
-                          "images": images,
-                      })
+              logos_dir = root / LOGOS
+              if logos_dir.is_dir():
+                  data["projects"].append(entry(LOGOS, files(logos_dir, LOGO_EXTS)))
+
+              # images/<studio>/<project>/ -> slug = project folder name.
+              # Loose files directly inside a studio folder are ignored.
+              for studio in subdirs(root):
+                  if studio.name == LOGOS:
+                      continue
+                  for project in subdirs(studio):
+                      data["projects"].append(entry(project.name, files(project, EXTS)))
 
           Path("images.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
           print(f"hero: {data['hero']}, projects: {len(data['projects'])}")
