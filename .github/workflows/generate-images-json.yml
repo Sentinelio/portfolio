@@ -61,13 +61,24 @@ jobs:
               if logos_dir.is_dir():
                   data["projects"].append(entry(LOGOS, files(logos_dir, LOGO_EXTS)))
 
-              # images/<studio>/<project>/ -> slug = project folder name.
-              # Loose files directly inside a studio folder are ignored.
-              for studio in subdirs(root):
-                  if studio.name == LOGOS:
-                      continue
-                  for project in subdirs(studio):
-                      data["projects"].append(entry(project.name, files(project, EXTS)))
+              # Any leaf folder (no visible subfolders) under images/ that holds
+              # images is a project, at any depth: images/<studio>/<project>/ or
+              # images/<studio>/<group>/<project>/. slug = leaf folder name.
+              # Intermediate folders and loose files in them produce no entry;
+              # leaf folders without images (e.g. only .gitkeep) are skipped.
+              def walk(d):
+                  children = subdirs(d)
+                  if not children:
+                      images = files(d, EXTS)
+                      if images:
+                          data["projects"].append(entry(d.name, images))
+                      return
+                  for c in children:
+                      walk(c)
+
+              for top in subdirs(root):
+                  if top.name != LOGOS:
+                      walk(top)
 
           Path("images.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
           print(f"hero: {data['hero']}, projects: {len(data['projects'])}")
