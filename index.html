@@ -2230,6 +2230,9 @@ html,body{margin:0;padding:0;background:#07090c;color:#dfe6ee;font-family:'Space
 a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
 ::selection{background:#ff7a2f;color:#07090c;}
 @keyframes mmScan{0%{transform:translateY(-100%);}100%{transform:translateY(100%);}}
+@keyframes mmPulseHdr{0%,100%{background-color:rgba(255,122,47,0.22);box-shadow:0 0 0 0 rgba(255,122,47,0.7);}50%{background-color:rgba(255,122,47,0.78);box-shadow:0 0 0 7px rgba(255,122,47,0);}}
+@keyframes mmPulseLi{0%,100%{background-color:rgba(10,102,194,0.28);box-shadow:0 0 0 0 rgba(56,139,230,0.75);}50%{background-color:rgba(28,124,220,0.88);box-shadow:0 0 0 7px rgba(56,139,230,0);}}
+@media (prefers-reduced-motion: reduce){ .mm-pulse{animation:none !important;} }
 /* Tablets and narrow desktops: render the whole site at 70% (desktop zoom-out). Phones keep the fluid layout at 100%. */
 @media (min-width: 600px) and (max-width: 1280px) and (hover: none){ html{zoom:0.7;} }
 </style>
@@ -2237,14 +2240,14 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
 <div style="position:relative;min-height:100vh;background-color:#07090c;">
 
   <header style="position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:0;height:52px;background:rgba(7,9,12,0.94);backdrop-filter:blur(10px);border-bottom:1px solid #1b2230;">
-    <a href="." onClick="{{ reloadHome }}" title="Reload the portfolio" style="display:flex;align-items:center;gap:12px;padding:0 24px;height:100%;border-right:1px solid #1b2230;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.1em;color:#dfe6ee;cursor:pointer;" style-hover="color:#ff7a2f;background:#0c1017;"><span style="display:inline-block;width:8px;height:8px;background:#ff7a2f;"></span>MM_PORTFOLIO.umap</a>
+    <a href="." onClick="{{ reloadHome }}" title="Reload the portfolio" style="display:flex;align-items:center;gap:12px;padding:0 24px;height:100%;border-right:1px solid #1b2230;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.1em;color:#dfe6ee;cursor:pointer;" style-hover="color:#ff7a2f;background:#0c1017;"><span style="display:inline-block;width:8px;height:8px;background:#ff7a2f;"></span>MANUEL_MENDILUCE_PORTFOLIO.umap</a>
     <nav style="display:flex;height:100%;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;">
       <a href="#" onClick="{{ goTop }}" style="display:flex;align-items:center;padding:0 18px;border-right:1px solid #1b2230;color:#8a94a3;" style-hover="color:#ff7a2f;background:#0c1017;">OVERVIEW</a>
       <a href="#levels" onClick="{{ navGo }}" style="display:flex;align-items:center;padding:0 18px;border-right:1px solid #1b2230;color:#8a94a3;" style-hover="color:#ff7a2f;background:#0c1017;">LEVELS</a>
       <a href="#log" onClick="{{ navGo }}" style="display:flex;align-items:center;padding:0 18px;border-right:1px solid #1b2230;color:#8a94a3;" style-hover="color:#ff7a2f;background:#0c1017;">CHANGELOG</a>
       <a href="#tools" onClick="{{ navGo }}" style="display:flex;align-items:center;padding:0 18px;border-right:1px solid #1b2230;color:#8a94a3;" style-hover="color:#ff7a2f;background:#0c1017;">TOOLS</a>
     </nav>
-    <div style="margin-left:auto;display:flex;align-items:center;gap:14px;padding:0 24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#8a94a3;"><sc-if value="{{ recruiterMode }}" hint-placeholder-val="{{ false }}"><span style="background:#ff7a2f;color:#07090c;font-weight:700;padding:3px 8px;">RECRUITER ACCESS</span></sc-if><sc-if value="{{ availOn }}" hint-placeholder-val="{{ false }}"><span style="color:#ff7a2f;">●</span> AVAILABLE · </sc-if><a href="{{ emailHref }}" title="{{ emailLabel }}">CONTACT</a><span style="color:#2a3344;">/</span><a href="{{ linkedinHref }}" target="_blank" rel="noopener" title="LinkedIn profile">LINKEDIN</a></div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:14px;padding:0 24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#8a94a3;"><sc-if value="{{ recruiterMode }}" hint-placeholder-val="{{ false }}"><span style="background:#ff7a2f;color:#07090c;font-weight:700;padding:3px 8px;">RECRUITER ACCESS</span></sc-if><sc-if value="{{ availOn }}" hint-placeholder-val="{{ false }}"><span style="color:#ff7a2f;">●</span> AVAILABLE · </sc-if><a href="{{ emailHref }}" title="{{ emailLabel }}" class="mm-pulse" style="display:flex;align-items:center;height:28px;padding:0 10px;color:#dfe6ee;animation:mmPulseHdr 2.4s ease-in-out infinite;" style-hover="color:#07090c;background:#ff7a2f;animation:none;">CONTACT</a><a href="{{ linkedinHref }}" target="_blank" rel="noopener" title="LinkedIn profile" class="mm-pulse" style="display:flex;align-items:center;height:28px;padding:0 10px;color:#dfe6ee;animation:mmPulseLi 2.4s ease-in-out 1.2s infinite;" style-hover="color:#ffffff;background:#0a66c2;animation:none;">LINKEDIN</a></div>
   </header>
 
   <section id="overview" style="position:relative;overflow:hidden;border-bottom:1px solid #1b2230;">
@@ -2478,15 +2481,16 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
       </div>
     </div>
     <div style="position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:16px 72px;">
-      <div role="img" aria-label="{{ pTitle }}" onClick="{{ stopClick }}" style="width:100%;height:100%;background-image:url('{{ lbUrl }}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
+      <sc-if value="{{ lbIsImage }}" hint-placeholder-val="{{ true }}"><div role="img" aria-label="{{ pTitle }}" onClick="{{ stopClick }}" style="width:100%;height:100%;background-image:url('{{ lbUrl }}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div></sc-if>
+      <sc-if value="{{ lbIsVideo }}" hint-placeholder-val="{{ false }}"><div onClick="{{ stopClick }}" style="position:relative;width:min(100%,calc((100vh - 180px) * 16 / 9));aspect-ratio:16/9;background:#000;border:1px solid #1b2230;"><iframe src="{{ lbUrl }}" title="{{ pTitle }}" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe></div></sc-if>
       <sc-if value="{{ lbMany }}" hint-placeholder-val="{{ false }}">
-        <button onClick="{{ lbPrev }}" title="Previous image (←)" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid #2a3344;background:rgba(7,9,12,0.8);color:#dfe6ee;font-size:20px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">‹</button>
-        <button onClick="{{ lbNext }}" title="Next image (→)" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid #2a3344;background:rgba(7,9,12,0.8);color:#dfe6ee;font-size:20px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">›</button>
+        <button onClick="{{ lbPrev }}" title="Previous (←)" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid #2a3344;background:rgba(7,9,12,0.8);color:#dfe6ee;font-size:20px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">‹</button>
+        <button onClick="{{ lbNext }}" title="Next (→)" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid #2a3344;background:rgba(7,9,12,0.8);color:#dfe6ee;font-size:20px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">›</button>
       </sc-if>
     </div>
     <div onClick="{{ stopClick }}" style="display:flex;gap:6px;justify-content:center;overflow-x:auto;scrollbar-width:none;padding:10px 24px 14px;border-top:1px solid #1b2230;background:rgba(7,9,12,0.9);">
       <sc-for list="{{ lbThumbs }}" as="lt" hint-placeholder-count="0">
-        <div onClick="{{ lt.pick }}" style="flex:0 0 96px;aspect-ratio:16/9;border:1px solid {{ lt.border }};background-color:#0c1017;background-image:url('{{ lt.img }}');background-size:cover;background-position:center;cursor:pointer;opacity:{{ lt.op }};" style-hover="opacity:1;border-color:#ff7a2f;"></div>
+        <div onClick="{{ lt.pick }}" style="position:relative;flex:0 0 96px;aspect-ratio:16/9;border:1px solid {{ lt.border }};background-color:#0c1017;background-image:url('{{ lt.img }}');background-size:cover;background-position:center;cursor:pointer;opacity:{{ lt.op }};" style-hover="opacity:1;border-color:#ff7a2f;"><sc-if value="{{ lt.isVideo }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.14em;color:#ff7a2f;background:rgba(7,9,12,0.35);">▶ VIDEO</div></sc-if></div>
       </sc-for>
     </div>
   </div>
@@ -2500,49 +2504,35 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
         <button onClick="{{ closeProject }}" title="Close (Esc)" style="background:transparent;border:1px solid #ff7a2f;color:#ff7a2f;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:10px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background 0.15s ease,color 0.15s ease,transform 0.15s ease;" style-hover="background:#ff7a2f;color:#07090c;transform:translateY(-1px);" style-active="transform:translateY(0);">✕ CLOSE <span style="font-size:9px;opacity:0.7;border:1px solid currentColor;border-radius:3px;padding:1px 4px;">ESC</span></button>
       </div>
     </div>
-    <div style="padding:24px 15% 96px;display:flex;flex-wrap:nowrap;gap:20px;align-items:stretch;">
-      <div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;">
-        <div style="position:relative;aspect-ratio:16/9;background:#000;border:1px solid #1b2230;overflow:hidden;">
-          <sc-if value="{{ selNone }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background-color:#0c1017;background-image:linear-gradient(rgba(255,122,47,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,47,0.12) 1px,transparent 1px);background-size:32px 32px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:rgba(255,122,47,0.6);text-align:center;line-height:1.8;">NO TEXTURE<br>{{ pSlug }}</div></sc-if>
-          <sc-if value="{{ selIsVideo }}" hint-placeholder-val="{{ false }}"><iframe src="{{ selUrl }}" title="{{ pTitle }}" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe></sc-if>
-          <sc-if value="{{ selIsImage }}" hint-placeholder-val="{{ false }}"><div role="img" aria-label="{{ pTitle }}" onClick="{{ openLightbox }}" title="Click to view full size" style="position:absolute;inset:0;background-image:url('{{ selUrl }}');background-size:contain;background-repeat:no-repeat;background-position:center;cursor:zoom-in;"></div></sc-if>
-          <div style="position:absolute;top:12px;left:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#dfe6ee;background:rgba(7,9,12,0.6);padding:3px 7px;">VIEWPORT · {{ pTitle }}</div>
-          <div style="position:absolute;top:12px;right:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#dfe6ee;background:rgba(7,9,12,0.6);padding:3px 7px;">{{ mediaCounter }}</div>
-          <sc-if value="{{ hasManyMedia }}" hint-placeholder-val="{{ false }}">
-            <button onClick="{{ prevMedia }}" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:38px;height:38px;border:1px solid #2a3344;background:rgba(7,9,12,0.75);color:#dfe6ee;font-size:16px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">‹</button>
-            <button onClick="{{ nextMedia }}" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:38px;height:38px;border:1px solid #2a3344;background:rgba(7,9,12,0.75);color:#dfe6ee;font-size:16px;cursor:pointer;" style-hover="border-color:#ff7a2f;color:#ff7a2f;">›</button>
-          </sc-if>
-          <div style="position:absolute;top:0;left:0;width:14px;height:14px;border-top:2px solid #ff7a2f;border-left:2px solid #ff7a2f;"></div><div style="position:absolute;top:0;right:0;width:14px;height:14px;border-top:2px solid #ff7a2f;border-right:2px solid #ff7a2f;"></div><div style="position:absolute;bottom:0;left:0;width:14px;height:14px;border-bottom:2px solid #ff7a2f;border-left:2px solid #ff7a2f;"></div><div style="position:absolute;bottom:0;right:0;width:14px;height:14px;border-bottom:2px solid #ff7a2f;border-right:2px solid #ff7a2f;"></div>
-        </div>
-        <div ref="{{ thumbsRef }}" style="display:flex;gap:6px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;margin-top:8px;padding-bottom:4px;">
-          <sc-for list="{{ thumbs }}" as="th" hint-placeholder-count="0">
-            <div onClick="{{ th.pick }}" style="flex:0 0 132px;aspect-ratio:16/9;position:relative;border:1px solid {{ th.border }};background:#0c1017;cursor:pointer;overflow:hidden;">
-              <sc-if value="{{ th.isVideo }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#ff7a2f;">▶ VIDEO</div></sc-if>
-              <sc-if value="{{ th.isImage }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background-image:url('{{ th.img }}');background-size:cover;background-position:center;"></div></sc-if>
+    <div style="padding:24px 15% 110px;">
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div style="display:flex;gap:24px;align-items:stretch;flex-wrap:wrap;background:#0c1017;border:1px solid #1b2230;padding:22px 24px;">
+          <sc-if value="{{ pHasCover }}" hint-placeholder-val="{{ false }}"><div role="img" aria-label="{{ pTitle }} cover" style="flex:0 0 92px;aspect-ratio:3/4;background-color:#07090c;background-image:url('{{ pCover }}');background-size:cover;background-position:center;border:1px solid #2a3344;box-shadow:0 6px 14px rgba(0,0,0,0.45);"></div></sc-if>
+          <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:16px;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;">
+              <div style="font-weight:700;font-size:clamp(24px,2.4vw,34px);line-height:1;letter-spacing:-0.02em;">{{ pTitle }}</div>
+              <sc-if value="{{ pHasScore }}" hint-placeholder-val="{{ false }}"><div style="flex:0 0 auto;text-align:center;background:#ff7a2f;color:#07090c;padding:6px 10px;"><div style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;line-height:1;">{{ pScore }}</div><div style="font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:0.1em;margin-top:2px;">METACRITIC</div></div></sc-if>
             </div>
-          </sc-for>
-        </div>
-      </div>
-      <aside style="flex:0 0 clamp(260px,32%,380px);min-width:0;align-self:stretch;display:flex;flex-direction:column;gap:2px;background:#1b2230;border:1px solid #1b2230;">
-        <div style="background:#0c1017;padding:22px 24px;">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;">
-            <div style="font-weight:700;font-size:26px;line-height:1;letter-spacing:-0.02em;">{{ pTitle }}</div>
-            <sc-if value="{{ pHasScore }}" hint-placeholder-val="{{ false }}"><div style="flex:0 0 auto;text-align:center;background:#ff7a2f;color:#07090c;padding:6px 10px;"><div style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;line-height:1;">{{ pScore }}</div><div style="font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:0.1em;margin-top:2px;">METACRITIC</div></div></sc-if>
-          </div>
-          <div style="display:grid;grid-template-columns:88px 1fr;gap:8px 14px;font-size:13px;line-height:1.5;margin-top:16px;">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">STUDIO</div><div>{{ pCompany }}</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">PLATFORMS</div><div>{{ pPlatforms }}</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">STATUS</div><div><span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.12em;padding:3px 7px;color:{{ pStatusFg }};background:{{ pStatusBg }};">{{ pStatus }}</span></div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">TIME</div><div>{{ pTime }}</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">ROLE</div><div>{{ pPosition }}</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">ENGINE</div><div>{{ pEngine }}</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:8px 40px;font-size:13px;line-height:1.5;">
+              <div style="display:grid;grid-template-columns:88px 1fr;gap:8px 14px;align-content:start;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">STUDIO</div><div>{{ pCompany }}</div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">PLATFORMS</div><div>{{ pPlatforms }}</div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">STATUS</div><div><span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.12em;padding:3px 7px;color:{{ pStatusFg }};background:{{ pStatusBg }};">{{ pStatus }}</span></div>
+              </div>
+              <div style="display:grid;grid-template-columns:88px 1fr;gap:8px 14px;align-content:start;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">TIME</div><div>{{ pTime }}</div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">ROLE</div><div>{{ pPosition }}</div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">ENGINE</div><div>{{ pEngine }}</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div style="background:#0c1017;padding:22px 24px;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:20px;align-items:stretch;">
+        <div style="min-width:0;background:#0c1017;border:1px solid #1b2230;padding:22px 24px;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#ff7a2f;margin-bottom:10px;">// BRIEFING</div>
           <p style="margin:0;color:#8a94a3;font-size:14px;line-height:1.7;">{{ pAbout }}</p>
         </div>
-        <div style="background:#0c1017;padding:22px 24px;flex:1;">
+        <div style="min-width:0;background:#0c1017;border:1px solid #1b2230;padding:22px 24px;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#ff7a2f;margin-bottom:10px;">// OBJECTIVES COMPLETED</div>
           <div style="display:flex;flex-direction:column;gap:8px;">
             <sc-for list="{{ pResp }}" as="r" hint-placeholder-count="0">
@@ -2550,7 +2540,21 @@ a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
             </sc-for>
           </div>
         </div>
-      </aside>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#ff7a2f;">// GALLERY · {{ gridCount }}</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(max(160px,22%),1fr));gap:16px;">
+            <sc-for list="{{ grid }}" as="g" hint-placeholder-count="0">
+              <div role="button" onClick="{{ g.open }}" title="{{ g.title }}" style="position:relative;aspect-ratio:16/9;background-color:#0c1017;background-image:url('{{ g.img }}');background-size:cover;background-position:center;border:1px solid #1b2230;cursor:zoom-in;overflow:hidden;transition:transform 0.15s ease,border-color 0.15s ease;" style-hover="border-color:#ff7a2f;transform:translateY(-2px);">
+                <sc-if value="{{ g.isVideo }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(7,9,12,0.35);"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.14em;color:#07090c;background:#ff7a2f;padding:6px 10px;">▶ PLAY VIDEO</div></div></sc-if>
+              </div>
+            </sc-for>
+            <sc-if value="{{ noGrid }}" hint-placeholder-val="{{ false }}">
+              <div style="grid-column:1 / -1;aspect-ratio:16/3;background-color:#0c1017;background-image:linear-gradient(rgba(255,122,47,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,47,0.12) 1px,transparent 1px);background-size:32px 32px;border:1px solid #1b2230;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:rgba(255,122,47,0.6);text-align:center;line-height:1.8;">NO TEXTURE<br>{{ pSlug }}</div>
+            </sc-if>
+          </div>
+        </div>
+      </div>
     </div>
     <div style="position:fixed;left:0;right:0;bottom:36px;z-index:6;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 24px;background:rgba(7,9,12,0.94);backdrop-filter:blur(10px);border-top:1px solid #1b2230;">
       <div style="display:flex;align-items:center;gap:14px;min-width:0;">
@@ -2950,7 +2954,9 @@ class Component extends DCLogic {
       });
     }).catch(() => this.setState({ idxFailed: true }));
   }
-  componentDidUpdate(prev) { if (prev.cycleSeconds !== this.props.cycleSeconds) { clearInterval(this.timer); this.startTimer(); } }
+  componentDidUpdate(prev, prevState) {
+    if (prev.cycleSeconds !== this.props.cycleSeconds) { clearInterval(this.timer); this.startTimer(); }
+  }
   componentWillUnmount() { window.removeEventListener('keydown', this.onKey); clearInterval(this.timer); }
   startTimer() { this.timer = setInterval(() => this.setState(s => ({ tick: s.tick + 1 })), Math.max(500, (this.props.cycleSeconds ?? 1.8) * 1000)); }
   ticks(sec, def) { const cyc = Math.max(0.5, this.props.cycleSeconds ?? 1.8); const n = parseFloat(sec); return Math.max(1, Math.round((isNaN(n) || n <= 0 ? def : n) / cyc)); }
@@ -3057,9 +3063,13 @@ class Component extends DCLogic {
       img.src = u;
     });
   }
+  galleryOf(id) { // detail view: every image except the cover (the cover is index-only)
+    const e = this.entry(id), bad = this.broken || {};
+    return e.images.filter(u => u && u !== e.cover && !bad[u]);
+  }
   mediaOf(id) {
     const d = this.data[id] || {};
-    return [].concat((d.videos || []).map(v => ({ type: 'video', url: v })), this.shotsOf(id).map(u => ({ type: 'image', url: u })));
+    return [].concat((d.videos || []).filter(Boolean).map(v => ({ type: 'video', url: this.ytEmbed(v) })), this.galleryOf(id).map(u => ({ type: 'image', url: u })));
   }
   yearsOf(id) { const d = this.data[id] || {}; if (d.start) { const a = d.start.slice(0, 4); const b = d.end ? d.end.slice(0, 4) : ''; return b ? [a, b] : [a]; } return (d.meta || '').match(/\d{4}/g) || []; }
   lastYear(id) { const d = this.data[id] || {}; if (d.start && !d.end) return 'NOW'; const y = this.yearsOf(id); return y.length ? y[y.length - 1] : (id === 'tunein' ? 'TBA' : ''); }
@@ -3080,12 +3090,10 @@ class Component extends DCLogic {
   visibleIds() { return this.levelIds.filter(id => !this.isHidden(id)).slice(0, (this.site && this.site.latestCount) || 4); }
   open(id) { this.checkList(this.shotsOf(id)); this.setState({ active: id, mediaIdx: 0 }); if (this.thumbsEl) this.thumbsEl.scrollTo({ left: 0 }); }
   stepRoom(dir) { const list = this.levelIds.filter(id => !this.isHidden(id)).concat(this.workIds.filter(id => !this.isHidden(id))); const i = list.indexOf(this.state.active); this.open(list[(i + dir + list.length) % list.length]); }
+  ytEmbed(u) { const m = /(?:youtube\.com\/(?:embed\/|watch\?(?:.*&)?v=|shorts\/|live\/)|youtu\.be\/)([\w-]{6,})/.exec(u || ''); return m ? 'https://www.youtube.com/embed/' + m[1] : (u || ''); }
+  ytThumb(url) { const m = /(?:embed\/|v=|youtu\.be\/)([\w-]{6,})/.exec(url || ''); return m ? 'https://img.youtube.com/vi/' + m[1] + '/hqdefault.jpg' : ''; }
   stepMedia(dir) {
     const media = this.mediaOf(this.state.active); const n = media.length; if (!n) return;
-    if (this.state.lightbox) { // inside the full view only images count
-      const imgs = media.map((m, i) => m.type === 'image' ? i : -1).filter(i => i > -1); if (!imgs.length) return;
-      const k = Math.max(0, imgs.indexOf(this.state.mediaIdx)); this.setState({ mediaIdx: imgs[(k + dir + imgs.length) % imgs.length] }); return;
-    }
     this.setState(s => ({ mediaIdx: (s.mediaIdx + dir + n) % n }));
   }
   slide(list, t, k, R) {
@@ -3156,23 +3164,26 @@ class Component extends DCLogic {
       prevTitle: active ? ((this.data[order[(order.indexOf(active) - 1 + order.length) % order.length]] || {}).title || '') : '',
       nextTitle: active ? ((this.data[order[(order.indexOf(active) + 1) % order.length]] || {}).title || '') : '',
       pScore: f.score, pHasScore: !!f.score, pCompany: f.company, pPlatforms: f.platforms,
+      pCover: active ? (this.shotsOf(active)[0] || '') : '', pHasCover: !!(active && this.shotsOf(active)[0]),
       pStatus: active ? this.statusOf(active) : '', pStatusBg: active && this.statusKey(active) === 'cancelled' ? '#1b2230' : (active && this.statusKey(active) === 'indev' ? '#ff7a2f' : '#dfe6ee'), pStatusFg: active && this.statusKey(active) === 'cancelled' ? '#8a94a3' : '#07090c',
       pTime: f.time, pPosition: f.position, pEngine: f.engine,
       pAbout: active ? (this.abouts[active] || (p ? p.desc : '') || '') : '',
       pResp: p ? (p.resp || []) : [],
       selNone: !sel, selIsVideo: !!sel && sel.type === 'video', selIsImage: !!sel && sel.type === 'image', selUrl: sel ? sel.url : '',
+      grid: media.map((m, i) => ({ isVideo: m.type === 'video', img: m.type === 'video' ? this.ytThumb(m.url) : m.url, title: m.type === 'video' ? 'Play video' : 'View full size', open: () => this.setState({ mediaIdx: i, lightbox: true }) })),
+      noGrid: !media.length, gridCount: pad(media.filter(m => m.type === 'image').length) + ' SHOTS' + (media.some(m => m.type === 'video') ? ' · VIDEO' : ''),
       mediaCounter: media.length ? pad(mi + 1) + ' / ' + pad(media.length) : '00 / 00',
       hasManyMedia: media.length > 1,
       prevMedia: (e) => { e.stopPropagation(); this.stepMedia(-1); },
       nextMedia: (e) => { e.stopPropagation(); this.stepMedia(1); },
-      thumbs: media.map((m, i) => ({ isVideo: m.type === 'video', isImage: m.type === 'image', img: m.url, border: i === mi ? '#ff7a2f' : '#1b2230', pick: () => this.setState({ mediaIdx: i }) })),
+      thumbs: media.map((m, i) => ({ idx: i, isVideo: m.type === 'video', isImage: m.type === 'image', img: m.url, border: i === mi ? '#ff7a2f' : '#1b2230', pick: () => this.setState({ mediaIdx: i }) })),
       thumbsRef: (el) => { this.thumbsEl = el; },
       prevProject: () => this.stepRoom(-1), nextProject: () => this.stepRoom(1),
       closeProject: () => this.setState({ active: null, lightbox: false }),
-      lightboxOpen: !!(this.state.lightbox && sel && sel.type === 'image'), lbUrl: sel ? sel.url : '',
-      lbCounter: (() => { const imgs = media.filter(m => m.type === 'image'); const k = sel ? imgs.indexOf(sel) : -1; return imgs.length ? pad(k + 1) + ' / ' + pad(imgs.length) : ''; })(),
-      lbMany: media.filter(m => m.type === 'image').length > 1,
-      lbThumbs: media.map((m, i) => ({ m, i })).filter(x => x.m.type === 'image').map(({ m, i }) => ({ img: m.url, border: i === mi ? '#ff7a2f' : '#1b2230', op: i === mi ? '1' : '0.55', pick: (e) => { e.stopPropagation(); this.setState({ mediaIdx: i }); } })),
+      lightboxOpen: !!(this.state.lightbox && sel), lbUrl: sel ? sel.url : '', lbIsImage: !!sel && sel.type === 'image', lbIsVideo: !!sel && sel.type === 'video',
+      lbCounter: media.length ? pad(mi + 1) + ' / ' + pad(media.length) : '',
+      lbMany: media.length > 1,
+      lbThumbs: media.map((m, i) => ({ isVideo: m.type === 'video', img: m.type === 'video' ? this.ytThumb(m.url) : m.url, border: i === mi ? '#ff7a2f' : '#1b2230', op: i === mi ? '1' : '0.55', pick: (e) => { e.stopPropagation(); this.setState({ mediaIdx: i }); } })),
       openLightbox: (e) => { e.stopPropagation(); this.setState({ lightbox: true }); },
       closeLightbox: () => this.setState({ lightbox: false }),
       lbPrev: (e) => { e.stopPropagation(); this.stepMedia(-1); }, lbNext: (e) => { e.stopPropagation(); this.stepMedia(1); },
