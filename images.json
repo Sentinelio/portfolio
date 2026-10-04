@@ -90,9 +90,8 @@
     },
     {
       "slug": "02-ImperialGlory",
-      "cover": "images/01-PyroStudios/02-ImperialGlory/01.jpg",
+      "cover": "images/01-PyroStudios/02-ImperialGlory/02.jpg",
       "images": [
-        "images/01-PyroStudios/02-ImperialGlory/01.jpg",
         "images/01-PyroStudios/02-ImperialGlory/02.jpg",
         "images/01-PyroStudios/02-ImperialGlory/03.jpg",
         "images/01-PyroStudios/02-ImperialGlory/04.jpg",
@@ -100,7 +99,8 @@
         "images/01-PyroStudios/02-ImperialGlory/06.jpg",
         "images/01-PyroStudios/02-ImperialGlory/07.jpg",
         "images/01-PyroStudios/02-ImperialGlory/08.jpg",
-        "images/01-PyroStudios/02-ImperialGlory/09.jpg"
+        "images/01-PyroStudios/02-ImperialGlory/09.jpg",
+        "images/01-PyroStudios/02-ImperialGlory/IG_cover.jpg"
       ]
     },
     {
