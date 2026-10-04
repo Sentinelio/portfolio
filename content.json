@@ -291,7 +291,8 @@
         "engine": "Unreal Engine 3",
         "workMode": "onsite"
       },
-      "cover": "images/02-GrinBarcelona/01-UT3PhysXMod/01.jpg"
+      "cover": "images/02-GrinBarcelona/01-UT3PhysXMod/01.jpg",
+      "coverInGallery": true
     },
     "commandos": {
       "title": "Commandos Strike Force",
@@ -353,7 +354,8 @@
         "engine": "Diesel Engine",
         "workMode": "onsite"
       },
-      "cover": "images/02-GrinBarcelona/03-Strider/04.jpg"
+      "cover": "images/02-GrinBarcelona/03-Strider/04.jpg",
+      "coverInGallery": true
     },
     "tower": {
       "title": "Tower",
@@ -385,7 +387,8 @@
         "engine": "Diesel Engine",
         "workMode": "onsite"
       },
-      "cover": "images/02-GrinBarcelona/04-Tower/03.jpg"
+      "cover": "images/02-GrinBarcelona/04-Tower/03.jpg",
+      "coverInGallery": true
     },
     "cops": {
       "title": "Cops: The Police Experience",
@@ -487,7 +490,8 @@
         "position": "Technical Level Designer",
         "engine": "Unreal Engine 4 · Blueprints",
         "workMode": ""
-      }
+      },
+      "coverInGallery": true
     },
     "pfinder": {
       "title": "BP_ActorFinder",
@@ -519,7 +523,8 @@
         "position": "Technical Level Designer",
         "engine": "Unreal Engine 4 · Blueprints",
         "workMode": ""
-      }
+      },
+      "coverInGallery": true
     },
     "pdebug": {
       "title": "BP_DebugMenu",
@@ -549,7 +554,8 @@
         "position": "Technical Level Designer",
         "engine": "Unreal Engine 4 · Blueprints",
         "workMode": ""
-      }
+      },
+      "coverInGallery": true
     },
     "prebel": {
       "title": "Rebel Assault",
@@ -577,7 +583,8 @@
         "position": "Level Designer",
         "engine": "Hammer 2 (Source)",
         "workMode": ""
-      }
+      },
+      "coverInGallery": true
     },
     "pport": {
       "title": "Port",
@@ -605,7 +612,8 @@
         "position": "Level Designer",
         "engine": "Hammer 2 (Source)",
         "workMode": ""
-      }
+      },
+      "coverInGallery": true
     },
     "pcourtyard": {
       "title": "Courtyard",
@@ -633,7 +641,8 @@
         "position": "Level Designer",
         "engine": "Hammer 2 (Source)",
         "workMode": ""
-      }
+      },
+      "coverInGallery": true
     }
   },
   "levelOrder": [

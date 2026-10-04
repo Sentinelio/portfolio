@@ -2231,6 +2231,7 @@ html{scrollbar-gutter:stable;}
 a{color:#ff7a2f;text-decoration:none;}a:hover{color:#dfe6ee;}
 ::selection{background:#ff7a2f;color:#07090c;}
 @keyframes mmScan{0%{transform:translateY(-100%);}100%{transform:translateY(100%);}}
+@keyframes mmDotPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,122,47,0.55);opacity:1;}50%{box-shadow:0 0 0 6px rgba(255,122,47,0);opacity:0.75;}}
 @keyframes mmAvailPulse{0%,100%{opacity:0.35;}50%{opacity:1;}}
 @keyframes mmPulseHdr{0%,100%{background-color:rgba(255,122,47,0.22);box-shadow:0 0 0 0 rgba(255,122,47,0.7);}50%{background-color:rgba(255,122,47,0.78);box-shadow:0 0 0 7px rgba(255,122,47,0);}}
 @keyframes mmPulseLi{0%,100%{background-color:rgba(10,102,194,0.28);box-shadow:0 0 0 0 rgba(56,139,230,0.75);}50%{background-color:rgba(28,124,220,0.88);box-shadow:0 0 0 7px rgba(56,139,230,0);}}
@@ -2268,7 +2269,7 @@ header{overflow:hidden;}
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.3em;color:#ff7a2f;">// LEVEL DESIGNER · SINCE 2004</div>
       <h1 style="margin:18px 0 0;font-weight:700;font-size:clamp(38px,5vw,68px);line-height:1.04;letter-spacing:-0.03em;min-height:2.1em;">{{ phraseA }}<br><span style="color:#ff7a2f;">{{ phraseB }}</span></h1>
       <sc-if value="{{ siteHeroCustom }}" hint-placeholder-val="{{ false }}"><p style="max-width:620px;margin:18px 0 0;font-size:16px;line-height:1.7;color:#8a94a3;">{{ siteHero }}</p></sc-if>
-      <sc-if value="{{ siteHeroDefault }}" hint-placeholder-val="{{ true }}"><p style="max-width:620px;margin:18px 0 0;font-size:16px;line-height:1.7;color:#8a94a3;">Twenty-two years of level design — metrics, blockouts, combat encounters and puzzles for <span style="color:#dfe6ee;">Cyberpunk 2077</span>, <span style="color:#dfe6ee;">Rime</span>, <span style="color:#dfe6ee;">Deadlight</span>, <span style="color:#dfe6ee;">Gylt</span> and <span style="color:#dfe6ee;">Song of Nunu</span>. Now Principal Level Designer at Vercors Games.</p></sc-if>
+      <sc-if value="{{ siteHeroDefault }}" hint-placeholder-val="{{ true }}"><p style="max-width:620px;margin:18px 0 0;font-size:16px;line-height:1.7;color:#8a94a3;">Twenty-two years of level design — metrics, blockouts, combat encounters and puzzles for <span style="color:#dfe6ee;">Cyberpunk 2077</span>, <span style="color:#dfe6ee;">Rime</span>, <span style="color:#dfe6ee;">Deadlight</span>, <span style="color:#dfe6ee;">Gylt</span> and <span style="color:#dfe6ee;">Song of Nunu</span>.<span style="display:block;margin-top:6px;color:#dfe6ee;"><sc-if value="{{ heroNowIsAvail }}" hint-placeholder-val="{{ false }}"><span class="mm-pulse" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#ff7a2f;margin-right:10px;vertical-align:1px;animation:mmDotPulse 2.4s ease-in-out infinite;"></span></sc-if><span style="color:#ff7a2f;font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;">{{ heroNowLead }}</span>{{ heroNowRest }}</span></p></sc-if>
     </div>
   </section>
 
@@ -3001,6 +3002,7 @@ class Component extends DCLogic {
       if (!this.data[id]) { this.data[id] = { title: id, meta: '', role: '', hero: '', desc: '', resp: [], videos: [], shots: [] }; }
       const d = this.data[id];
       ['title', 'meta', 'role', 'desc', 'start', 'end', 'status', 'released', 'cover'].forEach(k => { if (typeof o[k] === 'string') d[k] = o[k]; });
+      if (typeof o.coverInGallery === 'boolean') d.coverInGallery = o.coverInGallery;
       if (Array.isArray(o.resp)) d.resp = o.resp;
       if (Array.isArray(o.videos)) d.videos = o.videos;
       if (typeof o.slug === 'string' && o.slug) this.slugs[id] = o.slug;
@@ -3101,6 +3103,16 @@ class Component extends DCLogic {
     const af = availYM != null ? availYM : nowYM; const future = af > nowYM; const monthsAway = af - nowYM;
     return { logRows, logYears, logCols: cols, logRange: startYear + ' → ' + (endYear - 1), availOn: !!site.available, availCol: col(af), availFrom: (future ? 'FROM ' : 'SINCE ') + fmt(af), availNowCol: col(nowYM), availFromSide: (col(af) >= cols - 30 ? 'right:0;text-align:right;' : 'left:0;') + (future && (af - nowYM) < 14 ? 'bottom:calc(100% + 18px);' : 'bottom:calc(100% + 4px);'), availFuture: future, availCountdown: future ? 'FROM ' + fmt(af) : 'SINCE ' + fmt(af), availPulse: (this.state.logRowHover == null || this.state.logRowHover < 0) ? 'mmAvailPulse 3.2s ease-in-out infinite' : 'none', availTitle: site.availableTitle || 'Available for a new level', availRoles: site.availableRoles || 'Principal / Lead Level Design · remote or on-site' };
   }
+  heroNowText() {
+        const S2 = this.site || {}; const nowD = new Date(); const nowYM = nowD.getFullYear() * 12 + nowD.getMonth();
+        const ym = (v) => { const m = /^(\d{4})-(\d{2})/.exec(v || ''); return m ? parseInt(m[1]) * 12 + parseInt(m[2]) - 1 : null; };
+        if (S2.available) { const af = ym(S2.availableFrom); const roles = (S2.availableRoles || '').trim(); const when = af != null && af > nowYM ? ' from ' + ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][af % 12] + ' ' + Math.floor(af / 12) : ''; return 'Available' + when + (roles ? ' for ' + roles + ' roles' : ' for a new level') + '.'; }
+        const rows = this.changelogOverride || this.defaultChangelog();
+        const cur = rows.find(r => (r.stints || []).some(st => st.from && (!st.to || (ym(st.to) != null && ym(st.to) >= nowYM))));
+        if (!cur) return '';
+        const role = (this.rolesOf(rows, cur).split(/\s*→\s*/).pop() || '').trim();
+        return 'Now ' + (role ? role + ' at ' : 'at ') + cur.company + '.';
+  }
   isHidden(id) { return !this.state.unlocked && (this.hiddenIds || []).indexOf(id) > -1; }
   isMasked(id) { return !this.state.unlocked && this.statusKey(id) === 'nda'; } // unannounced: listed, but name, media and texts stay hidden
   titleOf(id) { const d = this.data[id] || {}; return this.isMasked(id) ? 'Unannounced project' : (d.title || id); }
@@ -3135,6 +3147,7 @@ class Component extends DCLogic {
   galleryOf(id) { // detail view: every image except the cover (the cover is index-only)
     if (this.isMasked(id)) return [];
     const e = this.entry(id), bad = this.broken || {};
+    if ((this.data[id] || {}).coverInGallery) { const L = e.images.filter(u => u && !bad[u]); if (e.cover && L.indexOf(e.cover) < 0 && !bad[e.cover]) L.unshift(e.cover); return L; } // cover is a normal shot for this project
     return e.images.filter(u => u && u !== e.cover && !this.isCoverFile(u) && !bad[u]);
   }
   mediaOf(id) {
@@ -3153,7 +3166,7 @@ class Component extends DCLogic {
   defaultWorkMode = { cp: 'onsite', rime: 'onsite', deadlight: 'onsite', gylt: 'onsite', brutale: 'onsite', nunu: 'hybrid', tunein: 'remote', wanted: 'onsite', ut3: 'onsite', strider: 'onsite', tower: 'onsite', commandos: 'onsite', imperial: 'onsite', cops: 'onsite' };
   defaultSpans = { cp: ['2019-01', '2021-07'], rime: ['2013-09', '2017-05'], deadlight: ['2011-05', '2012-08'], gylt: ['2018-01', '2018-11'], nunu: ['2021-08', '2023-11'], tunein: ['2025-09', ''], brutale: ['2015-04', '2015-09'], wanted: ['2007-07', '2009-03'], ut3: ['2007-07', '2007-12'], cops: ['2006-01', '2007-07'], commandos: ['2004-10', '2006-03'], imperial: ['2004-10', '2005-05'], strider: ['2009-01', '2009-08'], tower: ['2009-01', '2009-08'] };
   defaultReleased = { imperial: '2005-05', commandos: '2006-03', ut3: '2007-12', wanted: '2009-03', deadlight: '2012-08', brutale: '2017-04', rime: '2017-05', gylt: '2019-11', cp: '2020-12', nunu: '2023-11' };
-  cov(id) { const d = this.data[id] || {}, img = this.shotsOf(id)[0] || ''; const sk = this.statusKey(id); const on = (this.state.logHover || '') === id; return { single: true, group: false, nda: false, title: d.title || id, img, has: !!img, badge: sk === 'indev' ? 'IN DEV' : (sk === 'mod' ? 'MOD' : ''), hasBadge: sk === 'indev' || sk === 'mod', open: () => this.open(id), border: on ? '#ff7a2f' : '#2a3344', tf: on ? 'translateY(-3px)' : 'none', shadow: on ? '0 10px 20px rgba(0,0,0,0.6)' : '0 6px 14px rgba(0,0,0,0.45)', enter: () => this.setState({ logHover: id }), leave: () => this.setState({ logHover: '' }) }; }
+  cov(id) { const d = this.data[id] || {}, img = this.shotsOf(id)[0] || ''; const sk = this.statusKey(id); const on = (this.state.logHover || '') === id; return { single: true, group: false, nda: false, title: d.title || id, img, has: !!img, badge: sk === 'mod' ? 'MOD' : '', hasBadge: sk === 'mod', open: () => this.open(id), border: on ? '#ff7a2f' : '#2a3344', tf: on ? 'translateY(-3px)' : 'none', shadow: on ? '0 10px 20px rgba(0,0,0,0.6)' : '0 6px 14px rgba(0,0,0,0.45)', enter: () => this.setState({ logHover: id }), leave: () => this.setState({ logHover: '' }) }; }
   covGroup(ids, label, key) {
     const on = this.state.openGroup === key;
     return { single: false, group: true, nda: false, title: label, sign: on ? '−' : '+', plusW: 18,
@@ -3242,6 +3255,7 @@ class Component extends DCLogic {
     const order = this.levelIds.filter(id => !this.isHidden(id) && !this.isMasked(id)).concat(this.workIds.filter(id => !this.isHidden(id) && !this.isMasked(id)));
     return {
       hero, phraseA: ph[0], phraseB: ph[1], siteHero: (this.site && this.site.hero) || '', siteHeroCustom: !!(this.site && this.site.hero), siteHeroDefault: !(this.site && this.site.hero),
+      ...(() => { const t = this.heroNowText(); const m = /^(Available)(.*)$/.exec(t); return m ? { heroNowLead: m[1], heroNowRest: m[2], heroNowIsAvail: true } : { heroNowLead: '', heroNowRest: t, heroNowIsAvail: false }; })(),
       recruiterMode: this.state.unlocked, recruiterLeft: this.state.unlocked && this.accessExpires ? ' · ' + this.leftText(this.accessExpires - Date.now()) : '',
       aboutQuote: (this.site && this.site.aboutQuote) || '', aboutQuoteCustom: !!(this.site && this.site.aboutQuote), aboutQuoteDefault: !(this.site && this.site.aboutQuote),
       aboutBody: (this.site && this.site.aboutBody) || '', aboutBodyCustom: !!(this.site && this.site.aboutBody), aboutBodyDefault: !(this.site && this.site.aboutBody),
