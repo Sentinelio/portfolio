@@ -172,10 +172,10 @@
     "tunein": {
       "title": "Tuned In",
       "slug": "02-TunedIn",
-      "status": "indev",
-      "released": "",
+      "status": "released",
+      "released": "2026-08",
       "start": "2025-09",
-      "end": "",
+      "end": "2026-09",
       "meta": "Vercors Games · 2025–Now · Unreal Engine 5 · PC · Kickstarter coming soon",
       "role": "Principal Level Designer",
       "desc": "An original horror game based on a cursed TV: it holds you captive, and to break free you must survive the dark entity’s programs of mind-bending puzzles, terror and impossible choices. In development at Vercors Games · Kickstarter campaign coming soon.",
@@ -191,8 +191,8 @@
       "facts": {
         "score": "",
         "company": "Vercors Games (Madrid, Spain)",
-        "platforms": "PC · in development",
-        "time": "2025 – Now",
+        "platforms": "PC",
+        "time": "September 2025 – September 2026",
         "position": "Principal Level Designer",
         "engine": "Unreal Engine 5",
         "workMode": "remote"
@@ -699,6 +699,10 @@
     "aboutBody": "",
     "aboutRows": [
       {
+        "label": "BORN IN",
+        "value": "Madrid, Spain"
+      },
+      {
         "label": "BASED IN",
         "value": "Maków Podhalański, Poland"
       },
@@ -751,7 +755,7 @@
       "bg": [
         "images/07-VercorsGames/TuneIn_bg.jpg"
       ],
-      "bgPos": "50% 50%"
+      "bgPos": "52% 54%"
     },
     {
       "company": "Wonder Legends Studios",
