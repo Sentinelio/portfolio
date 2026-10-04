@@ -328,6 +328,13 @@
       ]
     },
     {
+      "slug": "06-WonderLegends",
+      "cover": "images/06-WonderLegends/WonderLegendsStudio.jpg",
+      "images": [
+        "images/06-WonderLegends/WonderLegendsStudio.jpg"
+      ]
+    },
+    {
       "slug": "02-TunedIn",
       "cover": "images/07-VercorsGames/02-TunedIn/01.png",
       "images": [
