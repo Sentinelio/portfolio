@@ -2341,10 +2341,10 @@ header{overflow:hidden;}
         </sc-if>
         <div style="grid-column:1;grid-row:1 / span 2;align-self:start;padding-right:14px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;">
           <div style="width:40px;height:40px;border:1px solid #1b2230;background:#0c1017;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-            <sc-if value="{{ row.logoHas }}" hint-placeholder-val="{{ false }}"><div style="width:32px;height:32px;background-image:url('{{ row.logo }}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div></sc-if>
+            <sc-if value="{{ row.logoHas }}" hint-placeholder-val="{{ false }}"><div role="img" aria-label="{{ row.company }} logo" style="width:40px;height:40px;background-image:url('{{ row.logo }}');background-size:cover;background-position:center;background-repeat:no-repeat;"></div></sc-if>
             <sc-if value="{{ row.logoNo }}" hint-placeholder-val="{{ true }}"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#52607a;">{{ row.ini }}</div></sc-if>
           </div>
-          <div><div style="font-weight:700;font-size:16px;line-height:1.1;">{{ row.company }}</div><div style="font-size:12px;color:#8a94a3;margin-top:6px;line-height:1.5;">{{ row.roles }}</div></div>
+          <div><div style="font-weight:700;font-size:16px;line-height:1.1;">{{ row.company }}</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#ff7a2f;margin-top:7px;">{{ row.count }}</div><div style="font-size:12px;color:#8a94a3;margin-top:5px;line-height:1.5;">{{ row.roles }}</div></div>
         </div>
         <sc-for list="{{ row.stints }}" as="st" hint-placeholder-count="1">
           <div style="grid-column:{{ st.c1 }} / {{ st.c2 }};grid-row:1;position:relative;height:14px;min-width:0;">
@@ -2453,6 +2453,7 @@ header{overflow:hidden;}
       </sc-if>
       <sc-if value="{{ aboutRowsDefault }}" hint-placeholder-val="{{ true }}">
       <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #1b2230;">
+        <div style="display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #1b2230;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">BORN IN</div><div style="font-size:14px;line-height:1.5;">Maków Podhalański, Poland</div></div>
         <div style="display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #1b2230;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">BASED IN</div><div style="font-size:14px;line-height:1.5;">Maków Podhalański, Poland</div></div>
         <div style="display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #1b2230;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">FOCUS</div><div style="font-size:14px;line-height:1.5;">Metrics &amp; tilesets · blockouts · combat encounters · puzzles · technical LD &amp; tools</div></div>
         <div style="display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #1b2230;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#52607a;padding-top:3px;">ENGINES</div><div style="font-size:14px;line-height:1.5;">Unreal Engine 3 / 4 / 5 · RED Engine 4 · Unity 5 · Diesel · Hammer 2</div></div>
@@ -2950,14 +2951,16 @@ class Component extends DCLogic {
     // Data loading: relative first (production, unchanged). If a file fails, retry it from the live site (preview / local file);
     // paths coming from LIVE_BASE get that prefix. Embedded texts + slugs remain the last resort.
     const LIVE_BASE = 'https://sentinelio.github.io/portfolio/';
+    const RAW_BASE = 'https://raw.githubusercontent.com/Sentinelio/portfolio/main/'; // same files straight from the repo, for previews where the Pages host is unreachable
     const getJson = (url) => fetch(url).then(r => { if (!r.ok) throw new Error(url); return r.json(); });
-    const loadJson = (name) => getJson(name).then(j => ({ json: j, base: '' })).catch(() => getJson(LIVE_BASE + name).then(j => ({ json: j, base: LIVE_BASE })));
+    const loadJson = (name) => getJson(name).then(j => ({ json: j, base: '' })).catch(() => getJson(LIVE_BASE + name).then(j => ({ json: j, base: LIVE_BASE }))).catch(() => getJson(RAW_BASE + name).then(j => ({ json: j, base: RAW_BASE })));
     const absFrom = (base) => (u) => (base && typeof u === 'string' && u && !/^(?:[a-z]+:)?\/\//i.test(u)) ? base + u.replace(/^\.?\//, '') : u;
     const contentP = loadJson('content.json').catch((err) => { console.warn('content.json not applied — using the texts built into the page.', err); return null; });
     const imagesP = loadJson('images.json').catch(() => null);
     Promise.all([contentP, imagesP]).then(([cr, ir]) => {
       const c = cr && cr.json; if (!c || typeof c !== 'object') return;
       const base = (ir && ir.base) || cr.base; // image paths in content.json live in the same images/ tree as images.json
+      this.contentBase = base || ''; this.absContent = (u) => (base && u && !/^(?:[a-z]+:)?\/\//i.test(u)) ? base + u.replace(/^\.?\//, '') : u;
       if (base) {
         const abs = absFrom(base);
         if (c.site && Array.isArray(c.site.heroImages)) c.site.heroImages = c.site.heroImages.map(abs);
@@ -2997,7 +3000,7 @@ class Component extends DCLogic {
       const o = P[id]; if (!o) return;
       if (!this.data[id]) { this.data[id] = { title: id, meta: '', role: '', hero: '', desc: '', resp: [], videos: [], shots: [] }; }
       const d = this.data[id];
-      ['title', 'meta', 'role', 'desc', 'start', 'end', 'status', 'released'].forEach(k => { if (typeof o[k] === 'string') d[k] = o[k]; });
+      ['title', 'meta', 'role', 'desc', 'start', 'end', 'status', 'released', 'cover'].forEach(k => { if (typeof o[k] === 'string') d[k] = o[k]; });
       if (Array.isArray(o.resp)) d.resp = o.resp;
       if (Array.isArray(o.videos)) d.videos = o.videos;
       if (typeof o.slug === 'string' && o.slug) this.slugs[id] = o.slug;
@@ -3089,7 +3092,8 @@ class Component extends DCLogic {
       const rowIds = (r.stints || []).reduce((a, st) => a.concat(this.stintIds(rows, r, st)), []).filter((id, i, arr) => arr.indexOf(id) === i && this.data[id] && !this.isHidden(id));
       const bgList = (Array.isArray(r.bg) && r.bg.length ? r.bg : rowIds.map(id => this.shotsOf(id)[0] || '')).filter((u, i, arr) => u && !bad[u] && arr.indexOf(u) === i);
       const bg = this.slide(bgList, tk, 5 + ri * 2, Rbg);
-      return { company: r.company || '', roles: this.rolesOf(rows, r), logo: lg ? lg.img : '', logoHas: !!(lg && lg.has), logoNo: !(lg && lg.has), ini, stints, bottom: ri === rows.length - 1 ? '1px solid #1b2230' : 'none',
+      const nProj = rowIds.length + (r.stints || []).reduce((n, st) => n + (st.nda ? 1 : 0), 0);
+      return { company: r.company || '', count: nProj ? (nProj === 1 ? '1 LEVEL' : nProj + ' LEVELS') : 'UNANNOUNCED WORK', roles: this.rolesOf(rows, r), logo: lg ? lg.img : '', logoHas: !!(lg && lg.has), logoNo: !(lg && lg.has), ini, stints, bottom: ri === rows.length - 1 ? '1px solid #1b2230' : 'none',
         bgHas: bg.has, bgA: bg.a, bgB: bg.b, bgBo: bg.bo, bgBt: bg.bt, bgPos: /^\s*\d{1,3}%\s+\d{1,3}%\s*$/.test(r.bgPos || '') ? r.bgPos.trim() : 'center', bgOp: rh === ri ? hoverOp : idleOp, enter: () => this.setState({ logRowHover: ri }), leave: () => this.setState({ logRowHover: -1 }) };
     });
     const logYears = []; for (let y = startYear; y < endYear; y += 4) logYears.push({ label: String(y), col: col(y * 12) });
@@ -3105,12 +3109,16 @@ class Component extends DCLogic {
     if (!idx || !slug) return { cover: '', images: [] };
     const e = idx.bySlug[slug] || {};
     const images = Array.isArray(e.images) ? e.images.filter(Boolean) : [];
-    return { cover: e.cover || images[0] || '', images };
+    const want = ((this.data[id] || {}).cover || '').trim(); const bad = this.broken || {};
+    const custom = want ? (images.find(u => u === want || u.endsWith('/' + want) || u.endsWith('/' + want.split('/').pop())) || (this.contentBase != null ? this.absContent(want) : '')) : '';
+    const named = images.find(u => this.isCoverFile(u)) || '';
+    return { cover: (custom && !bad[custom] ? custom : '') || named || e.cover || images[0] || '', images };
   }
+  isCoverFile(u) { return /_cover\.[a-z0-9]+$/i.test(((u || '').split('?')[0].split('/').pop()) || ''); }
   shotsOf(id) {
     if (this.isMasked(id)) return [];
     const e = this.entry(id), list = e.images.slice();
-    if (e.cover && list.indexOf(e.cover) === -1) list.unshift(e.cover);
+    if (e.cover) { const i = list.indexOf(e.cover); if (i > -1) list.splice(i, 1); list.unshift(e.cover); } // the chosen cover always leads
     const bad = this.broken || {};
     return list.filter(u => u && !bad[u]);
   }
@@ -3127,7 +3135,7 @@ class Component extends DCLogic {
   galleryOf(id) { // detail view: every image except the cover (the cover is index-only)
     if (this.isMasked(id)) return [];
     const e = this.entry(id), bad = this.broken || {};
-    return e.images.filter(u => u && u !== e.cover && !bad[u]);
+    return e.images.filter(u => u && u !== e.cover && !this.isCoverFile(u) && !bad[u]);
   }
   mediaOf(id) {
     if (this.isMasked(id)) return [];
