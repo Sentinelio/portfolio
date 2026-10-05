@@ -167,8 +167,8 @@
     "tunein": {
       "title": "Tuned In",
       "slug": "02-TunedIn",
-      "status": "indev",
-      "released": "",
+      "status": "released",
+      "released": "2026-08",
       "start": "2025-09",
       "end": "2026-08",
       "meta": "Vercors Games · 2025–Now · Unreal Engine 5 · PC · Kickstarter coming soon",
@@ -177,8 +177,10 @@
       "about": "An original horror game built around a cursed TV that holds you captive: to break free you must survive the dark entity’s programmes of puzzles, terror and impossible choices.",
       "hook": "",
       "resp": [
-        "Principal Level Designer in \"Tuned In\" (UE5, PC)",
-        "Principal Level Designer in an unannounced project"
+        "Design and creation of blockouts",
+        "Puzzle design with the game mechanics",
+        "Prototyping of new features and mechanics",
+        "Scripting and camera work"
       ],
       "videos": [
         "https://www.youtube.com/embed/UfsR-6-E2Ko"
@@ -739,7 +741,7 @@
     "contactTitle": "",
     "contactBody": "",
     "available": true,
-    "availableFrom": "2026-11",
+    "availableFrom": "",
     "availableTitle": "",
     "availableRoles": "Level Designer"
   },
