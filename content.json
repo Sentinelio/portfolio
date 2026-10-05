@@ -279,12 +279,13 @@
       "facts": {
         "score": "",
         "company": "Grin Barcelona (Barcelona, Spain)",
-        "platforms": "PC, PS3 · official mod",
+        "platforms": "PC, PS3 ",
         "time": "2007",
         "position": "Level Designer",
         "engine": "Unreal Engine 3",
         "workMode": "onsite"
-      }
+      },
+      "coverInGallery": true
     },
     "commandos": {
       "title": "Commandos Strike Force",
@@ -339,7 +340,7 @@
       "facts": {
         "score": "",
         "company": "Grin Barcelona (Barcelona, Spain)",
-        "platforms": "Cancelled · Xbox 360 pitch demo",
+        "platforms": "Xbox 360 pitch demo",
         "time": "2009",
         "position": "Level Designer",
         "engine": "Diesel Engine",
@@ -370,7 +371,7 @@
       "facts": {
         "score": "",
         "company": "Grin Barcelona (Barcelona, Spain)",
-        "platforms": "Cancelled · XBLA pitch demo",
+        "platforms": "XBLA pitch demo",
         "time": "2009",
         "position": "Level Designer",
         "engine": "Diesel Engine",
@@ -406,7 +407,7 @@
       "facts": {
         "score": "",
         "company": "Pyro Studios (Madrid, Spain)",
-        "platforms": "Cancelled",
+        "platforms": "PC",
         "time": "2006 – 2007",
         "position": "Junior Level Designer",
         "engine": "Ignition Engine / Unreal Engine 3",
@@ -475,7 +476,8 @@
         "position": "Technical Level Designer",
         "engine": "Unreal Engine 4 · Blueprints",
         "workMode": ""
-      }
+      },
+      "coverInGallery": true
     },
     "pfinder": {
       "title": "BP_ActorFinder",
@@ -507,7 +509,8 @@
         "position": "Technical Level Designer",
         "engine": "Unreal Engine 4 · Blueprints",
         "workMode": ""
-      }
+      },
+      "coverInGallery": true
     },
     "pdebug": {
       "title": "BP_DebugMenu",
@@ -537,7 +540,8 @@
         "position": "Technical Level Designer",
         "engine": "Unreal Engine 4 · Blueprints",
         "workMode": ""
-      }
+      },
+      "coverInGallery": true
     },
     "prebel": {
       "title": "Rebel Assault",
@@ -565,7 +569,8 @@
         "position": "Level Designer",
         "engine": "Hammer 2 (Source)",
         "workMode": ""
-      }
+      },
+      "coverInGallery": true
     },
     "pport": {
       "title": "Port",
@@ -593,7 +598,8 @@
         "position": "Level Designer",
         "engine": "Hammer 2 (Source)",
         "workMode": ""
-      }
+      },
+      "coverInGallery": true
     },
     "pcourtyard": {
       "title": "Courtyard",
@@ -621,7 +627,8 @@
         "position": "Level Designer",
         "engine": "Hammer 2 (Source)",
         "workMode": ""
-      }
+      },
+      "coverInGallery": true
     },
     "pmuv4zanj": {
       "title": "Cyberpunk 2077: Phantom Liberty",
