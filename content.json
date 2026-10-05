@@ -750,7 +750,7 @@
       "stints": [
         {
           "from": "2025-09",
-          "to": "",
+          "to": "2026-08",
           "ids": [
             "tunein"
           ]
@@ -774,10 +774,10 @@
         }
       ],
       "bg": [
-        "images/05-CDProjektRed/cyberpunk_bg.png"
+        "images/06-WonderLegends/wonder_legends_studio_bg.jpg"
       ],
       "bgPos": "51% 56%",
-      "logo": "images/05-CDProjektRed/CDPR.png"
+      "logo": "images/06-WonderLegends/WonderLegendsStudio.jpg"
     },
     {
       "company": "CD Projekt Red",
@@ -790,7 +790,11 @@
             "cp"
           ]
         }
-      ]
+      ],
+      "bg": [
+        "images/05-CDProjektRed/cyberpunk_bg.png"
+      ],
+      "logo": "images/05-CDProjektRed/CDPR.png"
     },
     {
       "company": "Tequila Works",
