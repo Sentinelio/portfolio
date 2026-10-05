@@ -738,10 +738,10 @@
     "linkedin": "http://www.linkedin.com/pub/manuel-mendiluce/2/86a/465",
     "contactTitle": "",
     "contactBody": "",
-    "available": false,
-    "availableFrom": "",
+    "available": true,
+    "availableFrom": "2026-11",
     "availableTitle": "",
-    "availableRoles": ""
+    "availableRoles": "Level Designer"
   },
   "changelog": [
     {
@@ -755,7 +755,12 @@
             "tunein"
           ]
         }
-      ]
+      ],
+      "bg": [
+        "images/07-VercorsGames/TuneIn_bg.jpg"
+      ],
+      "bgPos": "49% 52%",
+      "logo": "images/07-VercorsGames/VercorsGames.png"
     },
     {
       "company": "Wonder Legends",
@@ -767,7 +772,12 @@
           "ids": [],
           "nda": 1
         }
-      ]
+      ],
+      "bg": [
+        "images/05-CDProjektRed/cyberpunk_bg.png"
+      ],
+      "bgPos": "51% 56%",
+      "logo": "images/05-CDProjektRed/CDPR.png"
     },
     {
       "company": "CD Projekt Red",
@@ -803,7 +813,12 @@
             "nunu"
           ]
         }
-      ]
+      ],
+      "logo": "images/04-TequilaWorks/TequilaWorks.jpg",
+      "bg": [
+        "images/04-TequilaWorks/rime_bg.jpg"
+      ],
+      "bgPos": "48% 70%"
     },
     {
       "company": "Grin Barcelona",
@@ -821,7 +836,12 @@
             "tower"
           ]
         }
-      ]
+      ],
+      "logo": "images/02-GrinBarcelona/GrinBarcelona.png",
+      "bg": [
+        "images/02-GrinBarcelona/wanted_bg.jpg"
+      ],
+      "bgPos": "49% 45%"
     },
     {
       "company": "Pyro Studios",
@@ -838,7 +858,12 @@
             "cops"
           ]
         }
-      ]
+      ],
+      "bg": [
+        "images/01-PyroStudios/CSF_bg.jpg"
+      ],
+      "bgPos": "48% 15%",
+      "logo": "images/01-PyroStudios/PyroStudios.jpg"
     }
   ],
   "accessKeys": []
