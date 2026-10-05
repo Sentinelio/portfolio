@@ -7,7 +7,7 @@
       "status": "released",
       "released": "2020-12",
       "start": "2019-01",
-      "end": "2021-07",
+      "end": "2020-12",
       "meta": "CD Projekt Red · Kraków · 2019–2021 · RED Engine 4 · 86 Metacritic",
       "role": "Senior Level Designer",
       "desc": "Combat design across main quests, side quests, minor activities, street stories and combat events · on Cyberpunk 2077 and Phantom Liberty. Signature achievement: the Nomad lifepath opening and its car chase. Visual scripting of every owned location, in constant communication with the open world, environment and quest teams.",
@@ -27,7 +27,7 @@
         "score": "86",
         "company": "CD Projekt Red (Kraków, Poland)",
         "platforms": "PC, PS4, PS5, Xbox One, Xbox Series, Stadia",
-        "time": "January 2019 – July 2021",
+        "time": "January 2019 – December 2020",
         "position": "Senior Level Designer",
         "engine": "RED Engine 4",
         "workMode": "onsite"
@@ -624,8 +624,8 @@
     "pmuv4zanj": {
       "title": "Cyberpunk 2077: Phantom Liberty",
       "slug": "02-cyberpunk2077phantomliberty",
-      "start": "",
-      "end": "",
+      "start": "2020-12",
+      "end": "2021-07",
       "status": "released",
       "released": "2025-09",
       "meta": "",
@@ -644,12 +644,12 @@
         "https://www.youtube.com/embed/kfX9n_G0N2Y"
       ],
       "facts": {
-        "score": "",
+        "score": "89",
         "company": "CD Projekt Red (Kraków, Poland)",
-        "platforms": "",
-        "time": "",
+        "platforms": "PC, PS4, PS5, Xbox One, Xbox Series, Stadia",
+        "time": "December 2020 – July 2021",
         "position": "Senior Level Designer",
-        "engine": "",
+        "engine": "RED Engine 4",
         "workMode": "hybrid"
       },
       "cover": "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/PhantomLiberty_cover.jpg"
