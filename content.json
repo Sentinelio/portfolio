@@ -31,8 +31,7 @@
         "position": "Senior Level Designer",
         "engine": "RED Engine 4",
         "workMode": "onsite"
-      },
-      "cover": "images/05-CDProjektRed/01-Cyberpunk2077/Cyberpunk2077_cover.jpg"
+      }
     },
     "rime": {
       "title": "Rime",
@@ -66,8 +65,7 @@
         "position": "Senior → Lead Level Designer",
         "engine": "Unreal Engine 4",
         "workMode": "onsite"
-      },
-      "cover": "images/04-TequilaWorks/02-Rime/Rime_cover.jpg"
+      }
     },
     "deadlight": {
       "title": "Deadlight",
@@ -100,8 +98,7 @@
         "position": "Senior Level Designer",
         "engine": "Unreal Engine 3",
         "workMode": "onsite"
-      },
-      "cover": "images/04-TequilaWorks/01-Deadlight/Deadlight_cover.jpg"
+      }
     },
     "gylt": {
       "title": "Gylt",
@@ -135,8 +132,7 @@
         "position": "Lead Level Designer",
         "engine": "Unreal Engine 4",
         "workMode": "onsite"
-      },
-      "cover": "images/04-TequilaWorks/04-Gylt/Gylt_cover.jpg"
+      }
     },
     "nunu": {
       "title": "Song of Nunu",
@@ -165,17 +161,16 @@
         "time": "2021 – 2023",
         "position": "Level Design Director",
         "engine": "Unreal Engine 5",
-        "workMode": "remote"
-      },
-      "cover": "images/04-TequilaWorks/05-SongOfNunu/SongOfNunu_cover.jpg"
+        "workMode": "hybrid"
+      }
     },
     "tunein": {
       "title": "Tuned In",
       "slug": "02-TunedIn",
-      "status": "released",
-      "released": "2026-08",
+      "status": "indev",
+      "released": "",
       "start": "2025-09",
-      "end": "2026-09",
+      "end": "",
       "meta": "Vercors Games · 2025–Now · Unreal Engine 5 · PC · Kickstarter coming soon",
       "role": "Principal Level Designer",
       "desc": "An original horror game based on a cursed TV: it holds you captive, and to break free you must survive the dark entity’s programs of mind-bending puzzles, terror and impossible choices. In development at Vercors Games · Kickstarter campaign coming soon.",
@@ -191,13 +186,12 @@
       "facts": {
         "score": "",
         "company": "Vercors Games (Madrid, Spain)",
-        "platforms": "PC",
-        "time": "September 2025 – September 2026",
+        "platforms": "PC · in development",
+        "time": "2025 – Now",
         "position": "Principal Level Designer",
         "engine": "Unreal Engine 5",
         "workMode": "remote"
-      },
-      "cover": "images/07-VercorsGames/02-TunedIn/TuneIn_cover.png"
+      }
     },
     "brutale": {
       "title": "The Sexy Brutale",
@@ -226,8 +220,7 @@
         "position": "Additional Senior Level Designer",
         "engine": "Unity 5",
         "workMode": "onsite"
-      },
-      "cover": "images/04-TequilaWorks/03-TheSexyBrutale/TeSexyBrutale_Cover.jpg"
+      }
     },
     "wanted": {
       "title": "Wanted: Weapons of Fate",
@@ -259,8 +252,7 @@
         "position": "Level Designer",
         "engine": "Diesel Engine",
         "workMode": "onsite"
-      },
-      "cover": "images/02-GrinBarcelona/02-WantedWeaponsOfFate/Wanted_cover.jpg"
+      }
     },
     "ut3": {
       "title": "UT3: Ageia PhysX Mod",
@@ -290,9 +282,7 @@
         "position": "Level Designer",
         "engine": "Unreal Engine 3",
         "workMode": "onsite"
-      },
-      "cover": "images/02-GrinBarcelona/01-UT3PhysXMod/01.jpg",
-      "coverInGallery": true
+      }
     },
     "commandos": {
       "title": "Commandos Strike Force",
@@ -322,8 +312,7 @@
         "position": "QA Tester",
         "engine": "In-house engine",
         "workMode": "onsite"
-      },
-      "cover": "images/01-PyroStudios/01-CommandosStrikeForce/CSF_cover.jpg"
+      }
     },
     "strider": {
       "title": "Strider",
@@ -353,9 +342,7 @@
         "position": "Level Designer",
         "engine": "Diesel Engine",
         "workMode": "onsite"
-      },
-      "cover": "images/02-GrinBarcelona/03-Strider/04.jpg",
-      "coverInGallery": true
+      }
     },
     "tower": {
       "title": "Tower",
@@ -386,9 +373,7 @@
         "position": "Level Designer",
         "engine": "Diesel Engine",
         "workMode": "onsite"
-      },
-      "cover": "images/02-GrinBarcelona/04-Tower/03.jpg",
-      "coverInGallery": true
+      }
     },
     "cops": {
       "title": "Cops: The Police Experience",
@@ -424,8 +409,7 @@
         "position": "Junior Level Designer",
         "engine": "Ignition Engine / Unreal Engine 3",
         "workMode": "onsite"
-      },
-      "cover": "images/01-PyroStudios/03-Cops/05.jpg"
+      }
     },
     "imperial": {
       "title": "Imperial Glory",
@@ -455,8 +439,7 @@
         "position": "QA Tester",
         "engine": "In-house engine",
         "workMode": "onsite"
-      },
-      "cover": "images/01-PyroStudios/02-ImperialGlory/IG_cover.jpg"
+      }
     },
     "ptileset": {
       "title": "Dynamic Tileset",
@@ -490,8 +473,7 @@
         "position": "Technical Level Designer",
         "engine": "Unreal Engine 4 · Blueprints",
         "workMode": ""
-      },
-      "coverInGallery": true
+      }
     },
     "pfinder": {
       "title": "BP_ActorFinder",
@@ -523,8 +505,7 @@
         "position": "Technical Level Designer",
         "engine": "Unreal Engine 4 · Blueprints",
         "workMode": ""
-      },
-      "coverInGallery": true
+      }
     },
     "pdebug": {
       "title": "BP_DebugMenu",
@@ -554,8 +535,7 @@
         "position": "Technical Level Designer",
         "engine": "Unreal Engine 4 · Blueprints",
         "workMode": ""
-      },
-      "coverInGallery": true
+      }
     },
     "prebel": {
       "title": "Rebel Assault",
@@ -583,8 +563,7 @@
         "position": "Level Designer",
         "engine": "Hammer 2 (Source)",
         "workMode": ""
-      },
-      "coverInGallery": true
+      }
     },
     "pport": {
       "title": "Port",
@@ -612,8 +591,7 @@
         "position": "Level Designer",
         "engine": "Hammer 2 (Source)",
         "workMode": ""
-      },
-      "coverInGallery": true
+      }
     },
     "pcourtyard": {
       "title": "Courtyard",
@@ -641,21 +619,54 @@
         "position": "Level Designer",
         "engine": "Hammer 2 (Source)",
         "workMode": ""
+      }
+    },
+    "pmuv4zanj": {
+      "title": "Cyberpunk 2077: Phantom Liberty",
+      "slug": "02-cyberpunk2077phantomliberty",
+      "start": "",
+      "end": "",
+      "status": "released",
+      "released": "2025-09",
+      "meta": "",
+      "role": "",
+      "desc": "",
+      "about": "An open-world RPG set in Night City, a megalopolis obsessed with power, glamour and body modification. You play V, a mercenary chasing a one-of-a-kind implant that holds the key to immortality.",
+      "hook": "",
+      "resp": [
+        "Design and creation of levels in paper design and blockouts",
+        "Combat design in main quests, side quests, street stories and combat events",
+        "Visual scripting of all owned locations",
+        "Link between the Tools and Level Design departments to improve internal tools",
+        "Constant collaboration with open world, environment and quest teams"
+      ],
+      "videos": [
+        "https://www.youtube.com/embed/kfX9n_G0N2Y"
+      ],
+      "facts": {
+        "score": "",
+        "company": "CD Projekt Red (Kraków, Poland)",
+        "platforms": "",
+        "time": "",
+        "position": "Senior Level Designer",
+        "engine": "",
+        "workMode": "hybrid"
       },
-      "coverInGallery": true
+      "cover": "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/PhantomLiberty_cover.jpg"
     }
   },
   "levelOrder": [
     "tunein",
     "nunu",
+    "pmuv4zanj",
     "cp",
     "gylt",
     "rime",
     "brutale",
     "deadlight",
-    "tower",
-    "strider",
     "wanted",
+    "strider",
+    "tower",
     "ut3",
     "cops",
     "commandos",
@@ -727,55 +738,40 @@
     "linkedin": "http://www.linkedin.com/pub/manuel-mendiluce/2/86a/465",
     "contactTitle": "",
     "contactBody": "",
-    "available": true,
-    "availableFrom": "2026-11",
+    "available": false,
+    "availableFrom": "",
     "availableTitle": "",
-    "availableRoles": "Level Designer",
-    "heroImages": [
-      "images/07-VercorsGames/TuneIn_bg.jpg",
-      "images/04-TequilaWorks/rime_bg.jpg"
-    ],
-    "heroRandom": true,
-    "heroRandomCount": 8
+    "availableRoles": ""
   },
   "changelog": [
     {
       "company": "Vercors Games",
-      "roles": "Principal Level Designer",
+      "roles": "",
       "stints": [
         {
           "from": "2025-09",
-          "to": "2026-08",
+          "to": "",
           "ids": [
             "tunein"
           ]
         }
-      ],
-      "logo": "images/07-VercorsGames/VercorsGames.png",
-      "bg": [
-        "images/07-VercorsGames/TuneIn_bg.jpg"
-      ],
-      "bgPos": "52% 54%"
+      ]
     },
     {
-      "company": "Wonder Legends Studios",
+      "company": "Wonder Legends",
       "roles": "Principal Level Designer",
       "stints": [
         {
-          "from": "2025-01",
+          "from": "2025-02",
           "to": "2025-08",
           "ids": [],
           "nda": 1
         }
-      ],
-      "logo": "images/06-WonderLegends/WonderLegendsStudio.jpg",
-      "bg": [
-        "images/06-WonderLegends/wonder_legends_studio_bg.jpg"
       ]
     },
     {
       "company": "CD Projekt Red",
-      "roles": "Senior Level Designer",
+      "roles": "",
       "stints": [
         {
           "from": "2019-01",
@@ -784,12 +780,7 @@
             "cp"
           ]
         }
-      ],
-      "logo": "images/05-CDProjektRed/CDPR.png",
-      "bg": [
-        "images/05-CDProjektRed/cyberpunk_bg.png"
-      ],
-      "bgPos": "96% 56%"
+      ]
     },
     {
       "company": "Tequila Works",
@@ -812,16 +803,11 @@
             "nunu"
           ]
         }
-      ],
-      "logo": "images/04-TequilaWorks/TequilaWorks.jpg",
-      "bg": [
-        "images/04-TequilaWorks/rime_bg.jpg"
-      ],
-      "bgPos": "84% 72%"
+      ]
     },
     {
       "company": "Grin Barcelona",
-      "roles": "Level Designer",
+      "roles": "",
       "stints": [
         {
           "from": "2007-07",
@@ -835,16 +821,11 @@
             "tower"
           ]
         }
-      ],
-      "logo": "images/02-GrinBarcelona/GrinBarcelona.png",
-      "bgPos": "51% 43%",
-      "bg": [
-        "images/02-GrinBarcelona/wanted_bg.jpg"
       ]
     },
     {
       "company": "Pyro Studios",
-      "roles": "QA Tester → Junior Level Designer",
+      "roles": "",
       "stints": [
         {
           "from": "2004-10",
@@ -857,11 +838,6 @@
             "cops"
           ]
         }
-      ],
-      "logo": "images/01-PyroStudios/PyroStudios.jpg",
-      "bgPos": "50% 11%",
-      "bg": [
-        "images/01-PyroStudios/CSF_bg.jpg"
       ]
     }
   ],
