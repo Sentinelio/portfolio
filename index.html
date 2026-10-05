@@ -2353,6 +2353,9 @@ header{overflow:hidden;}
             <div style="position:absolute;inset:0;background:{{ st.bg }};border-left:2px solid #ff7a2f;border-right:2px solid #ff7a2f;box-sizing:border-box;"></div>
             <span style="position:absolute;right:0;top:100%;margin-top:4px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;color:{{ st.toColor }};white-space:nowrap;">{{ st.to }}</span>
           </div>
+          <sc-for list="{{ st.tails }}" as="tl" hint-placeholder-count="0">
+            <div aria-hidden="true" style="grid-column:{{ tl.a }} / {{ tl.b }};grid-row:1;align-self:center;height:0;border-top:1px dashed rgba(255,122,47,0.55);pointer-events:none;"></div>
+          </sc-for>
           <sc-for list="{{ st.marks }}" as="mk" hint-placeholder-count="0">
             <div onClick="{{ mk.open }}" onMouseEnter="{{ mk.enter }}" onMouseLeave="{{ mk.leave }}" title="{{ mk.title }}" style="grid-column:{{ mk.col }} / span 1;grid-row:1;justify-self:center;position:relative;z-index:2;width:10px;height:10px;cursor:pointer;">
               <div style="position:absolute;left:-14px;top:-14px;width:38px;height:38px;"></div>
@@ -3088,8 +3091,10 @@ class Component extends DCLogic {
         if (unre.length) cases.push(this.covGroup(unre, 'Unreleased', r.company + ':' + st.from));
         const ndaCount = all.filter(id => this.statusKey(id) === 'nda').length + (st.nda ? 1 : 0);
         for (let n = 0; n < ndaCount; n++) cases.push({ single: false, group: false, nda: true });
-        const marks = all.filter(id => !this.isMasked(id)).map(id => { const d = this.data[id] || {}; const rm = ym(d.released || this.defaultReleased[id]); if (rm == null) return null; return { col: Math.max(2, Math.min(cols + 1, col(rm))), title: (d.title || id) + ' · released ' + fmt(rm), open: () => this.open(id), bg: hv === id ? '#ff7a2f' : '#dfe6ee', scale: hv === id ? '1.6' : '1', enter: () => this.setState({ logHover: id }), leave: () => this.setState({ logHover: '' }) }; }).filter(Boolean);
-        return { marks, c1, c2, from: fmt(f), to: isNow ? 'NOW' : fmt(t), bg: isNow ? '#ff7a2f' : '#1b2230', toColor: isNow ? '#ff7a2f' : '#dfe6ee', k1: nearEdge ? Math.max(2, Math.min(c1, c2 - 36)) : c1, k2: nearEdge ? c2 : cols + 2, justify: nearEdge ? 'flex-end' : 'flex-start', cases };
+        const marks = all.filter(id => !this.isMasked(id)).map(id => { const d = this.data[id] || {}; const rm = ym(d.released || this.defaultReleased[id]); if (rm == null) return null; const mc = Math.max(2, Math.min(cols + 1, col(rm))); const after = !isNow && mc >= c2; return { col: mc, after, title: (d.title || id) + ' · released ' + fmt(rm) + (after ? ' · shipped after I left' : ''), open: () => this.open(id), bg: hv === id ? '#ff7a2f' : (after ? '#07090c' : '#dfe6ee'), scale: hv === id ? '1.6' : '1', enter: () => this.setState({ logHover: id }), leave: () => this.setState({ logHover: '' }) }; }).filter(Boolean);
+        const lastAfter = marks.filter(m => m.after).reduce((mx, m) => Math.max(mx, m.col), 0);
+        const tails = lastAfter ? [{ a: c2, b: lastAfter }] : [];
+        return { marks, tails, c1, c2, from: fmt(f), to: isNow ? 'NOW' : fmt(t), bg: isNow ? '#ff7a2f' : '#1b2230', toColor: isNow ? '#ff7a2f' : '#dfe6ee', k1: nearEdge ? Math.max(2, Math.min(c1, c2 - 36)) : c1, k2: nearEdge ? c2 : cols + 2, justify: nearEdge ? 'flex-end' : 'flex-start', cases };
       }).filter(Boolean);
       const rowIds = (r.stints || []).reduce((a, st) => a.concat(this.stintIds(rows, r, st)), []).filter((id, i, arr) => arr.indexOf(id) === i && this.data[id] && !this.isHidden(id));
       const bgList = (Array.isArray(r.bg) && r.bg.length ? r.bg : rowIds.map(id => this.shotsOf(id)[0] || '')).filter((u, i, arr) => u && !bad[u] && arr.indexOf(u) === i);
