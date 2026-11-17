@@ -2949,6 +2949,8 @@ class Component extends DCLogic {
       if (e.key === 'ArrowLeft') this.stepMedia(-1);
     };
     window.addEventListener('keydown', this.onKey);
+    this.onPop = () => { const id = this.deepId(); if (id) { if (id !== this.state.active) this.open(id); } else if (this.state.active) this.setState({ active: null, lightbox: false }); }; // Back / Forward follow the ?p= link
+    window.addEventListener('popstate', this.onPop);
     this.startTimer();
     const q = new URLSearchParams(window.location.search);
     this.accessKey = q.get('access') || (window.location.hash || '').replace('#', '');
@@ -2962,7 +2964,7 @@ class Component extends DCLogic {
     const contentP = loadJson('content.json').catch((err) => { console.warn('content.json not applied — using the texts built into the page.', err); return null; });
     const imagesP = loadJson('images.json').catch(() => null);
     Promise.all([contentP, imagesP]).then(([cr, ir]) => {
-      const c = cr && cr.json; if (!c || typeof c !== 'object') return;
+      const c = cr && cr.json; if (!c || typeof c !== 'object') { this.openFromUrl(); return; }
       const base = (ir && ir.base) || cr.base; // image paths in content.json live in the same images/ tree as images.json
       this.contentBase = base || ''; this.absContent = (u) => (base && u && !/^(?:[a-z]+:)?\/\//i.test(u)) ? base + u.replace(/^\.?\//, '') : u;
       if (base) {
@@ -2973,7 +2975,7 @@ class Component extends DCLogic {
       try { this.applyContent(c); } catch (err) { console.warn('content.json: partially applied —', err); }
       const hit = this.accessKey && Array.isArray(c.accessKeys) ? c.accessKeys.find(k => k && k.key === this.accessKey && (!k.expires || Date.now() < Date.parse(k.expires))) : null;
       this.accessExpires = hit && hit.expires ? Date.parse(hit.expires) : 0;
-      this.setState({ content: c, unlocked: !!hit });
+      this.setState({ content: c, unlocked: !!hit }, () => this.openFromUrl());
     });
     imagesP.then((ir) => {
       if (!ir) { this.setState({ idxFailed: true }); return; }
@@ -2990,10 +2992,11 @@ class Component extends DCLogic {
     if (prev.cycleSeconds !== this.props.cycleSeconds) { clearInterval(this.timer); this.startTimer(); }
     if (this.lastActive !== this.state.active) { // one page scrollbar: open → top of the project, close → back where the index was (runtime passes no prevState, so track it here)
       if (this.state.active) window.scrollTo(0, 0); else if (this.lastActive !== undefined) window.scrollTo(0, this.indexScroll || 0);
+      this.syncUrl(this.lastActive, this.state.active);
       this.lastActive = this.state.active;
     }
   }
-  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); clearInterval(this.timer); }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); window.removeEventListener('popstate', this.onPop); clearInterval(this.timer); }
   startTimer() { this.timer = setInterval(() => { if (this.state.unlocked && this.accessExpires && Date.now() > this.accessExpires) this.setState({ unlocked: false, active: null }); this.setState(s => ({ tick: s.tick + 1 })); }, Math.max(500, (this.props.cycleSeconds ?? 1.8) * 1000)); }
   leftText(ms) { if (ms <= 0) return 'EXPIRED'; const m = Math.floor(ms / 60000), h = Math.floor(m / 60), d = Math.floor(h / 24); return d >= 1 ? d + 'D ' + (h % 24) + 'H LEFT' : (h >= 1 ? h + 'H ' + (m % 60) + 'M LEFT' : Math.max(1, m) + 'M LEFT'); }
   ticks(sec, def) { const cyc = Math.max(0.5, this.props.cycleSeconds ?? 1.8); const n = parseFloat(sec); return Math.max(1, Math.round((isNaN(n) || n <= 0 ? def : n) / cyc)); }
@@ -3180,6 +3183,21 @@ class Component extends DCLogic {
       items: ids.map(id => { const d = this.data[id] || {}, img = this.shotsOf(id)[0] || ''; const hvOn = (this.state.logHover || '') === id; return { title: d.title || id, img, has: !!img, w: on ? 54 : 0, op: on ? 1 : 0, open: () => this.open(id), border: hvOn ? '#ff7a2f' : '#2a3344', enter: () => this.setState({ logHover: id }), leave: () => this.setState({ logHover: '' }) }; }) };
   }
   visibleIds() { return this.levelIds.filter(id => !this.isHidden(id)).slice(0, (this.site && this.site.latestCount) || 4); }
+  // One link per project: https://manuelmendiluce.com/?p=<id>  (ids are the stable keys of content.json: cp, rime, nunu ...).
+  deepId() { const p = new URLSearchParams(window.location.search).get('p'); if (!p || this.levelIds.indexOf(p) < 0 && this.workIds.indexOf(p) < 0) return null; return this.isHidden(p) || this.isMasked(p) ? null : p; }
+  openFromUrl() {
+    this.urlReady = true; // until now the address bar is left alone, so a ?p= link is not stripped before it is read
+    const id = this.deepId(); if (id) { this.open(id); return; }
+    try { if (new URLSearchParams(window.location.search).has('p')) { const u = new URL(window.location.href); u.searchParams.delete('p'); history.replaceState(null, '', u.href); } } catch (e) {}
+  }
+  syncUrl(prev, cur) { // open from the index → new history entry; project → project (arrows) → replace it; close → new entry without ?p=
+    if (!this.urlReady) return;
+    try {
+      if ((new URLSearchParams(window.location.search).get('p') || null) === (cur || null)) return;
+      const u = new URL(window.location.href); if (cur) u.searchParams.set('p', cur); else u.searchParams.delete('p');
+      if (prev && cur) history.replaceState(null, '', u.href); else history.pushState(null, '', u.href);
+    } catch (e) {} // file:// or sandboxed preview: the page still works, just without links
+  }
   open(id) { if (this.isMasked(id)) return; if (!this.state.active) this.indexScroll = window.scrollY; this.checkList(this.shotsOf(id)); this.setState({ active: id, mediaIdx: 0 }); if (this.thumbsEl) this.thumbsEl.scrollTo({ left: 0 }); }
   stepRoom(dir) { const list = this.levelIds.filter(id => !this.isHidden(id) && !this.isMasked(id)).concat(this.workIds.filter(id => !this.isHidden(id) && !this.isMasked(id))); const i = list.indexOf(this.state.active); this.open(list[(i + dir + list.length) % list.length]); }
   ytEmbed(u) { const m = /(?:youtube\.com\/(?:embed\/|watch\?(?:.*&)?v=|shorts\/|live\/)|youtu\.be\/)([\w-]{6,})/.exec(u || ''); return m ? 'https://www.youtube.com/embed/' + m[1] : (u || ''); }
