@@ -5,11 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Manuel Mendiluce — Level Designer</title>
 <meta name="robots" content="index,follow">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F754R05BGV"></script>
+<!-- Google Analytics (Consent Mode: no guarda cookies de analítica hasta que el visitante acepta) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {analytics_storage:'denied', ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'});
+  var mmChoice = (document.cookie.match(/(?:^|; )mm_consent=(granted|denied)/) || [])[1];
+  if (mmChoice) gtag('consent', 'update', {analytics_storage: mmChoice});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F754R05BGV"></script>
+<script>
   gtag('js', new Date());
   gtag('config', 'G-F754R05BGV');
 </script>
@@ -3340,5 +3345,26 @@ class Component extends DCLogic {
 <div id="mm-fallback" style="min-height:100vh;box-sizing:border-box;padding:56px 32px;font-family:'Space Grotesk','Segoe UI',sans-serif;background:#07090c;color:#dfe6ee;"><div style="font-family:monospace;font-size:11px;letter-spacing:0.3em;color:#ff7a2f;">// LEVEL DESIGNER · SINCE 2004</div><h1 style="margin:18px 0 0;font-size:44px;line-height:1.05;letter-spacing:-0.03em;">Manuel Mendiluce</h1><p style="max-width:620px;margin:18px 0 0;font-size:16px;line-height:1.7;color:#8a94a3;">Twenty-two years of level design — metrics, blockouts, combat encounters and puzzles for Cyberpunk 2077, Rime, Deadlight, Gylt and Song of Nunu. Now Principal Level Designer at Vercors Games.</p><p style="margin:24px 0 0;font-family:monospace;font-size:12px;letter-spacing:0.1em;"><a href="mailto:Manuel.Mendiluce@gmail.com" style="color:#ff7a2f;text-decoration:none;">MANUEL.MENDILUCE@GMAIL.COM</a> · <a href="http://www.linkedin.com/pub/manuel-mendiluce/2/86a/465" style="color:#ff7a2f;text-decoration:none;">LINKEDIN</a></p></div>
 <script>setTimeout(function(){var r=document.getElementById("dc-root");if(!r||!r.firstElementChild){document.getElementById("mm-fallback").style.display="block";}},6000);</script>
 <noscript><style>#mm-fallback{display:block!important}</style></noscript>
+<!-- Aviso de cookies -->
+<div id="mm-cookie" style="display:none;position:fixed;left:16px;right:16px;bottom:16px;max-width:520px;margin:0 auto;z-index:9999;background:#0c1017;border:1px solid #1f2735;border-radius:6px;padding:14px 16px;font:13px/1.5 ui-monospace,Consolas,monospace;color:#dfe6ee;box-shadow:0 10px 30px rgba(0,0,0,.5);">
+  <p style="margin:0 0 10px;color:#b9c2cf;">This site uses Google Analytics to count visits. Nothing is tracked unless you accept.</p>
+  <div style="display:flex;gap:8px;justify-content:flex-end;">
+    <button id="mm-reject" type="button" style="font:600 12px ui-monospace,Consolas,monospace;padding:8px 14px;border-radius:4px;border:1px solid #2a3344;background:transparent;color:#dfe6ee;cursor:pointer;">REJECT</button>
+    <button id="mm-accept" type="button" style="font:600 12px ui-monospace,Consolas,monospace;padding:8px 14px;border-radius:4px;border:1px solid #ff7a2f;background:#ff7a2f;color:#0b0e13;cursor:pointer;">ACCEPT</button>
+  </div>
+</div>
+<script>
+(function () {
+  var box = document.getElementById('mm-cookie');
+  function save(v) {
+    document.cookie = 'mm_consent=' + v + '; Max-Age=31536000; Path=/; SameSite=Lax; Secure';
+    gtag('consent', 'update', { analytics_storage: v });
+    box.style.display = 'none';
+  }
+  if (!/(?:^|; )mm_consent=/.test(document.cookie)) box.style.display = 'block';
+  document.getElementById('mm-accept').onclick = function () { save('granted'); };
+  document.getElementById('mm-reject').onclick = function () { save('denied'); };
+})();
+</script>
 </body>
 </html>
