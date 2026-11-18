@@ -3347,10 +3347,13 @@ class Component extends DCLogic {
 <noscript><style>#mm-fallback{display:block!important}</style></noscript>
 <!-- Aviso de cookies -->
 <div id="mm-cookie" style="display:none;position:fixed;left:16px;right:16px;bottom:16px;max-width:520px;margin:0 auto;z-index:9999;background:#0c1017;border:1px solid #1f2735;border-radius:6px;padding:14px 16px;font:13px/1.5 ui-monospace,Consolas,monospace;color:#dfe6ee;box-shadow:0 10px 30px rgba(0,0,0,.5);">
-  <p style="margin:0 0 10px;color:#b9c2cf;">This site uses Google Analytics to count visits. Nothing is tracked unless you accept. <a href="privacy.html" style="color:#dfe6ee;text-decoration:underline;">Privacy</a></p>
-  <div style="display:flex;gap:8px;justify-content:flex-end;">
+  <p style="margin:0 0 10px;color:#b9c2cf;">This site uses Google Analytics to count visits. Nothing is tracked unless you accept.</p>
+  <div style="display:flex;gap:8px;justify-content:space-between;align-items:center;">
+    <a href="privacy.html" style="font:600 12px ui-monospace,Consolas,monospace;letter-spacing:.06em;color:#dfe6ee;text-decoration:underline;text-underline-offset:3px;">PRIVACY</a>
+    <span style="display:flex;gap:8px;">
     <button id="mm-reject" type="button" style="font:600 12px ui-monospace,Consolas,monospace;padding:8px 14px;border-radius:4px;border:1px solid #2a3344;background:transparent;color:#dfe6ee;cursor:pointer;">REJECT</button>
     <button id="mm-accept" type="button" style="font:600 12px ui-monospace,Consolas,monospace;padding:8px 14px;border-radius:4px;border:1px solid #ff7a2f;background:#ff7a2f;color:#0b0e13;cursor:pointer;">ACCEPT</button>
+    </span>
   </div>
 </div>
 <script>
