@@ -1,0 +1,376 @@
+{
+  "hero": "images/hero.jpg",
+  "projects": [
+    {
+      "slug": "01-RebelAssault",
+      "cover": "images/00-Personal/Maps/01-RebelAssault/01.jpg",
+      "images": [
+        "images/00-Personal/Maps/01-RebelAssault/01.jpg",
+        "images/00-Personal/Maps/01-RebelAssault/02.jpg",
+        "images/00-Personal/Maps/01-RebelAssault/03.jpg",
+        "images/00-Personal/Maps/01-RebelAssault/04.jpg",
+        "images/00-Personal/Maps/01-RebelAssault/05.jpg",
+        "images/00-Personal/Maps/01-RebelAssault/06.jpg"
+      ]
+    },
+    {
+      "slug": "02-Port",
+      "cover": "images/00-Personal/Maps/02-Port/01.jpg",
+      "images": [
+        "images/00-Personal/Maps/02-Port/01.jpg",
+        "images/00-Personal/Maps/02-Port/02.jpg",
+        "images/00-Personal/Maps/02-Port/03.jpg",
+        "images/00-Personal/Maps/02-Port/04.jpg",
+        "images/00-Personal/Maps/02-Port/05.jpg",
+        "images/00-Personal/Maps/02-Port/06.jpg"
+      ]
+    },
+    {
+      "slug": "03-Courtyard",
+      "cover": "images/00-Personal/Maps/03-Courtyard/01.jpg",
+      "images": [
+        "images/00-Personal/Maps/03-Courtyard/01.jpg",
+        "images/00-Personal/Maps/03-Courtyard/02.jpg",
+        "images/00-Personal/Maps/03-Courtyard/03.jpg",
+        "images/00-Personal/Maps/03-Courtyard/04.jpg",
+        "images/00-Personal/Maps/03-Courtyard/05.jpg",
+        "images/00-Personal/Maps/03-Courtyard/06.jpg"
+      ]
+    },
+    {
+      "slug": "02-BPActorFinder",
+      "cover": "images/00-Personal/Tools/02-BPActorFinder/01.jpg",
+      "images": [
+        "images/00-Personal/Tools/02-BPActorFinder/01.jpg",
+        "images/00-Personal/Tools/02-BPActorFinder/02.jpg",
+        "images/00-Personal/Tools/02-BPActorFinder/03.jpg",
+        "images/00-Personal/Tools/02-BPActorFinder/04.jpg",
+        "images/00-Personal/Tools/02-BPActorFinder/05.jpg",
+        "images/00-Personal/Tools/02-BPActorFinder/06.jpg",
+        "images/00-Personal/Tools/02-BPActorFinder/07.jpg",
+        "images/00-Personal/Tools/02-BPActorFinder/08.jpg"
+      ]
+    },
+    {
+      "slug": "03-BPDebugMenu",
+      "cover": "images/00-Personal/Tools/03-BPDebugMenu/01.jpg",
+      "images": [
+        "images/00-Personal/Tools/03-BPDebugMenu/01.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/02.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/03.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/04.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/05.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/06.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/07.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/08.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/09.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/10.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/11.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/12.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/13.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/14.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/15.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/16.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/17.jpg",
+        "images/00-Personal/Tools/03-BPDebugMenu/18.jpg"
+      ]
+    },
+    {
+      "slug": "01-CommandosStrikeForce",
+      "cover": "images/01-PyroStudios/01-CommandosStrikeForce/02.jpg",
+      "images": [
+        "images/01-PyroStudios/01-CommandosStrikeForce/02.jpg",
+        "images/01-PyroStudios/01-CommandosStrikeForce/03.jpg",
+        "images/01-PyroStudios/01-CommandosStrikeForce/04.jpg",
+        "images/01-PyroStudios/01-CommandosStrikeForce/05.jpg",
+        "images/01-PyroStudios/01-CommandosStrikeForce/06.jpg",
+        "images/01-PyroStudios/01-CommandosStrikeForce/07.jpg",
+        "images/01-PyroStudios/01-CommandosStrikeForce/CSF_cover.jpg"
+      ]
+    },
+    {
+      "slug": "02-ImperialGlory",
+      "cover": "images/01-PyroStudios/02-ImperialGlory/02.jpg",
+      "images": [
+        "images/01-PyroStudios/02-ImperialGlory/02.jpg",
+        "images/01-PyroStudios/02-ImperialGlory/03.jpg",
+        "images/01-PyroStudios/02-ImperialGlory/04.jpg",
+        "images/01-PyroStudios/02-ImperialGlory/05.jpg",
+        "images/01-PyroStudios/02-ImperialGlory/06.jpg",
+        "images/01-PyroStudios/02-ImperialGlory/07.jpg",
+        "images/01-PyroStudios/02-ImperialGlory/08.jpg",
+        "images/01-PyroStudios/02-ImperialGlory/09.jpg",
+        "images/01-PyroStudios/02-ImperialGlory/IG_cover.jpg"
+      ]
+    },
+    {
+      "slug": "03-Cops",
+      "cover": "images/01-PyroStudios/03-Cops/01.jpg",
+      "images": [
+        "images/01-PyroStudios/03-Cops/01.jpg",
+        "images/01-PyroStudios/03-Cops/02.jpg",
+        "images/01-PyroStudios/03-Cops/03.jpg",
+        "images/01-PyroStudios/03-Cops/04.jpg",
+        "images/01-PyroStudios/03-Cops/05.jpg",
+        "images/01-PyroStudios/03-Cops/06.jpg",
+        "images/01-PyroStudios/03-Cops/07.jpg",
+        "images/01-PyroStudios/03-Cops/08.jpg",
+        "images/01-PyroStudios/03-Cops/09.jpg",
+        "images/01-PyroStudios/03-Cops/10.jpg",
+        "images/01-PyroStudios/03-Cops/11.jpg",
+        "images/01-PyroStudios/03-Cops/12.jpg",
+        "images/01-PyroStudios/03-Cops/13.jpg",
+        "images/01-PyroStudios/03-Cops/14.jpg",
+        "images/01-PyroStudios/03-Cops/15.jpg",
+        "images/01-PyroStudios/03-Cops/16.jpg",
+        "images/01-PyroStudios/03-Cops/17.jpg",
+        "images/01-PyroStudios/03-Cops/18.jpg",
+        "images/01-PyroStudios/03-Cops/19.jpg",
+        "images/01-PyroStudios/03-Cops/20.jpg",
+        "images/01-PyroStudios/03-Cops/21.jpg",
+        "images/01-PyroStudios/03-Cops/22.jpg",
+        "images/01-PyroStudios/03-Cops/23.jpg",
+        "images/01-PyroStudios/03-Cops/24.jpg",
+        "images/01-PyroStudios/03-Cops/25.jpg",
+        "images/01-PyroStudios/03-Cops/26.jpg",
+        "images/01-PyroStudios/03-Cops/27.jpg",
+        "images/01-PyroStudios/03-Cops/28.jpg",
+        "images/01-PyroStudios/03-Cops/29.jpg",
+        "images/01-PyroStudios/03-Cops/30.jpg"
+      ]
+    },
+    {
+      "slug": "01-UT3PhysXMod",
+      "cover": "images/02-GrinBarcelona/01-UT3PhysXMod/01.jpg",
+      "images": [
+        "images/02-GrinBarcelona/01-UT3PhysXMod/01.jpg",
+        "images/02-GrinBarcelona/01-UT3PhysXMod/02.jpg",
+        "images/02-GrinBarcelona/01-UT3PhysXMod/03.jpg",
+        "images/02-GrinBarcelona/01-UT3PhysXMod/04.jpg",
+        "images/02-GrinBarcelona/01-UT3PhysXMod/05.jpg",
+        "images/02-GrinBarcelona/01-UT3PhysXMod/06.jpg",
+        "images/02-GrinBarcelona/01-UT3PhysXMod/07.jpg",
+        "images/02-GrinBarcelona/01-UT3PhysXMod/08.jpg",
+        "images/02-GrinBarcelona/01-UT3PhysXMod/09.jpg"
+      ]
+    },
+    {
+      "slug": "02-WantedWeaponsOfFate",
+      "cover": "images/02-GrinBarcelona/02-WantedWeaponsOfFate/02.jpg",
+      "images": [
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/02.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/03.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/04.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/05.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/06.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/07.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/08.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/09.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/10.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/11.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/12.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/13.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/14.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/15.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/16.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/17.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/18.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/19.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/20.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/21.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/22.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/23.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/24.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/25.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/26.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/27.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/28.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/29.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/30.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/31.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/32.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/33.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/34.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/35.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/36.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/37.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/38.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/39.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/40.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/41.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/42.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/43.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/44.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/45.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/46.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/47.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/48.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/49.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/50.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/51.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/52.jpg",
+        "images/02-GrinBarcelona/02-WantedWeaponsOfFate/Wanted_cover.jpg"
+      ]
+    },
+    {
+      "slug": "03-Strider",
+      "cover": "images/02-GrinBarcelona/03-Strider/01.jpg",
+      "images": [
+        "images/02-GrinBarcelona/03-Strider/01.jpg",
+        "images/02-GrinBarcelona/03-Strider/02.jpg",
+        "images/02-GrinBarcelona/03-Strider/03.jpg",
+        "images/02-GrinBarcelona/03-Strider/04.jpg",
+        "images/02-GrinBarcelona/03-Strider/05.jpg",
+        "images/02-GrinBarcelona/03-Strider/06.jpg",
+        "images/02-GrinBarcelona/03-Strider/07.jpg"
+      ]
+    },
+    {
+      "slug": "04-Tower",
+      "cover": "images/02-GrinBarcelona/04-Tower/01.jpg",
+      "images": [
+        "images/02-GrinBarcelona/04-Tower/01.jpg",
+        "images/02-GrinBarcelona/04-Tower/02.jpg",
+        "images/02-GrinBarcelona/04-Tower/03.jpg",
+        "images/02-GrinBarcelona/04-Tower/04.jpg"
+      ]
+    },
+    {
+      "slug": "01-Deadlight",
+      "cover": "images/04-TequilaWorks/01-Deadlight/02.jpg",
+      "images": [
+        "images/04-TequilaWorks/01-Deadlight/02.jpg",
+        "images/04-TequilaWorks/01-Deadlight/06.jpg",
+        "images/04-TequilaWorks/01-Deadlight/07.jpg",
+        "images/04-TequilaWorks/01-Deadlight/08.jpg",
+        "images/04-TequilaWorks/01-Deadlight/09.jpg",
+        "images/04-TequilaWorks/01-Deadlight/10.jpg",
+        "images/04-TequilaWorks/01-Deadlight/Deadlight_cover.jpg"
+      ]
+    },
+    {
+      "slug": "02-Rime",
+      "cover": "images/04-TequilaWorks/02-Rime/04.jpg",
+      "images": [
+        "images/04-TequilaWorks/02-Rime/04.jpg",
+        "images/04-TequilaWorks/02-Rime/05.jpg",
+        "images/04-TequilaWorks/02-Rime/06.jpg",
+        "images/04-TequilaWorks/02-Rime/07.jpg",
+        "images/04-TequilaWorks/02-Rime/08.jpg",
+        "images/04-TequilaWorks/02-Rime/09.jpg",
+        "images/04-TequilaWorks/02-Rime/10.jpg",
+        "images/04-TequilaWorks/02-Rime/Rime_cover.jpg"
+      ]
+    },
+    {
+      "slug": "03-TheSexyBrutale",
+      "cover": "images/04-TequilaWorks/03-TheSexyBrutale/01.jpg",
+      "images": [
+        "images/04-TequilaWorks/03-TheSexyBrutale/01.jpg",
+        "images/04-TequilaWorks/03-TheSexyBrutale/02.jpg",
+        "images/04-TequilaWorks/03-TheSexyBrutale/03.jpg",
+        "images/04-TequilaWorks/03-TheSexyBrutale/04.jpg",
+        "images/04-TequilaWorks/03-TheSexyBrutale/05.jpg",
+        "images/04-TequilaWorks/03-TheSexyBrutale/06.jpg",
+        "images/04-TequilaWorks/03-TheSexyBrutale/07.jpg",
+        "images/04-TequilaWorks/03-TheSexyBrutale/08.jpg",
+        "images/04-TequilaWorks/03-TheSexyBrutale/09.jpg",
+        "images/04-TequilaWorks/03-TheSexyBrutale/10.jpg",
+        "images/04-TequilaWorks/03-TheSexyBrutale/11.jpg",
+        "images/04-TequilaWorks/03-TheSexyBrutale/TeSexyBrutale_Cover.jpg"
+      ]
+    },
+    {
+      "slug": "04-Gylt",
+      "cover": "images/04-TequilaWorks/04-Gylt/02.jpg",
+      "images": [
+        "images/04-TequilaWorks/04-Gylt/02.jpg",
+        "images/04-TequilaWorks/04-Gylt/03.png",
+        "images/04-TequilaWorks/04-Gylt/04.jpg",
+        "images/04-TequilaWorks/04-Gylt/05.png",
+        "images/04-TequilaWorks/04-Gylt/06.png",
+        "images/04-TequilaWorks/04-Gylt/07.png",
+        "images/04-TequilaWorks/04-Gylt/08.jpg",
+        "images/04-TequilaWorks/04-Gylt/09.png",
+        "images/04-TequilaWorks/04-Gylt/10.png",
+        "images/04-TequilaWorks/04-Gylt/Gylt_cover.jpg"
+      ]
+    },
+    {
+      "slug": "05-SongOfNunu",
+      "cover": "images/04-TequilaWorks/05-SongOfNunu/01.jpg",
+      "images": [
+        "images/04-TequilaWorks/05-SongOfNunu/01.jpg",
+        "images/04-TequilaWorks/05-SongOfNunu/02.jpg",
+        "images/04-TequilaWorks/05-SongOfNunu/03.jpg",
+        "images/04-TequilaWorks/05-SongOfNunu/04.jpg",
+        "images/04-TequilaWorks/05-SongOfNunu/05.jpg",
+        "images/04-TequilaWorks/05-SongOfNunu/06.jpg",
+        "images/04-TequilaWorks/05-SongOfNunu/07.jpg",
+        "images/04-TequilaWorks/05-SongOfNunu/08.jpg",
+        "images/04-TequilaWorks/05-SongOfNunu/09.jpg",
+        "images/04-TequilaWorks/05-SongOfNunu/10.jpg",
+        "images/04-TequilaWorks/05-SongOfNunu/SongOfNunu_cover.jpg"
+      ]
+    },
+    {
+      "slug": "01-Cyberpunk2077",
+      "cover": "images/05-CDProjektRed/01-Cyberpunk2077/02.jpg",
+      "images": [
+        "images/05-CDProjektRed/01-Cyberpunk2077/02.jpg",
+        "images/05-CDProjektRed/01-Cyberpunk2077/03.jpg",
+        "images/05-CDProjektRed/01-Cyberpunk2077/04.jpg",
+        "images/05-CDProjektRed/01-Cyberpunk2077/05.jpg",
+        "images/05-CDProjektRed/01-Cyberpunk2077/06.jpg",
+        "images/05-CDProjektRed/01-Cyberpunk2077/07.jpg",
+        "images/05-CDProjektRed/01-Cyberpunk2077/08.jpg",
+        "images/05-CDProjektRed/01-Cyberpunk2077/09.jpg",
+        "images/05-CDProjektRed/01-Cyberpunk2077/10.jpg",
+        "images/05-CDProjektRed/01-Cyberpunk2077/11.png",
+        "images/05-CDProjektRed/01-Cyberpunk2077/12.png",
+        "images/05-CDProjektRed/01-Cyberpunk2077/13.png",
+        "images/05-CDProjektRed/01-Cyberpunk2077/14.png",
+        "images/05-CDProjektRed/01-Cyberpunk2077/Cyberpunk2077_cover.jpg"
+      ]
+    },
+    {
+      "slug": "02-Cyberpunk2077PhantomLiberty",
+      "cover": "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/01.png",
+      "images": [
+        "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/01.png",
+        "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/02.png",
+        "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/03.png",
+        "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/04.png",
+        "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/05.png",
+        "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/06.png",
+        "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/07.png",
+        "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/08.png",
+        "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/PhantomLiberty_cover.jpg",
+        "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/Screenshot 2026-10-05 141149.png"
+      ]
+    },
+    {
+      "slug": "06-WonderLegends",
+      "cover": "images/06-WonderLegends/WonderLegendsStudio.jpg",
+      "images": [
+        "images/06-WonderLegends/WonderLegendsStudio.jpg",
+        "images/06-WonderLegends/wonder_legends_studio_bg.jpg"
+      ]
+    },
+    {
+      "slug": "02-TunedIn",
+      "cover": "images/07-VercorsGames/02-TunedIn/01.jpg",
+      "images": [
+        "images/07-VercorsGames/02-TunedIn/01.jpg",
+        "images/07-VercorsGames/02-TunedIn/02.jpg",
+        "images/07-VercorsGames/02-TunedIn/03.jpg",
+        "images/07-VercorsGames/02-TunedIn/04.jpg",
+        "images/07-VercorsGames/02-TunedIn/05.png",
+        "images/07-VercorsGames/02-TunedIn/06.png",
+        "images/07-VercorsGames/02-TunedIn/08.png",
+        "images/07-VercorsGames/02-TunedIn/Screenshot 2026-06-10 110849.png",
+        "images/07-VercorsGames/02-TunedIn/TuneIn_cover.png"
+      ]
+    }
+  ]
+}
