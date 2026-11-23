@@ -335,8 +335,9 @@
     },
     {
       "slug": "02-Cyberpunk2077PhantomLiberty",
-      "cover": "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/PhantomLiberty_cover.jpg",
+      "cover": "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/01.png",
       "images": [
+        "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/01.png",
         "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/PhantomLiberty_cover.jpg",
         "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/Screenshot 2026-10-05 141121.png",
         "images/05-CDProjektRed/02-Cyberpunk2077PhantomLiberty/Screenshot 2026-10-05 141149.png",
